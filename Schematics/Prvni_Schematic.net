@@ -1,0 +1,11 @@
+* Schematics Netlist *
+
+
+
+R_R2         0 out  1k  
+V_V1         in 0 20V
+R_R1         in out  1k  
+R_R4         0 $N_0001  1k  
+V_V2         $N_0002 0  
++SIN 0 5 1k 0 0 0
+R_R3         $N_0002 $N_0001  1k  

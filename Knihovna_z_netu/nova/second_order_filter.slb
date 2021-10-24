@@ -1,0 +1,32 @@
+*version 9.2 870703573
+@index
+symloc Filter 0 2
+symloc Second_order_filter 2 1006
+*s*symbol Second_order_filter
+d 
+@type p
+@attributes
+a 0 s 11 0 8 -2 hln 100 PART=Second_order_filter
+a 0 s 0:13 0 0 0 hln 100 MODEL=Second_order_filter
+a 1 sp 9 0 12 28 hln 100 REFDES=
+a 0 s 0:13 0 0 0 hln 100 TEMPLATE=X^@REFDES %in %out %GND @MODEL PARAMS: ?rezistor_R1|rezistor_R1=@rezistor_R1||rezistor_R1=0| ?rezistor_R2|rezistor_R2=@rezistor_R2||rezistor_R2=0| ?kondenzator_C1|kondenzator_C1=@kondenzator_C1||kondenzator_C1=0| ?kondenzator_C2|kondenzator_C2=@kondenzator_C2||kondenzator_C2=0|
+a 0 u 0:13 0 0 0 hln 100 rezistor_R1=0
+a 0 u 0:13 0 0 0 hln 100 rezistor_R2=0
+a 0 u 0:13 0 0 0 hln 100 kondenzator_C1=0
+a 0 u 0:13 0 0 0 hln 100 kondenzator_C2=0
+@pins
+p 2 12 12 hln 100 in n 0 10 h
+a 0 s 1 0 9 8 hrn 100 PIN=1
+a 0 s 0:13 0 0 10 hln 100 ERC=x
+p 2 48 12 hrn 100 out n 60 10 u
+a 0 s 1 0 51 8 hln 100 PIN=2
+a 0 s 0:13 0 60 10 hln 100 ERC=x
+p 2 36 20 uln 100 GND n 30 40 v
+a 0 s 1 0 28 31 vrn 100 PIN=3
+a 0 s 0:13 0 30 40 hln 100 ERC=x
+@graphics 60 40 0 0 10
+r 0 10 0 50 30
+v 0 20 10
+30 10
+40 20
+;

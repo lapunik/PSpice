@@ -1,0 +1,8 @@
+* Schematics Netlist *
+
+
+
+R_R3         0 $N_0001  {zatez}  
+D_D2         0 $N_0001 D02CZ5_1 
+V_V2         $N_0002 0 32
+R_R5         $N_0002 $N_0001  13  

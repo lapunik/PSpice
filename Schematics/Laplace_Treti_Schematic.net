@@ -1,0 +1,9 @@
+* Schematics Netlist *
+
+
+
+R_R1         0 $N_0001  {odpor}  
+V_V1         IN 0 DC 0V AC 1V 
+E_E3         $N_0001 0 LAPLACE { V(out2, 0) } = { {s/(2+(2*1.4142*s)+(s_2))}  }
+E_E4         out2 0 LAPLACE { V(Iout1, 0) } = { {s/(2+(2*1.4142*s)+(s_2))}  }
+E_E2         out1 0 LAPLACE { V(IN, 0) } = { {s/(2+(2*s)+(s_2))}  }

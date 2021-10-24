@@ -1,0 +1,22 @@
+* C:\Users\Lapunik\Dropbox\PSpice\Schematics\DC_teplotni_analyza_Schematic.sch
+
+* Schematics Version 9.2
+* Thu Oct 24 12:27:50 2019
+
+
+
+** Analysis setup **
+.DC LIN TEMP -20 100 100m 
+.OP 
+
+
+* From [PSPICE NETLIST] section of C:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "nom.lib"
+
+.INC "DC_teplotni_analyza_Schematic.net"
+
+
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END

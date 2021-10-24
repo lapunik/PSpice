@@ -1,0 +1,258 @@
+
+**** 11/14/19 18:12:04 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\Sumovy_filtr_Semestralni_prace.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.2
+* Thu Nov 14 18:12:04 2019
+
+
+.PARAM         kondenzator35=150p 
+
+** Analysis setup **
+.ac DEC 101 100 100k
+.OP 
+
+
+* From [PSPICE NETLIST] section of C:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "nom.lib"
+
+.INC "Sumovy_filtr_Semestralni_prace.net"
+
+
+
+**** INCLUDING Sumovy_filtr_Semestralni_prace.net ****
+* Schematics Netlist *
+
+
+
+R_Rz1         0 Uout1  100k  
+R_R46         in $N_0001  100k  
+R_R47         $N_0001 $N_0002  100k  
+C_C34         0 $N_0002  150p  
+R_R48         Uout1 $N_0003  100k  
+R_Rz2         0 Uout2  100k  
+C_C37         $N_0003 Uout2  150p  
+C_C36         0 Uout2  150p  
+V_Voz+         $N_0004 0 +18
+R_R49         $N_0003 $N_0005  100k  
+X_OZ7         $N_0005 Uout2 $N_0004 $N_0006 Uout2 LF156/LT
+X_OZ6         $N_0002 Uout1 $N_0004 $N_0006 Uout1 LF156/LT
+V_Uin         in 0  AC 200m
++SIN 0 0 0 0 0 0
+C_C35         $N_0001 Uout1  {kondenzator35}  
+V_Voz-         0 $N_0006 +18
+
+**** RESUMING Sumovy_filtr_Semestralni_prace.cir ****
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END
+
+**** 11/14/19 18:12:04 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\Sumovy_filtr_Semestralni_prace.sch
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_OZ7.DM1       X_OZ7.DM2       X_OZ7.DM3       X_OZ7.DM4       
+          IS    1.000000E-15  800.000000E-18  100.000000E-18    1.000000E-09 
+          BV                   52.8                                          
+
+
+               X_OZ6.DM1       X_OZ6.DM2       X_OZ6.DM3       X_OZ6.DM4       
+          IS    1.000000E-15  800.000000E-18  100.000000E-18    1.000000E-09 
+          BV                   52.8                                          
+
+
+**** 11/14/19 18:12:04 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\Sumovy_filtr_Semestralni_prace.sch
+
+
+ ****     Junction FET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_OZ7.JM1       X_OZ7.JM2       X_OZ6.JM1       X_OZ6.JM2       
+               PJF             PJF             PJF             PJF             
+         VTO   -1               -.998          -1               -.998        
+        BETA  925.280000E-06  925.280000E-06  925.280000E-06  925.280000E-06 
+          IS   31.500000E-12   28.500000E-12   31.500000E-12   28.500000E-12 
+
+
+**** 11/14/19 18:12:04 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\Sumovy_filtr_Semestralni_prace.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   in)    0.0000  (Uout1)     .0020  (Uout2)     .0040  ($N_0001)-7.323E-06    
+
+($N_0002)-14.65E-06                   ($N_0003)     .0020                       
+
+($N_0004)   18.0000                   ($N_0005)     .0020                       
+
+($N_0006)  -18.0000                   (X_OZ6.1)     .0020                       
+
+(X_OZ6.8)-940.8E-09                   (X_OZ7.1)     .0040                       
+
+(X_OZ7.8)-1.882E-06                   (X_OZ6.12)    -.4887                      
+
+(X_OZ6.13)    3.1572                  (X_OZ6.14)   -3.1532                      
+
+(X_OZ6.18) 414.8E-09                  (X_OZ6.20) 861.7E-18                      
+
+(X_OZ6.40)  -16.0000                  (X_OZ6.60)  -18.0000                      
+
+(X_OZ6.70)   18.0000                  (X_OZ6.80)  -15.7450                      
+
+(X_OZ6.90)  -15.7450                  (X_OZ7.12)    -.4867                      
+
+(X_OZ7.13)    3.1592                  (X_OZ7.14)   -3.1512                      
+
+(X_OZ7.18) 825.2E-09                  (X_OZ7.20) 1.714E-15                      
+
+(X_OZ7.40)  -16.0000                  (X_OZ7.60)  -18.0000                      
+
+(X_OZ7.70)   18.0000                  (X_OZ7.80)  -15.7450                      
+
+(X_OZ7.90)  -15.7450                  (X_OZ6.102)     .0020                     
+
+(X_OZ6.103)-14.65E-06                 (X_OZ6.131)   18.0000                     
+
+(X_OZ6.141)  -18.0000                 (X_OZ7.102)     .0040                     
+
+(X_OZ7.103)     .0020                 (X_OZ7.131)   18.0000                     
+
+(X_OZ7.141)  -18.0000                 
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Voz+      -1.000E-02
+    V_Uin       -7.323E-11
+    V_Voz-      -1.000E-02
+    X_OZ7.VCM2   4.800E-04
+    X_OZ7.VC     1.484E-11
+    X_OZ7.VE     1.563E-11
+    X_OZ6.VCM2   4.800E-04
+    X_OZ6.VC     1.523E-11
+    X_OZ6.VE     1.485E-11
+
+    TOTAL POWER DISSIPATION   3.58E-01  WATTS
+
+
+**** 11/14/19 18:12:04 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\Sumovy_filtr_Semestralni_prace.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** VOLTAGE-CONTROLLED CURRENT SOURCES
+
+
+NAME         X_OZ7.GOSIT             X_OZ7.GCM   X_OZ7.GA    X_OZ7.GB  
+I-SOURCE     1.163E-09              -4.587E-09  -4.568E-09  -5.383E-05
+
+NAME         X_OZ7.GCL   X_OZ7.GPL   X_OZ7.GNL   X_OZ6.GOSIT           
+I-SOURCE     1.714E-15  -1.421E-14   1.421E-14   1.171E-09            
+
+NAME         X_OZ6.GCM   X_OZ6.GA    X_OZ6.GB    X_OZ6.GCL   X_OZ6.GPL 
+I-SOURCE    -4.606E-09  -4.597E-09  -2.692E-05   8.617E-16  -1.421E-14
+
+NAME         X_OZ6.GNL 
+I-SOURCE     1.421E-14
+
+
+**** VOLTAGE-CONTROLLED VOLTAGE SOURCES
+
+
+NAME         X_OZ7.ECL   X_OZ6.ECL 
+V-SOURCE     8.252E-07   4.148E-07
+I-SOURCE    -1.714E-18  -8.617E-19
+
+
+**** DIODES
+
+
+NAME         X_OZ7.D1    X_OZ7.D2    X_OZ7.D3A   X_OZ7.D3B   X_OZ7.D4A 
+MODEL        X_OZ7.DM1   X_OZ7.DM1   X_OZ7.DM3   X_OZ7.DM3   X_OZ7.DM3 
+ID           8.57E-19   -8.57E-19   -1.49E-18   -1.48E-11   -1.49E-18 
+VD           8.25E-07   -8.25E-07   -1.48E-06   -1.48E+01   -1.48E-06 
+REQ          9.63E+11    9.63E+11    9.96E+11    1.00E+12    9.96E+11 
+CAP          0.00E+00    0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+
+NAME         X_OZ7.D4B   X_OZ7.DSUB  X_OZ6.D1    X_OZ6.D2    X_OZ6.D3A 
+MODEL        X_OZ7.DM3   X_OZ7.DM2   X_OZ6.DM1   X_OZ6.DM1   X_OZ6.DM3 
+ID          -1.48E-11   -3.60E-11    4.31E-19   -4.31E-19   -1.49E-18 
+VD          -1.48E+01   -3.60E+01    4.15E-07   -4.15E-07   -1.48E-06 
+REQ          1.00E+12    1.00E+12    9.63E+11    9.63E+11    9.96E+11 
+CAP          0.00E+00    0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+
+NAME         X_OZ6.D3B   X_OZ6.D4A   X_OZ6.D4B   X_OZ6.DSUB
+MODEL        X_OZ6.DM3   X_OZ6.DM3   X_OZ6.DM3   X_OZ6.DM2 
+ID          -1.48E-11   -1.49E-18   -1.48E-11   -3.60E-11 
+VD          -1.48E+01   -1.48E-06   -1.48E+01   -3.60E+01 
+REQ          1.00E+12    9.96E+11    1.00E+12    1.00E+12 
+CAP          0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+
+
+**** JFETS
+
+
+NAME         X_OZ7.J1    X_OZ7.J2    X_OZ6.J1    X_OZ6.J2  
+MODEL        X_OZ7.JM1   X_OZ7.JM2   X_OZ6.JM1   X_OZ6.JM2 
+ID          -2.40E-04   -2.40E-04   -2.40E-04   -2.40E-04 
+VGS          4.91E-01    4.89E-01    4.91E-01    4.89E-01 
+VDS         -1.53E+01   -1.53E+01   -1.53E+01   -1.53E+01 
+GM           9.42E-04    9.42E-04    9.42E-04    9.42E-04 
+GDS          0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+CGS          0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+CGD          0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .11
+

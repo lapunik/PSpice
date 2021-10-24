@@ -1,0 +1,236 @@
+
+**** 11/07/19 12:38:08 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***TRF150_strmost.cir***
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+.LIB "nom.lib"
+
+VDS 1 0 DC 10 ; zdroj drain-source
+VGS 2 0 DC 4
+
+
+*definice MOSFET: M<jmeno> <D> <G> <S> <substrt> <model> (substrt je ten prostredek se sipkou)
+M1 1 2 0 0 IRF150
+
+.OP
+*.DC LIN VDS 0 50 50m;5; po peti voltech byla prasarna... musim dat mene
+*.DC LIN VDS 0 50 50m VGS LIST 4 4.5 5 5.5 6 7 8; s druhou smyckou v podobe listu
+.DC LIN VGS 0 50 50m
+*.STEP VGS LIST 4 4.5 5 5.5 6 7 8; s druhou smyckou v podobe listu ale step... rozeznam jednotlive prubehy
+*.STEP VGS 0 10 1; s druhou smyckou v podobe od 0 do 10 step...
+.STEP TEMP LIST 25 100
+
+*.TEMP 25 ; simulace pro 25 stupnu
+
+.PROBE VGS(M1);
+.PROBE VDS(M1);
+.PROBE ID(M1); 
+.PROBE IG(M1);  
+.END
+
+**** 11/07/19 12:38:08 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***TRF150_strmost.cir***
+
+
+ ****     MOSFET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               IRF150          
+               NMOS            
+       LEVEL    3            
+           L    2.000000E-06 
+           W     .3          
+         VTO    2.831        
+          KP   20.530000E-06 
+       GAMMA    0            
+         PHI     .6          
+      LAMBDA    0            
+          RD    1.031000E-03 
+          RS    1.624000E-03 
+          RG   13.89         
+         RDS  444.400000E+03 
+          IS  194.000000E-18 
+          JS    0            
+          PB     .8          
+        PBSW     .8          
+         CBD    3.229000E-09 
+          CJ    0            
+        CJSW    0            
+          TT  288.000000E-09 
+        CGSO    9.027000E-09 
+        CGDO    1.679000E-09 
+        CGBO    0            
+         TOX  100.000000E-09 
+          XJ    0            
+       UCRIT   10.000000E+03 
+       DELTA    0            
+         ETA    0            
+      DIOMOD    1            
+         VFB    0            
+        LETA    0            
+        WETA    0            
+          U0    0            
+        TEMP    0            
+         VDD    0            
+       XPART    0            
+
+
+**** 11/07/19 12:38:08 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***TRF150_strmost.cir***
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   25.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(    1)   10.0000  (    2)    4.0000  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    VDS         -2.106E+00
+    VGS          0.000E+00
+
+    TOTAL POWER DISSIPATION   2.11E+01  WATTS
+
+
+**** 11/07/19 12:38:08 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***TRF150_strmost.cir***
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   25.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** MOSFETS
+
+
+NAME         M1        
+MODEL        IRF150    
+ID           2.11E+00 
+VGS          4.00E+00 
+VDS          1.00E+01 
+VBS          0.00E+00 
+VTH          2.83E+00 
+VDSAT        1.16E+00 
+Lin0/Sat1   -1.00E+00 
+if          -1.00E+00 
+ir          -1.00E+00 
+TAU         -1.00E+00 
+GM           3.62E+00 
+GDS          2.25E-06 
+GMB          0.00E+00 
+CBD          8.78E-10 
+CBS          2.89E-19 
+CGSOV        2.71E-09 
+CGDOV        5.04E-10 
+CGBOV        0.00E+00 
+CGS          1.38E-10 
+CGD          0.00E+00 
+CGB          0.00E+00 
+**** 11/07/19 12:38:08 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***TRF150_strmost.cir***
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =  100.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(    1)   10.0000  (    2)    4.0000  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    VDS         -1.706E+00
+    VGS          0.000E+00
+
+    TOTAL POWER DISSIPATION   1.71E+01  WATTS
+
+
+**** 11/07/19 12:38:08 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***TRF150_strmost.cir***
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =  100.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** MOSFETS
+
+
+NAME         M1        
+MODEL        IRF150    
+ID           1.71E+00 
+VGS          4.00E+00 
+VDS          1.00E+01 
+VBS          0.00E+00 
+VTH          2.76E+00 
+VDSAT        1.24E+00 
+Lin0/Sat1   -1.00E+00 
+if          -1.00E+00 
+ir          -1.00E+00 
+TAU         -1.00E+00 
+GM           2.75E+00 
+GDS          2.25E-06 
+GMB          0.00E+00 
+CBD          8.88E-10 
+CBS          1.44E-17 
+CGSOV        2.71E-09 
+CGDOV        5.04E-10 
+CGBOV        0.00E+00 
+CGS          1.38E-10 
+CGD          0.00E+00 
+CGB          0.00E+00 
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .25
+

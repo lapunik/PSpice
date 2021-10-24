@@ -1,0 +1,41 @@
+
+**** 12/07/19 18:29:50 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***E_LAPLACE_SEMESTRALKA.cir***
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+.LIB "nom.lib" 
+
+.PARAM fc=2000 omega2={(2*3.1416*fc)*(2*3.1416*fc)} omega={(2*3.1416*fc)} 
+.PARAM a1={3.588} b1={10.464} a2={0.4925} b2={1.9622} a3={0.0995} b3={1.0826}
+
+V1 1 0 AC 1 
+R1 1 0 1MEG 
+E1 2 0 LAPLACE {V(1,0)}={(omega2/(omega2+(omega*a1*s)+(s*s*b1)))+(omega2/(omega2+(omega*a2*s)+(s*s*b2)))
+*+(omega2/(omega2+(omega*a3*s)+(s*s*b3)))}
+------------------------$
+ERROR -- End of expression not seen
+.OP 
+------------$
+ERROR -- End of expression not seen
+.OP 
+------------$
+ERROR -- End of expression not seen
+.AC DEC 101 1 100k 
+------------$
+ERROR -- End of expression not seen
+.PROBE V(2) 
+------------$
+ERROR -- End of expression not seen
+.END
+------------$
+ERROR -- Missing transfer function
+

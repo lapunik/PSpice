@@ -1,0 +1,291 @@
+
+**** 10/24/19 12:33:48 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***potenciometr.cir***
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+.LIB "nom.lib"
+
+
+V1 1 0 DC 10
+Rhorni 1 2 {(({hodnota}*(1-{natoceni}))+1m)}
+Rdolni 2 0 {(({hodnota}*{natoceni})+1m)}
+R2 = 2 0 1MEG
+* dame jeste na vystup jedna mega odpor aby nebyl na prazdno
+
+.PARAM hodnota = 2k natoceni = 0.5
+
+*druha moznost zadani potenciometru (podobvod)
+
+*X <jmeno><globalni_uzly><jmeno_podobvodu> [PARAMS:<parametr>=<hodnota>] ; podobvod je X stejne jako kondenzator je C napr.
+
+*zadani podobvodu = zaciname prikazem .SUBCKT, nasleduje netlist a konci prikazem .ENDS
+*definice: .SUBCKT <jmeno_subobvodu><lokalni_uzly> [PARAMS:<parametr>=<hodnota>]; pak volani podobvodu musi byt stejne razeni uzlu
+
+.SUBCKT potak 100 200 jezdec PARAMS:hodnotaR=2k ;hodnotaR aby se nepletla s predchozim parametrem
+RPhorni 100 jezdec {(({hodnotaR}*(1-{natoceni}))+1m)}
+RPdolni 200 jezdec {(({hodnotaR}*{natoceni})+1m)}
+
+.ENDS potak; potak tam byt nemusi ale lepe se v tom pak vyznam
+
+X1 10 0 20 potak PARAMS: hodnotaR=10k; kdybych nenapsal PARAMS:... tak by hodnota R byla 2kOhm - definovano pod obvodem, takze ja mu
+V2 10 0 DC 10
+R20 20 0 1MEG
+
+
+
+
+.OP
+
+*.DC LIN V1 0 5 5m
+.DC LIN V2 0 5 5m
+
+.STEP LIN PARAM natoceni 0 1 0.25
+
+.PROBE V(1) V(2) V(20)
+
+.END
+
+**** 10/24/19 12:33:48 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***potenciometr.cir***
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM NATOCENI =    0     
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(    1)   10.0000  (    2) 5.000E-06  (   10)   10.0000  (   20) 1.000E-06  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V1          -5.000E-03
+    V2          -1.000E-03
+
+    TOTAL POWER DISSIPATION   6.00E-02  WATTS
+
+
+**** 10/24/19 12:33:48 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***potenciometr.cir***
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM NATOCENI =    0     
+
+
+******************************************************************************
+
+
+
+
+**** 10/24/19 12:33:48 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***potenciometr.cir***
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM NATOCENI =     .25  
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(    1)   10.0000  (    2)    2.4991  (   10)   10.0000  (   20)    2.4953  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V1          -5.001E-03
+    V2          -1.001E-03
+
+    TOTAL POWER DISSIPATION   6.00E-02  WATTS
+
+
+**** 10/24/19 12:33:48 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***potenciometr.cir***
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM NATOCENI =     .25  
+
+
+******************************************************************************
+
+
+
+
+**** 10/24/19 12:33:48 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***potenciometr.cir***
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM NATOCENI =     .5   
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(    1)   10.0000  (    2)    4.9975  (   10)   10.0000  (   20)    4.9875  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V1          -5.003E-03
+    V2          -1.002E-03
+
+    TOTAL POWER DISSIPATION   6.01E-02  WATTS
+
+
+**** 10/24/19 12:33:48 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***potenciometr.cir***
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM NATOCENI =     .5   
+
+
+******************************************************************************
+
+
+
+
+**** 10/24/19 12:33:48 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***potenciometr.cir***
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM NATOCENI =     .75  
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(    1)   10.0000  (    2)    7.4972  (   10)   10.0000  (   20)    7.4860  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V1          -5.006E-03
+    V2          -1.006E-03
+
+    TOTAL POWER DISSIPATION   6.01E-02  WATTS
+
+
+**** 10/24/19 12:33:48 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***potenciometr.cir***
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM NATOCENI =     .75  
+
+
+******************************************************************************
+
+
+
+
+**** 10/24/19 12:33:48 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***potenciometr.cir***
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM NATOCENI =    1     
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(    1)   10.0000  (    2)   10.0000  (   10)   10.0000  (   20)   10.0000  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V1          -5.010E-03
+    V2          -1.010E-03
+
+    TOTAL POWER DISSIPATION   6.02E-02  WATTS
+
+
+**** 10/24/19 12:33:48 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***potenciometr.cir***
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM NATOCENI =    1     
+
+
+******************************************************************************
+
+
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .59
+

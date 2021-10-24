@@ -1,0 +1,261 @@
+
+**** 11/14/19 12:10:46 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\statistika_schematic.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.2
+* Thu Nov 14 12:10:46 2019
+
+
+
+** Analysis setup **
+.ac DEC 101 10k 1MEG
+.WCASE AC v([out]) YMAX
++  LIST VARY DEV LOW
+.OP 
+
+
+* From [PSPICE NETLIST] section of C:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "nom.lib"
+
+.INC "statistika_schematic.net"
+
+
+
+**** INCLUDING statistika_schematic.net ****
+* Schematics Netlist *
+
+
+
+R_R1         $N_0001 out R_R1 1k  
+.model        R_R1 RES R=1 DEV=10%
+C_C1         0 out C_C1 1n  
+.model        C_C1 CAP C=1 DEV=30%
+V_V1         $N_0001 0 DC 0V AC 1V 
+
+**** RESUMING statistika_schematic.cir ****
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END
+
+**** 11/14/19 12:10:46 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\statistika_schematic.sch
+
+
+ ****     Resistor MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               R_R1            
+           R    1            
+
+
+**** 11/14/19 12:10:46 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\statistika_schematic.sch
+
+
+ ****     Capacitor MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               C_C1            
+           C    1            
+
+
+**** 11/14/19 12:10:46 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\statistika_schematic.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      SENSITIVITY NOMINAL
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  out)    0.0000  ($N_0001)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+**** 11/14/19 12:10:46 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\statistika_schematic.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+                      SENSITIVITY NOMINAL
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  out)    0.0000  ($N_0001)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  out)    0.0000  ($N_0001)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+
+Mean Deviation = -384.7500E-06
+Sigma          =    0     
+
+ RUN                    MAX DEVIATION FROM NOMINAL
+
+C_C1 C_C1 C          384.7500E-06  lower  at F =  222.0900E+03
+                        (    .6605% change per 1% change in Model Parameter)
+
+R_R1 R_R1 R          384.7500E-06  lower  at F =  222.0900E+03
+                        (    .6605% change per 1% change in Model Parameter)
+
+
+**** 11/14/19 12:10:46 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\statistika_schematic.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      WORST CASE ALL DEVICES
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  out)    0.0000  ($N_0001)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+**** 11/14/19 12:10:46 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\statistika_schematic.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+                      WORST CASE ALL DEVICES
+
+******************************************************************************
+
+
+
+
+**** 11/14/19 12:10:46 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\statistika_schematic.sch
+
+
+ ****     UPDATED MODEL PARAMETERS         TEMPERATURE =   27.000 DEG C
+
+                      WORST CASE ALL DEVICES
+
+******************************************************************************
+
+
+
+Device       MODEL        PARAMETER    NEW VALUE    
+C_C1         C_C1         C               1.3           (Increased)  
+R_R1         R_R1         R               1.1           (Increased)  
+    
+
+**** 11/14/19 12:10:46 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\statistika_schematic.sch
+
+
+ ****     SORTED DEVIATIONS OF V(out)      TEMPERATURE =   27.000 DEG C
+
+                      WORST CASE SUMMARY
+
+******************************************************************************
+
+
+
+
+
+Mean Deviation =    -.1367
+Sigma          =    0     
+
+ RUN                    MAX DEVIATION FROM NOMINAL
+
+WORST CASE ALL DEVICES
+                         .1367  lower  at F =  189.3300E+03
+                        ( 121.24% of Nominal)
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .08
+

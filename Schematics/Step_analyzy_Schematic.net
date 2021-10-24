@@ -1,0 +1,7 @@
+* Schematics Netlist *
+
+
+
+R_R1         in out  1k  
+R_R2         0 out  {odpor}  
+V_V1         in 0 10V

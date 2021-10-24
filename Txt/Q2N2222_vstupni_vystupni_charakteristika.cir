@@ -1,0 +1,17 @@
+***Q2N2222_vstupni_vystupni_charakteristika.cir***
+.LIB "nom.lib"
+
+VCE 2 0 DC 10 
+IB 0 1 DC 4u; musim mit 0 1 protoye proudovz zdroj je jakoby otoceny
+
+Q1 2 1 0 0 Q2N2222
+
+.OP
+
+.DC LIN VCE 0 10 10m
+
+.STEP LIN IB 0 100u 10u
+
+.PROBE IC(Q1);
+ 
+.END

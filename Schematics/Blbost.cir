@@ -1,0 +1,24 @@
+* C:\Users\Lapunik\Dropbox\PSpice\Schematics\Blbost.sch
+
+* Schematics Version 9.2
+* Fri Oct 25 23:26:44 2019
+
+
+.PARAM         value=10 
+
+** Analysis setup **
+.STEP  PARAM value LIST 
++ 5 6 7 8 9 10
+.OP 
+
+
+* From [PSPICE NETLIST] section of C:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "nom.lib"
+
+.INC "Blbost.net"
+
+
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END

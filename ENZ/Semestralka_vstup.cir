@@ -1,0 +1,22 @@
+* C:\Users\Lapunik\OneDrive\Dokumenty\PSpice\ENZ\Semestralka_vstup.sch
+
+* Schematics Version 9.2
+* Thu Mar 12 17:30:26 2020
+
+
+
+** Analysis setup **
+.tran 1u 1m 0 1u
+.OP 
+
+
+* From [PSPICE NETLIST] section of C:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "nom.lib"
+
+.INC "Semestralka_vstup.net"
+
+
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END

@@ -1,0 +1,22 @@
+***statistika_tran_histogram.cir***
+
+.LIB "nom.lib"
+
+*napetovy delic
+V1 1 0 DC 10
+R1 1 2 Rodpor 1k
+R2 2 0 Rodpor 1k
+
+.MODEL Rodpor RES R=1 DEV 10%
+
+.OP
+
+.TRAN 1u 1m 0 1u
+*.TRAN 1u 1m 1m 1u; vykresleni pouze v jednom bode, do jednoho mili od jednoho mili, statistika, histogram gauss.... nutno smazat všechny soubiry kromì .cir !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+*.MC 20 TRAN V(2) YMAX OUTPUT ALL; 20 bìhu analyzy pro vystupni napeti delice a hleam nejhorsi vysledky od nominalni hodnoty a vykresluji je
+.WCASE TRAN V(2) YMAX LOW; nebo HI
+
+.PROBE V(2)
+
+.END

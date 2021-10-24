@@ -1,0 +1,24 @@
+* C:\Users\Lapunik\Dropbox\PSpice\Schematics\Semestralka_Second_order_filtr_Schematic1.sch
+
+* Schematics Version 9.2
+* Wed Dec 04 23:45:39 2019
+
+
+.PARAM         kondenzator_C1=0 kondenzator_C2=0 rezistor_R1=0
+.PARAM         rezistor_R2=0 
+
+** Analysis setup **
+.OP 
+
+
+* From [PSPICE NETLIST] section of C:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "C:\Users\Lapunik\Dropbox\PSpice\Knihovna_z_netu\nova\knihovna.lib"
+.lib "nom.lib"
+
+.INC "Semestralka_Second_order_filtr_Schematic1.sub"
+
+
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END

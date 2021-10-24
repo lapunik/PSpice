@@ -1,0 +1,23 @@
+* C:\Users\Lapunik\Dropbox\PSpice\Schematics\pokus_o_kaskodu.sch
+
+* Schematics Version 9.2
+* Thu Jan 16 01:00:11 2020
+
+
+
+** Analysis setup **
+.tran 1u 2000u 0 1u
+.OP 
+
+
+* From [PSPICE NETLIST] section of C:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "C:\Users\Lapunik\Dropbox\PSpice\Knihovna_z_netu\nova\knihovna.lib"
+.lib "nom.lib"
+
+.INC "pokus_o_kaskodu.net"
+
+
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END

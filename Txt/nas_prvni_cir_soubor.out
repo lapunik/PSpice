@@ -1,0 +1,137 @@
+
+**** 10/04/19 02:18:28 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***nas_prvni_cir_soubor.cir*** Ulozit_jako_allFiles_.cir_Potom_vypnout_potom_zapnout(Zavrit_soubor_otevrit_soubor)
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+* = komentar
+*pro vetsi pocty radku --> musism rozdelit v nejakem oddelovaci, zacit novou radku znakem +
+.LIB "nom.lib"; nalinkuje vsechny knihovny v superknihovne nom.lib, .LIB je prikz pro nalinkovani knihoven
+*.LIB "C:\"cesta_ke_knihovne"\"nazev_knihovny.lib";  nalinkuje knihovnu
+*PSpice meri uzlove napti k nule..
+
+*definujeme netlist = popis zapojeni obvodu 
+*definice napetoveho zdroje:
+* V<jmeno><uzel+><uzel->[DC] [napetiDC] [AC] [cislo] [prubeh] [parametry_prubehu] ;ostre zavorky <> musi byt, hranate zavorky [] nem
+*prubehy: 
+*SIN <offset> <amplituda> <frekvence> <zpozdeni> <cinitel_tlumeni> <faze> // SIN znaci jen ze jde o harmonickou, nemusi byt sinus
+*PULSE <napeti1> <napeti2> <zpozdeni> <nabezna_hrana> <dobezna_hrana> <sirka_pulzu> <perioda>
+*PWL <cas1 napeti1> <cas2 napeti2> ... <casN napetiN>
+
+*V1 1 0 DC 5V ; zdroj pro DC analzu zapojeny mezi uzly 0 a 1, hodnota 5V, POZN: tento zdroj muze byt take pouzit v tranzientni analy
+*V2 1 0 SIN 0 7 1k 0 0 0 ; harmonicky prubeh s nulovym offsetem, amplitudou 7V a kmitoctem 1kHz  
+*V3 1 0 AC 1; AC zdroj pro stridavou analyzu, amplituda (cislo) 1
+V4 1 0 PULSE 5 0 0 1u 1u 0.5m 1m; nedavat nabeznou a dobeznou nulu!! budou tect nekonecne proudy...... obdelnik 0 - 5 V, nabezna/dob
+R1 1 2 1k; <jmeno> <uzel1> <uzel2>  [model] <hodnota>
+R2 2 0 1k;
+
+*Definice dalsich  prikazu: (3_zakladni_analyzy)
+
+*Tranzientni analyza: .TRAN <krok_vykresleni><konecny_cas_simulace>[cas_vykresleni_od][krok_vypoctu]
+* krok vypoctu = nejkratsi casova konstanta (kondenztor/civka..) * 1/50, nebo 1/50 konecneho casu simulace
+*.TRAN 0 10ms; tahle byla prvni pro DC
+.TRAN 10u 10m 0 10u; krok vykresleni = krok vypoctu = konecny cas * cas simulace 
+
+
+*Stridava analyza: .AC <typ_rozmitani:LN(linearni(pocet bodu))/DEC(na_dekadu(1Hz az 1kHz napr. pocet bodu))/OCT(na_oktavu(oktava_=_d
+*Pozn._Pro_AC_pouzivat_vzdy_na_dekadu
+*.AC DEC 101 1 1MEG; Kmitoctova analyza se 101 body na dekadu o 1Hz do 1MHz
+
+*!!!! AC analyza = linearizovani charakteristik soucastek (tj. diody, tranzistory, OZ), pot se spote prenos obvodu (RLC prvky) a nak
+
+*Stejnosmerna analyza: .DC <typ_rozmitani:LN(linearni(pocet bodu))/DEC(na_dekadu(1Hz az 1kHz pocet bodu))/OCT(na_oktavu(oktava_=_dvo
+*Pozn._Pro_DC_pouzivat_vzdy_lin
+
+*.DC LIN V1 0 5 5m; Linearne rozmitane napeti zdroje V1 s inkrementem 5mV od 0 do 5V 
+
+.OP; prikaz_pro_ulozeni_linearizovanych_pracovnich_bodu_soucastek_do_vystupniho_souboru_VZDY_POUZIVAT
+
+*Pozn._poslani_dat_do_PROBE
+*.PROBE; posle_do_PROBE_vsechny_spocitane_prubehy 
+.PROBE V(*); posle_do_PROBE_napeti_vsechny_napeti
+*.PROBE V(2); posle_do_PROBE_napeti_na_uzlu_2
+
+*Ukonceni_souboru_VZDY_ulozeni_vysledku
+.END
+
+**** 10/04/19 02:18:28 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***nas_prvni_cir_soubor.cir*** Ulozit_jako_allFiles_.cir_Potom_vypnout_potom_zapnout(Zavrit_soubor_otevrit_soubor)
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(    1)    5.0000  (    2)    2.5000  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V4          -2.500E-03
+
+    TOTAL POWER DISSIPATION   1.25E-02  WATTS
+
+
+**** 10/04/19 02:18:28 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***nas_prvni_cir_soubor.cir*** Ulozit_jako_allFiles_.cir_Potom_vypnout_potom_zapnout(Zavrit_soubor_otevrit_soubor)
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+**** 10/04/19 02:18:28 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***nas_prvni_cir_soubor.cir*** Ulozit_jako_allFiles_.cir_Potom_vypnout_potom_zapnout(Zavrit_soubor_otevrit_soubor)
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(    1)    5.0000  (    2)    2.5000  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V4          -2.500E-03
+
+    TOTAL POWER DISSIPATION   1.25E-02  WATTS
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .11
+

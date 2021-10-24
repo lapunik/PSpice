@@ -1,0 +1,144 @@
+
+**** 11/07/19 12:21:09 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***usmernovac.cir***
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+.LIB "nom.lib"
+
+*net list
+V1 1 0 SIN 0 30 50 0 0 0
+*definice diody: D<jmeno><A><K><model>
+D1 1 2 D1N4007
+D2 0 2 D1N4007
+D3 3 0 D1N4007 ;DIN4007 je typ diody
+D4 3 1 D1N4007
+R1 2 3 1MEG
+C1 2 3 100u
+
+.OP
+.TRAN 100u 100m 0 100u; prvni cislo je z pravidla tisicina druheho cisla 
+
+.PROBE V(1) V(R1); ekvivalentni k V(R1) je V(2,3), nebo poslat do PROBE V(2) V(3) a odecist je 
+.PROBE I(R1); zobrazit proud, je to vdy proud soustkou (tranizistor zn IE,IC,IB)
+.END
+
+**** 11/07/19 12:21:09 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***usmernovac.cir***
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D1N4007         D1N4001         
+          IS   14.110000E-09   14.110000E-09 
+           N    1.984           1.984        
+         IKF   94.81           94.81         
+          BV    1.500000E+03   75            
+         IBV   10.000000E-06   10.000000E-06 
+          RS     .03389          .03389      
+          TT    5.700000E-06    5.700000E-06 
+         CJO   25.890000E-12   25.890000E-12 
+          VJ     .3245           .3245       
+           M     .44             .44         
+
+
+**** 11/07/19 12:21:09 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***usmernovac.cir***
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(    1)    0.0000  (    2)-13.93E-15  (    3) 13.93E-15  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V1           4.350E-29
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+**** 11/07/19 12:21:09 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***usmernovac.cir***
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** DIODES
+
+
+NAME         D1          D2          D3          D4        
+MODEL        D1N4007     D1N4007     D1N4007     D1N4007   
+ID           3.83E-21    3.83E-21    3.83E-21    3.83E-21 
+VD           1.39E-14    1.39E-14    1.39E-14    1.39E-14 
+REQ          3.64E+06    3.64E+06    3.64E+06    3.64E+06 
+CAP          2.75E-11    2.75E-11    2.75E-11    2.75E-11 
+**** 11/07/19 12:21:09 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***usmernovac.cir***
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(    1)    0.0000  (    2)-13.93E-15  (    3) 13.93E-15  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V1           4.350E-29
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .16
+

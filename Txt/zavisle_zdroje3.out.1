@@ -1,0 +1,82 @@
+
+**** 10/10/19 12:23:44 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***zavisle_zdroje3.cir***
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+*zadavani hodnot: bud 1. cislo nebo 2. vyraz (vzdy ve slozenych zavorkach)
+
+.LIB "nom.lib"
+*definice zavislych zdroju:
+* E = napetim rizeny zdroj napeti
+* F = proudem rizeny zdroj proudu
+* G = napetim rizeny zdroj proudu
+* H = proudem rizeny zdroj napeti
+*******************************************************************************************
+*priklad 1:
+*E/F/G/H <jmeno><uzel+><uzel-><ridici_uzel+><ridici_uzel-><zisk> 
+* zesilovac v nejakym miste
+
+E1 1 0 2 0 7.14
+R1 1 0 1MEG
+V2 2 0 1 ; pokud neni definovano DC ale jenom hodnota, je bran jako DC
+R2 2 0 1MEG
+
+.PROBE V(1) V(2)
+*******************************************************************************************
+*priklad 2:
+
+*E<jmeno><uzel+><uzel-> VALUE = {<vyraz>}
+E10 10 0 VALUE = {0.5*sin(2*3.1416*1*1k*TIME)} ; k = *1000, TIME to nejak zna
+R10 10 0 1MEG
+.PROBE V(10)
+
+*  definice globalniho parametru: .PARAM <jmeno_parametru>=<velikost><jmeno_parametru2>=<velikost2>
+* volani globalniho parametru: !vyraz = {jmeno_parametru}
+
+.PARAM PI=3.1416 amplituda=1.6 kmitocet=7k odpor=1MEG
+
+E11 11 0 VALUE = {amplituda*sin(2*PI*kmitocet*TIME)} ;
+R11 11 0 {odpor}
+.PROBE V(11)
+
+*******************************************************************************************
+*priklad 3:
+
+*absolutni hodnota z predeslych zdroju
+
+E15 15 0 VALUE= {ABS(V(10)+V(11))}
+R15 15 0 {odpor}
+C1 15 0 100 ; paralelni kondenzator (chci vyhlazeni) --> nevyhladi protoze ten zdroj natvrdo definuje napeti v tom uzlu (i proto ten
+
+.PROBE V(15)
+
+*******************************************************************************************
+*priklad 4:(LAPLACE)
+* E <jmeno><uzel+><uzel+> LAPLACE {<vyraz = napr. vstupni napeti>}={<transformace v LP tvaru>}
+
+.PARAM A1={(2*PI*omega*FC)*(2*PI*omega*FC)} A2={(2*PI*omega*FC)/Q}} omega=0.841 FC=1k Q=1.307; nefunguje strecha, musim dat to krat 
+------------------------------------------------------------------$
+ERROR -- Param name
+
+E20 20 0 LAPLACE {V(22)}={A1/(s*s+A2*s+A1)}
+R20 20 0 {odpor} 
+V22 22 0 AC 1
+R22 22 0 {odpor}
+
+.AC DEC 101 10 100k
+.PROBE V(20) V(22)
+
+
+.TRAN 10u 10m 0 10u 
+
+.OP
+.END
+

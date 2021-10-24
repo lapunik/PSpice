@@ -1,0 +1,51 @@
+***statistika.cir***
+.LIB "nom.lib"
+
+*tolerance = statistika
+
+* definice mdelu .MODEL <nazev> <nazev_referencniho_modelu> <parametr>=<hodnota> [tolerancni_pasmo] [tolerance]
+* nazev je nazev
+* nazev referencniho modelu = co to je za soucastku (RES/CAP/IND) rezistor, kapacitor, induktor
+* parametr referencniho modelu = co to bude za hodnotu (R/C/L) hodnota = násobitel
+* tolerancni pasma = (DEV/LOT) pro jednu soucastku = DEV, pro skuoinu soucastek = LOT (my budeme pouzivat jenom DEV)
+ 
+.MODEL Rodpor RES R=1 DEV 30%;v procentech !!, model Rodpor je model rezistoru s nasobitelem x1 a toleranci soucastky 30% 
+.MODEL Ckapacita CAP C=1 DEV 30%
+
+*dolni propust (integracni clanek)
+
+V1 in 0 DC 1 AC 1 PULSE -5 5 0 1u 1u 0.5m 1m
+R1 in out Rodpor 1k;pred hodnotu dám model soucsatky!! 
+C1 out 0 Ckapacita 10n
+
+*monte carlo analyza je takova kde pro prvni hodnotu se spocte nominalni (bez toleranci) a potom nejakej nahodnej generator zkousi cisla
+*definice monte carlo analyzy: .MC <pocet behu> <typ analyzy> <vzstupni promena> <funkce> [volitelne]
+*pocet behu dle uvazeni
+* (AC/DC/TRAN) pro kterou analyzu se bude vazat
+* vystupni promena je jasna (napeti, proud..) ta na kterou aplikuji Monte Carlo analyzu
+* funkce = (YMAX/MAX/MIN/RISE/FALL) budeme vždycky pouzivat YMAX (MAX je od nominalni hodnoty)
+*volitelne: LIST (nemusi byt uveden)/OUTPUT ALL(pro zobrazeni všech bìhù analýzy)
+
+*.MC 1000 AC V([out]) YMAX LIST OUTPUT ALL
+
+*Worst Case analyza
+*definice worst case  .WCASE <typ analyzy> <vzstupni promena> <funkce> [volitelne]
+.WCASE AC V([out]) YMAX LIST HI; pripadne misto (HI/LO) => nejhorsi nahoru/ dolu
+
+
+.OP
+
+.TRAN 10u 10m 0 10u
+.AC DEC 101 1 100k
+*.AC DEC 101 16k 16.00001k; Gausovo rozdeleni 
+.DC LIN V1 0 10 10m
+
+.PROBE V([in]) V([out])
+*.PROBE V([out]) ; Gausovo rozdeleni
+
+*funkce PRINT: .PRINT <typ_analyzy> <promena_pro_zaznam>
+.PRINT AC V([out]); do vystupniho souboru se ulozi tabulka hodnot V(out)... v output souboru
+* funkce PLOT .PLOT <typ_analyzy> <promena_pro_zaznam>
+.PLOT AC V([out]); do vystupniho souboru se ulozi tabulka hodnot V(out)... hvezdicky v output souboru
+
+.END

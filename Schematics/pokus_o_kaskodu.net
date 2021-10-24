@@ -1,0 +1,13 @@
+* Schematics Netlist *
+
+
+
+Q_Q2         $N_0001 in 0 Q2N2222
+Q_Q1         out $N_0002 $N_0001 Q2N2222
+V_V2         $N_0003 0 12V
+R_R5         $N_0002 $N_0003  9k  
+V_V1         in 0  
++SIN 0 5 1k 0 0 0
+R_R4         0 $N_0002  12k  
+R_Rz2         0 out  10k  
+R_R3         out $N_0003  10k  

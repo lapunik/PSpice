@@ -1,0 +1,85 @@
+
+**** 10/17/19 11:49:49 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***E_CHEBYSHEV.cir***
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+.LIB "nom.lib"
+*definice CHEBYSHEV: E<jmeno><uzel+><uzel-> CHEBYSHEV {<vyraz>} = <typ filtru> <zlomovy kmitocet> <utlumy>
+
+V1 1 0 AC 1;
+R1 1 0 1MEG;
+
+E2 2 0 CHEBYSHEV {V(1)}=LP 1k 20k 0.5 30
+R2 2 0 1MEG
+
+.OP
+
+.AC DEC 101 100 100k
+
+.PROBE V(1) V(2)
+
+.END
+
+**** 10/17/19 11:49:49 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***E_CHEBYSHEV.cir***
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(    1)    0.0000  (    2)    0.0000  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V1           0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+**** 10/17/19 11:49:49 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***E_CHEBYSHEV.cir***
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** VOLTAGE-CONTROLLED VOLTAGE SOURCES
+
+
+NAME         E2        
+V-SOURCE     0.000E+00
+I-SOURCE     0.000E+00
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .05
+

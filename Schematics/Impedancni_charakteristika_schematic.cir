@@ -1,0 +1,22 @@
+* C:\Users\Lapunik\Dropbox\PSpice\Schematics\Impedancni_charakteristika_schematic.sch
+
+* Schematics Version 9.2
+* Thu Oct 17 12:42:27 2019
+
+
+
+** Analysis setup **
+.ac DEC 101 10 1MEG
+.OP 
+
+
+* From [PSPICE NETLIST] section of C:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "nom.lib"
+
+.INC "Impedancni_charakteristika_schematic.net"
+
+
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END

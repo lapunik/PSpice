@@ -1,0 +1,101 @@
+
+**** 10/17/19 12:13:21 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***pocatecni_podminky_dva.cir***
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+.LIB "nom.lib"
+
+V1 1 0 DC 15
+R1 1 2 {1k}
+C1 2 0 {1u} IC= 100
+
+.OP
+.TRAN 10u 10m 0 100u
+.PROBE V(1) V(2)
+
+
+.END
+
+**** 10/17/19 12:13:21 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***pocatecni_podminky_dva.cir***
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(    1)   15.0000  (    2)  100.0000  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V1           8.500E-02
+
+    TOTAL POWER DISSIPATION  -1.28E+00  WATTS
+
+
+**** 10/17/19 12:13:21 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***pocatecni_podminky_dva.cir***
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+**** 10/17/19 12:13:21 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***pocatecni_podminky_dva.cir***
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(    1)   15.0000  (    2)  100.0000  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V1           8.500E-02
+
+    TOTAL POWER DISSIPATION  -1.28E+00  WATTS
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .02
+

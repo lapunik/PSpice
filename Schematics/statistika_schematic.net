@@ -1,0 +1,9 @@
+* Schematics Netlist *
+
+
+
+R_R1         $N_0001 out R_R1 1k  
+.model        R_R1 RES R=1 DEV=10%
+C_C1         0 out C_C1 1n  
+.model        C_C1 CAP C=1 DEV=30%
+V_V1         $N_0001 0 DC 0V AC 1V 

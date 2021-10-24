@@ -1,0 +1,25 @@
+* C:\Users\Lapunik\Dropbox\PSpice\Schematics\Semestralka_filtr_k_odevzdani.sch
+
+* Schematics Version 9.2
+* Mon Dec 09 11:26:06 2019
+
+
+
+** Analysis setup **
+.ac DEC 1001 10 10.00K
+.WCASE AC V([out]) YMAX
++  LIST VARY DEV LOW
+.OP 
+
+
+* From [PSPICE NETLIST] section of C:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "C:\Users\Lapunik\Dropbox\PSpice\Knihovna_z_netu\nova\knihovna.lib"
+.lib "nom.lib"
+
+.INC "Semestralka_filtr_k_odevzdani.net"
+
+
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END

@@ -1,0 +1,67 @@
+
+**** 12/05/19 11:14:41 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\Semestralka_filtr_k_odevzdani.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.2
+* Thu Dec 05 11:14:40 2019
+
+
+
+** Analysis setup **
+.ac DEC 101 10 100.00K
+.OP 
+
+
+* From [PSPICE NETLIST] section of C:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "C:\Users\Lapunik\Dropbox\PSpice\Knihovna_z_netu\nova\knihovna.lib"
+.lib "nom.lib"
+
+.INC "Semestralka_filtr_k_odevzdani.net"
+
+
+
+**** INCLUDING Semestralka_filtr_k_odevzdani.net ****
+* Schematics Netlist *
+
+
+
+R_R1         0 out  1MEG  
+V_V1         in 0 DC 0V AC 1V 
+X_0         in $N_0001 Second_order_filter PARAMS: rezistor_R1=7687
++  rezistor_R2=7687 kondenzator_C1=10n kondenzator_C2=10.717n
+X_1         $N_0001 $N_0002 Second_order_filter PARAMS: rezistor_R1=5115
++  rezistor_R2=5115 kondenzator_C1=11n kondenzator_C2=22n
+X_2         $N_0002 out Second_order_filter PARAMS: rezistor_R1=2060
++  rezistor_R2=2060 kondenzator_C1=10 kondenzator_C2=149.3n
+
+**** RESUMING Semestralka_filtr_k_odevzdani.cir ****
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END
+
+**** FROM LIBRARY C:\Users\Lapunik\Dropbox\PSpice\Knihovna_z_netu\nova\knihovna.lib ****
+.SUBCKT Second_order_filter Vin Vout PARAMS: rezistor_R1=0 rezistor_R2=0 kondenzator_C1=0 kondenzator_C2=0 
+V_V3         0 $N_0001 18V
+V_V4         $N_0002 0 18V
+X_U2A         $N_0003 Vout $N_0002 $N_0001 Vout TL082
+R_R2         $N_0004 $N_0003  {rezistor_R2}  
+C_C1         0 $N_0003  {kondenzator_C1}  
+C_C2         $N_0004 Vout  {kondenzator_C2}  
+R_R1         Vin $N_0004  {rezistor_R1}  
+.ENDS    Semestralka_Second_order_filtr_Schematic1
+---------$
+ERROR -- Name on .ENDS does not match .SUBCKT
+
+
+ERROR -- <X_0.kondenzator_C2> not a subcircuit param

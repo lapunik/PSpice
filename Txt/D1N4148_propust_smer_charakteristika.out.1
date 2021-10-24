@@ -1,0 +1,31 @@
+
+**** 11/07/19 12:48:10 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***D1N4148_propust_smer_charakteristika.cir***
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+.LIB "nom.lib"
+
+V1 1 0 DC 10 
+
+D1 1 0 0 D1N4148
+---------$
+ERROR -- Invalid parameter
+
+.OP
+
+.DC LIN V1 0 1 1m
+
+.STEP TEMP 0 100 10
+
+.PROBE V1(1);
+ 
+.END
+

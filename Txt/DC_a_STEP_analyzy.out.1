@@ -1,0 +1,38 @@
+
+**** 10/24/19 11:27:28 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***DC_a_STEP_analyzy.cir***
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+.LIB "nom.lib"
+
+V1 1 0 DC 10
+R1 1 2 1k
+R2 2 0 {odpor}
+
+.PARAM odpor=1k
+
+.OC
+$
+ERROR -- Unrecognizable command
+
+.PROBE V(1) V(2)
+
+*definice: .DC<typ_rozmitani:LIN,dec,oct><rozmitana_velicina><od><do><INKREMENT/pocet_bodu_na_dekadu/pocet_bodu_na_oktavu>
+*+ <typ_rozmitani:LIN,dec,oct><rozmitana_velicina><od><do><INKREMENT/pocet_bodu_na_dekadu/pocet_bodu_na_oktavu> ; druha smyka DC ana
+* prvn smyka analzy nm udv rozlien analzy, tj. vpoetn poet bod, druh smycka pak pocet vykreslenych charakteristik
+* (prvni symka je jako Uce a druh jako Ib u bipolarniho tranzistoru)
+* pro prvn smycku volim inktement tak abych mel alespon 1000 bodu, pro druhou smycku, treba do deseti charakteristik
+
+.DC V1 0 5 5m ; 5m = 1/1000 5 volt 
+
+.END
+

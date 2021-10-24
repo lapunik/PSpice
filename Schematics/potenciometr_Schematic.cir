@@ -1,0 +1,25 @@
+* C:\Users\Lapunik\Dropbox\PSpice\Schematics\potenciometr_Schematic.sch
+
+* Schematics Version 9.2
+* Thu Oct 24 12:18:02 2019
+
+
+.PARAM         hodnotaP1=1k nastaveniP1=0.5 
+
+** Analysis setup **
+.DC LIN V_V1 0 5 5m 
+.STEP  PARAM nastaveniP1 LIST 
++ 0 0.33 0.66 1
+.OP 
+
+
+* From [PSPICE NETLIST] section of C:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "nom.lib"
+
+.INC "potenciometr_Schematic.net"
+
+
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END

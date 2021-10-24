@@ -1,0 +1,8 @@
+* Schematics Netlist *
+
+
+
+C_C1         0 $N_0001  1n  
+V_V2         $N_0002 0 10
+R_R2         0 $N_0001  10  
+R_R1         $N_0002 0  {value}  

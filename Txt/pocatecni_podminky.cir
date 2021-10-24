@@ -1,0 +1,32 @@
+***pocatecni_podminky.cir***
+
+.LIB "nom.lib"
+
+.PARAM odpor1 = 100 odpor2 = 10k kapacita = 1n
+* definice pocatecnich podminek
+*1. moznost: definuji napeti na kondenzatoru /proud civkou
+*C<jmeno><uzel+><uzel->[model]<hodnota>[IC=<hodnota>]; neni proud kolektorem (IC = pocatecni podminka), napeti na kondenzatoru je definovany pomoci hodnoty IC
+*L<jmeno><uzel+><uzel->[model]<hodnota>[IC=<hodnota>]; proud civkou je definovany pomoci hodnoty IC
+*2. moznost: definuji napeti v uzlu prikazem .IC
+*.IC V<jmeno><hodnota>; v uzlu jmeno je na pocatku hodnota proti zemi
+
+*asynchroni bistabilni klopak (blikac, aspon myslim)
+
+V1 1 0 DC 15
+R1 1 2 {odpor1}
+R2 1 3 {odpor2}
+R3 1 4 {odpor2}
+R4 1 5 {odpor1} 
+C1 2 4 {kapacita}; IC = 0
+C2 5 3 {kapacita}
+.IC V(2,4) = 0; stejne jako dva radky vyse, mezi uzly 2 a 4 je na zacatku simulace nulove napeti
+
+*definice tranzistoru: Q<jmeno><uzelC><uzelB><uzelE><model>
+Q1 2 3 0 Q2N2222
+Q2 5 4 0 Q2N2222; v simulaci se nerozkmital protoze jsou oba tranzistory uplne stejny
+
+.OP
+.TRAN 100n 100u 0 100u
+.PROBE V(2) V(5)
+
+.END  

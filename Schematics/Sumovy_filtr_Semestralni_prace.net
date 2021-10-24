@@ -1,0 +1,20 @@
+* Schematics Netlist *
+
+
+
+R_Rz1         0 out1  100k  
+R_R46         in $N_0001  100k  
+R_R47         $N_0001 $N_0002  100k  
+C_C34         0 $N_0002  150p  
+R_R48         out1 $N_0003  100k  
+R_Rz2         0 out2  100k  
+C_C37         $N_0003 out2  150p  
+V_Voz+         $N_0004 0 +18
+R_R49         $N_0003 $N_0005  100k  
+X_OZ6         $N_0002 out1 $N_0004 $N_0006 out1 LF156/LT
+V_Voz-         0 $N_0006 +18
+C_C35         $N_0001 out1  {kondenzator35}  
+X_OZ7         $N_0005 out2 $N_0004 $N_0006 out2 LF156/LT
+C_C36         0 $N_0005  150p  
+V_V12         in 0  AC 200m
++PULSE 0 200m 0 0 0 500u 1m

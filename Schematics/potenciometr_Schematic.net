@@ -1,0 +1,12 @@
+* Schematics Netlist *
+
+
+
+R_R2         0 0  1MEG  
+V_V1         in 0 10
+X_R1    0 in 0 potenciometr_Schematic_R1 
+
+.subckt potenciometr_Schematic_R1 1 2 t  
+RT_R1         1 t {({hodnotaP1}*(1-{nastaveniP1}))+.001}
+RB_R1         t 2 {({hodnotaP1}*{nastaveniP1})+.001}
+.ends potenciometr_Schematic_R1

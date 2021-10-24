@@ -1,0 +1,3550 @@
+
+**** 12/09/19 11:26:06 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\Semestralka_filtr_k_odevzdani.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.2
+* Mon Dec 09 11:26:06 2019
+
+
+
+** Analysis setup **
+.ac DEC 1001 10 10.00K
+.WCASE AC V([out]) YMAX
++  LIST VARY DEV LOW
+.OP 
+
+
+* From [PSPICE NETLIST] section of C:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "C:\Users\Lapunik\Dropbox\PSpice\Knihovna_z_netu\nova\knihovna.lib"
+.lib "nom.lib"
+
+.INC "Semestralka_filtr_k_odevzdani.net"
+
+
+
+**** INCLUDING Semestralka_filtr_k_odevzdani.net ****
+* Schematics Netlist *
+
+
+
+R_R1         0 out  1MEG  
+X_0         in $N_0001 0 Second_order_filter PARAMS: rezistor_R1=9100
++  rezistor_R2=9100 kondenzator_C1=16n kondenzator_C2=51n
+X_1         $N_0001 $N_0002 0 Second_order_filter PARAMS: rezistor_R1=2000
++  rezistor_R2=2000 kondenzator_C1=10n kondenzator_C2=330n
+X_2         $N_0002 out 0 Second_order_filter PARAMS: rezistor_R1=4300
++  rezistor_R2=4300 kondenzator_C1=0.91n kondenzator_C2=390n
+V_V8         in 0 DC 0V AC 1V 
+
+**** RESUMING Semestralka_filtr_k_odevzdani.cir ****
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END
+
+**** 12/09/19 11:26:06 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\Semestralka_filtr_k_odevzdani.sch
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_0.X_U2A.dx    X_0.X_U2A.dy    X_1.X_U2A.dx    X_1.X_U2A.dy    
+          IS  800.000000E-18  800.000000E-18  800.000000E-18  800.000000E-18 
+          RS    1               1.000000E-03    1               1.000000E-03 
+         CJO                   10.000000E-12                   10.000000E-12 
+
+
+               X_2.X_U2A.dx    X_2.X_U2A.dy    
+          IS  800.000000E-18  800.000000E-18 
+          RS    1               1.000000E-03 
+         CJO                   10.000000E-12 
+
+
+**** 12/09/19 11:26:06 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\Semestralka_filtr_k_odevzdani.sch
+
+
+ ****     Junction FET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_0.X_U2A.jx    X_1.X_U2A.jx    X_2.X_U2A.jx    
+               NJF             NJF             NJF             
+         VTO   -1              -1              -1            
+        BETA  984.200000E-06  984.200000E-06  984.200000E-06 
+          IS    2.500000E-12    2.500000E-12    2.500000E-12 
+
+
+**** 12/09/19 11:26:06 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\Semestralka_filtr_k_odevzdani.sch
+
+
+ ****     Resistor MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_0.Rodpor      X_1.Rodpor      X_2.Rodpor      
+           R    1               1               1            
+
+
+**** 12/09/19 11:26:06 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\Semestralka_filtr_k_odevzdani.sch
+
+
+ ****     Capacitor MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_0.Ckapacita   X_1.Ckapacita   X_2.Ckapacita   
+           C    1               1               1            
+
+
+**** 12/09/19 11:26:06 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\Semestralka_filtr_k_odevzdani.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      SENSITIVITY NOMINAL
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   in)    0.0000  (  out)-48.43E-06  ($N_0001)-15.96E-06                       
+
+($N_0002)-32.25E-06                   (X_0.$N_0001)  -18.0000                   
+
+(X_0.$N_0002)   18.0000               (X_0.$N_0003) 424.2E-09                   
+
+(X_0.$N_0004) 212.1E-09               (X_0.X_U2A.6) 2.065E-09                   
+
+(X_0.X_U2A.7)-15.96E-06               (X_0.X_U2A.8)-15.96E-06                   
+
+(X_0.X_U2A.9)    0.0000               (X_1.$N_0001)  -18.0000                   
+
+(X_1.$N_0002)   18.0000               (X_1.$N_0003)-15.86E-06                   
+
+(X_1.$N_0004)-15.91E-06               (X_1.X_U2A.6) 4.854E-09                   
+
+(X_1.X_U2A.7)-32.25E-06               (X_1.X_U2A.8)-32.25E-06                   
+
+(X_1.X_U2A.9)    0.0000               (X_2.$N_0001)  -18.0000                   
+
+(X_2.$N_0002)   18.0000               (X_2.$N_0003)-32.05E-06                   
+
+(X_2.$N_0004)-32.15E-06               (X_2.X_U2A.6) 7.548E-09                   
+
+(X_2.X_U2A.7)-48.43E-06               (X_2.X_U2A.8)-48.43E-06                   
+
+(X_2.X_U2A.9)    0.0000               (X_0.X_U2A.10)     .6546                  
+
+(X_0.X_U2A.11)   17.6540              (X_0.X_U2A.12)   17.6540                  
+
+(X_0.X_U2A.53)   16.5000              (X_0.X_U2A.54)  -16.5000                  
+
+(X_0.X_U2A.90)-48.60E-09              (X_0.X_U2A.91)   50.0000                  
+
+(X_0.X_U2A.92)  -50.0000              (X_0.X_U2A.99)    0.0000                  
+
+(X_1.X_U2A.10)     .6546              (X_1.X_U2A.11)   17.6540                  
+
+(X_1.X_U2A.12)   17.6540              (X_1.X_U2A.53)   16.5000                  
+
+(X_1.X_U2A.54)  -16.5000              (X_1.X_U2A.90)-46.45E-09                  
+
+(X_1.X_U2A.91)   50.0000              (X_1.X_U2A.92)  -50.0000                  
+
+(X_1.X_U2A.99)    0.0000              (X_2.X_U2A.10)     .6546                  
+
+(X_2.X_U2A.11)   17.6540              (X_2.X_U2A.12)   17.6540                  
+
+(X_2.X_U2A.53)   16.5000              (X_2.X_U2A.54)  -16.5000                  
+
+(X_2.X_U2A.90)-71.93E-09              (X_2.X_U2A.91)   50.0000                  
+
+(X_2.X_U2A.92)  -50.0000              (X_2.X_U2A.99)    0.0000              
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V8         2.331E-11
+    X_0.V_V3    -2.034E-03
+    X_0.V_V4    -2.035E-03
+    X_1.V_V3    -2.034E-03
+    X_1.V_V4    -2.035E-03
+    X_2.V_V3    -2.034E-03
+    X_2.V_V4    -2.035E-03
+    X_0.X_U2A.vb   2.065E-14
+    X_0.X_U2A.vc   1.650E-11
+    X_0.X_U2A.ve   1.819E-11
+    X_0.X_U2A.vlim  -4.860E-11
+    X_0.X_U2A.vlp  -5.000E-11
+    X_0.X_U2A.vln  -5.001E-11
+    X_1.X_U2A.vb   4.854E-14
+    X_1.X_U2A.vc   1.650E-11
+    X_1.X_U2A.ve   1.819E-11
+    X_1.X_U2A.vlim  -4.645E-11
+    X_1.X_U2A.vlp  -5.000E-11
+    X_1.X_U2A.vln  -5.001E-11
+    X_2.X_U2A.vb   7.548E-14
+    X_2.X_U2A.vc   1.650E-11
+    X_2.X_U2A.ve   1.819E-11
+    X_2.X_U2A.vlim  -7.193E-11
+    X_2.X_U2A.vlp  -5.000E-11
+    X_2.X_U2A.vln  -5.001E-11
+
+    TOTAL POWER DISSIPATION   2.20E-01  WATTS
+
+
+**** 12/09/19 11:26:06 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\Semestralka_filtr_k_odevzdani.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+                      SENSITIVITY NOMINAL
+
+******************************************************************************
+
+
+
+
+
+
+**** VOLTAGE-CONTROLLED CURRENT SOURCES
+
+
+NAME         X_0.X_U2A.ga            X_0.X_U2A.gcm         
+I-SOURCE     1.114E-08               1.114E-08            
+
+NAME         X_1.X_U2A.ga            X_1.X_U2A.gcm         
+I-SOURCE     1.114E-08               1.114E-08            
+
+NAME         X_2.X_U2A.ga            X_2.X_U2A.gcm         
+I-SOURCE     1.113E-08               1.113E-08            
+
+
+**** VOLTAGE-CONTROLLED VOLTAGE SOURCES
+
+
+NAME         X_0.X_U2A.egnd          X_1.X_U2A.egnd        
+V-SOURCE     0.000E+00               0.000E+00            
+I-SOURCE     7.669E-07               7.678E-07            
+
+NAME         X_2.X_U2A.egnd        
+V-SOURCE     0.000E+00            
+I-SOURCE     7.660E-07            
+
+
+**** CURRENT-CONTROLLED CURRENT SOURCES
+
+
+NAME         X_0.X_U2A.fb            X_1.X_U2A.fb          
+I-SOURCE     4.792E-08               9.772E-08            
+
+NAME         X_2.X_U2A.fb          
+I-SOURCE     1.442E-07            
+
+
+**** CURRENT-CONTROLLED VOLTAGE SOURCES
+
+
+NAME         X_0.X_U2A.hlim          X_1.X_U2A.hlim        
+V-SOURCE    -4.860E-08              -4.645E-08            
+I-SOURCE     9.720E-20               9.290E-20            
+
+NAME         X_2.X_U2A.hlim        
+V-SOURCE    -7.193E-08            
+I-SOURCE     1.439E-19            
+
+
+**** DIODES
+
+
+NAME         X_0.X_U2A.dc            X_0.X_U2A.de          
+MODEL        X_0.X_U2A.dy            X_0.X_U2A.dy          
+ID          -1.65E-11               -1.65E-11             
+VD          -1.65E+01               -1.65E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          2.39E-12                2.39E-12             
+
+NAME         X_0.X_U2A.dlp           X_0.X_U2A.dln         
+MODEL        X_0.X_U2A.dx            X_0.X_U2A.dx          
+ID          -5.00E-11               -5.00E-11             
+VD          -5.00E+01               -5.00E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          0.00E+00                0.00E+00             
+
+NAME         X_0.X_U2A.dp            X_1.X_U2A.dc          
+MODEL        X_0.X_U2A.dx            X_1.X_U2A.dy          
+ID          -3.60E-11               -1.65E-11             
+VD          -3.60E+01               -1.65E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          0.00E+00                2.39E-12             
+
+NAME         X_1.X_U2A.de            X_1.X_U2A.dlp         
+MODEL        X_1.X_U2A.dy            X_1.X_U2A.dx          
+ID          -1.65E-11               -5.00E-11             
+VD          -1.65E+01               -5.00E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          2.39E-12                0.00E+00             
+
+NAME         X_1.X_U2A.dln           X_1.X_U2A.dp          
+MODEL        X_1.X_U2A.dx            X_1.X_U2A.dx          
+ID          -5.00E-11               -3.60E-11             
+VD          -5.00E+01               -3.60E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          0.00E+00                0.00E+00             
+
+NAME         X_2.X_U2A.dc            X_2.X_U2A.de          
+MODEL        X_2.X_U2A.dy            X_2.X_U2A.dy          
+ID          -1.65E-11               -1.65E-11             
+VD          -1.65E+01               -1.65E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          2.39E-12                2.39E-12             
+
+NAME         X_2.X_U2A.dlp           X_2.X_U2A.dln         
+MODEL        X_2.X_U2A.dx            X_2.X_U2A.dx          
+ID          -5.00E-11               -5.00E-11             
+VD          -5.00E+01               -5.00E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          0.00E+00                0.00E+00             
+
+NAME         X_2.X_U2A.dp          
+MODEL        X_2.X_U2A.dx          
+ID          -3.60E-11             
+VD          -3.60E+01             
+REQ          1.00E+12             
+CAP          0.00E+00             
+
+
+**** JFETS
+
+
+NAME         X_0.X_U2A.j1            X_0.X_U2A.j2          
+MODEL        X_0.X_U2A.jx            X_0.X_U2A.jx          
+ID           1.17E-04                1.17E-04             
+VGS         -6.55E-01               -6.55E-01             
+VDS          1.70E+01                1.70E+01             
+GM           6.80E-04                6.80E-04             
+GDS          0.00E+00                0.00E+00             
+CGS          0.00E+00                0.00E+00             
+CGD          0.00E+00                0.00E+00             
+
+NAME         X_1.X_U2A.j1            X_1.X_U2A.j2          
+MODEL        X_1.X_U2A.jx            X_1.X_U2A.jx          
+ID           1.17E-04                1.17E-04             
+VGS         -6.55E-01               -6.55E-01             
+VDS          1.70E+01                1.70E+01             
+GM           6.80E-04                6.80E-04             
+GDS          0.00E+00                0.00E+00             
+CGS          0.00E+00                0.00E+00             
+CGD          0.00E+00                0.00E+00             
+
+NAME         X_2.X_U2A.j1            X_2.X_U2A.j2          
+MODEL        X_2.X_U2A.jx            X_2.X_U2A.jx          
+ID           1.17E-04                1.17E-04             
+VGS         -6.55E-01               -6.55E-01             
+VDS          1.70E+01                1.70E+01             
+GM           6.80E-04                6.80E-04             
+GDS          0.00E+00                0.00E+00             
+CGS          0.00E+00                0.00E+00             
+CGD          0.00E+00                0.00E+00              NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   in)    0.0000  (  out)-48.43E-06  ($N_0001)-15.96E-06                       
+
+($N_0002)-32.25E-06                   (X_0.$N_0001)  -18.0000                   
+
+(X_0.$N_0002)   18.0000               (X_0.$N_0003) 424.2E-09                   
+
+(X_0.$N_0004) 212.1E-09               (X_0.X_U2A.6) 2.038E-09                   
+
+(X_0.X_U2A.7)-15.96E-06               (X_0.X_U2A.8)-15.96E-06                   
+
+(X_0.X_U2A.9)    0.0000               (X_1.$N_0001)  -18.0000                   
+
+(X_1.$N_0002)   18.0000               (X_1.$N_0003)-15.86E-06                   
+
+(X_1.$N_0004)-15.91E-06               (X_1.X_U2A.6) 4.854E-09                   
+
+(X_1.X_U2A.7)-32.25E-06               (X_1.X_U2A.8)-32.25E-06                   
+
+(X_1.X_U2A.9)    0.0000               (X_2.$N_0001)  -18.0000                   
+
+(X_2.$N_0002)   18.0000               (X_2.$N_0003)-32.05E-06                   
+
+(X_2.$N_0004)-32.15E-06               (X_2.X_U2A.6) 7.586E-09                   
+
+(X_2.X_U2A.7)-48.43E-06               (X_2.X_U2A.8)-48.43E-06                   
+
+(X_2.X_U2A.9)    0.0000               (X_0.X_U2A.10)     .6546                  
+
+(X_0.X_U2A.11)   17.6540              (X_0.X_U2A.12)   17.6540                  
+
+(X_0.X_U2A.53)   16.5000              (X_0.X_U2A.54)  -16.5000                  
+
+(X_0.X_U2A.90)-46.62E-09              (X_0.X_U2A.91)   50.0000                  
+
+(X_0.X_U2A.92)  -50.0000              (X_0.X_U2A.99)    0.0000                  
+
+(X_1.X_U2A.10)     .6546              (X_1.X_U2A.11)   17.6540                  
+
+(X_1.X_U2A.12)   17.6540              (X_1.X_U2A.53)   16.5000                  
+
+(X_1.X_U2A.54)  -16.5000              (X_1.X_U2A.90)-50.23E-09                  
+
+(X_1.X_U2A.91)   50.0000              (X_1.X_U2A.92)  -50.0000                  
+
+(X_1.X_U2A.99)    0.0000              (X_2.X_U2A.10)     .6546                  
+
+(X_2.X_U2A.11)   17.6540              (X_2.X_U2A.12)   17.6540                  
+
+(X_2.X_U2A.53)   16.5000              (X_2.X_U2A.54)  -16.5000                  
+
+(X_2.X_U2A.90)-71.74E-09              (X_2.X_U2A.91)   50.0000                  
+
+(X_2.X_U2A.92)  -50.0000              (X_2.X_U2A.99)    0.0000              
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V8         2.331E-11
+    X_0.V_V3    -2.034E-03
+    X_0.V_V4    -2.035E-03
+    X_1.V_V3    -2.034E-03
+    X_1.V_V4    -2.035E-03
+    X_2.V_V3    -2.034E-03
+    X_2.V_V4    -2.035E-03
+    X_0.X_U2A.vb   2.038E-14
+    X_0.X_U2A.vc   1.650E-11
+    X_0.X_U2A.ve   1.819E-11
+    X_0.X_U2A.vlim  -4.662E-11
+    X_0.X_U2A.vlp  -5.000E-11
+    X_0.X_U2A.vln  -5.001E-11
+    X_1.X_U2A.vb   4.854E-14
+    X_1.X_U2A.vc   1.650E-11
+    X_1.X_U2A.ve   1.819E-11
+    X_1.X_U2A.vlim  -5.023E-11
+    X_1.X_U2A.vlp  -5.000E-11
+    X_1.X_U2A.vln  -5.001E-11
+    X_2.X_U2A.vb   7.585E-14
+    X_2.X_U2A.vc   1.650E-11
+    X_2.X_U2A.ve   1.688E-11
+    X_2.X_U2A.vlim  -7.174E-11
+    X_2.X_U2A.vlp  -5.000E-11
+    X_2.X_U2A.vln  -5.001E-11
+
+    TOTAL POWER DISSIPATION   2.20E-01  WATTS
+
+
+
+
+**** VOLTAGE-CONTROLLED CURRENT SOURCES
+
+
+NAME         X_0.X_U2A.ga            X_0.X_U2A.gcm         
+I-SOURCE     1.114E-08               1.114E-08            
+
+NAME         X_1.X_U2A.ga            X_1.X_U2A.gcm         
+I-SOURCE     1.114E-08               1.114E-08            
+
+NAME         X_2.X_U2A.ga            X_2.X_U2A.gcm         
+I-SOURCE     1.113E-08               1.113E-08            
+
+
+**** VOLTAGE-CONTROLLED VOLTAGE SOURCES
+
+
+NAME         X_0.X_U2A.egnd          X_1.X_U2A.egnd        
+V-SOURCE     0.000E+00               0.000E+00            
+I-SOURCE     7.660E-07               7.678E-07            
+
+NAME         X_2.X_U2A.egnd        
+V-SOURCE     0.000E+00            
+I-SOURCE     7.660E-07            
+
+
+**** CURRENT-CONTROLLED CURRENT SOURCES
+
+
+NAME         X_0.X_U2A.fb            X_1.X_U2A.fb          
+I-SOURCE    -2.689E-06              -2.593E-06            
+
+NAME         X_2.X_U2A.fb          
+I-SOURCE    -2.501E-06            
+
+
+**** CURRENT-CONTROLLED VOLTAGE SOURCES
+
+
+NAME         X_0.X_U2A.hlim          X_1.X_U2A.hlim        
+V-SOURCE    -4.662E-08              -5.023E-08            
+I-SOURCE     9.324E-20               1.005E-19            
+
+NAME         X_2.X_U2A.hlim        
+V-SOURCE    -7.174E-08            
+I-SOURCE     1.435E-19            
+
+
+**** DIODES
+
+
+NAME         X_0.X_U2A.dc            X_0.X_U2A.de          
+MODEL        X_0.X_U2A.dy            X_0.X_U2A.dy          
+ID          -1.65E-11               -1.65E-11             
+VD          -1.65E+01               -1.65E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          2.39E-12                2.39E-12             
+
+NAME         X_0.X_U2A.dlp           X_0.X_U2A.dln         
+MODEL        X_0.X_U2A.dx            X_0.X_U2A.dx          
+ID          -5.00E-11               -5.00E-11             
+VD          -5.00E+01               -5.00E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          0.00E+00                0.00E+00             
+
+NAME         X_0.X_U2A.dp            X_1.X_U2A.dc          
+MODEL        X_0.X_U2A.dx            X_1.X_U2A.dy          
+ID          -3.60E-11               -1.65E-11             
+VD          -3.60E+01               -1.65E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          0.00E+00                2.39E-12             
+
+NAME         X_1.X_U2A.de            X_1.X_U2A.dlp         
+MODEL        X_1.X_U2A.dy            X_1.X_U2A.dx          
+ID          -1.65E-11               -5.00E-11             
+VD          -1.65E+01               -5.00E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          2.39E-12                0.00E+00             
+
+NAME         X_1.X_U2A.dln           X_1.X_U2A.dp          
+MODEL        X_1.X_U2A.dx            X_1.X_U2A.dx          
+ID          -5.00E-11               -3.60E-11             
+VD          -5.00E+01               -3.60E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          0.00E+00                0.00E+00             
+
+NAME         X_2.X_U2A.dc            X_2.X_U2A.de          
+MODEL        X_2.X_U2A.dy            X_2.X_U2A.dy          
+ID          -1.65E-11               -1.65E-11             
+VD          -1.65E+01               -1.65E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          2.39E-12                2.39E-12             
+
+NAME         X_2.X_U2A.dlp           X_2.X_U2A.dln         
+MODEL        X_2.X_U2A.dx            X_2.X_U2A.dx          
+ID          -5.00E-11               -5.00E-11             
+VD          -5.00E+01               -5.00E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          0.00E+00                0.00E+00             
+
+NAME         X_2.X_U2A.dp          
+MODEL        X_2.X_U2A.dx          
+ID          -3.60E-11             
+VD          -3.60E+01             
+REQ          1.00E+12             
+CAP          0.00E+00             
+
+
+**** JFETS
+
+
+NAME         X_0.X_U2A.j1            X_0.X_U2A.j2          
+MODEL        X_0.X_U2A.jx            X_0.X_U2A.jx          
+ID           1.17E-04                1.17E-04             
+VGS         -6.55E-01               -6.55E-01             
+VDS          1.70E+01                1.70E+01             
+GM           6.80E-04                6.80E-04             
+GDS          0.00E+00                0.00E+00             
+CGS          0.00E+00                0.00E+00             
+CGD          0.00E+00                0.00E+00             
+
+NAME         X_1.X_U2A.j1            X_1.X_U2A.j2          
+MODEL        X_1.X_U2A.jx            X_1.X_U2A.jx          
+ID           1.17E-04                1.17E-04             
+VGS         -6.55E-01               -6.55E-01             
+VDS          1.70E+01                1.70E+01             
+GM           6.80E-04                6.80E-04             
+GDS          0.00E+00                0.00E+00             
+CGS          0.00E+00                0.00E+00             
+CGD          0.00E+00                0.00E+00             
+
+NAME         X_2.X_U2A.j1            X_2.X_U2A.j2          
+MODEL        X_2.X_U2A.jx            X_2.X_U2A.jx          
+ID           1.17E-04                1.17E-04             
+VGS         -6.55E-01               -6.55E-01             
+VDS          1.70E+01                1.70E+01             
+GM           6.80E-04                6.80E-04             
+GDS          0.00E+00                0.00E+00             
+CGS          0.00E+00                0.00E+00             
+CGD          0.00E+00                0.00E+00              NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   in)    0.0000  (  out)-48.43E-06  ($N_0001)-15.96E-06                       
+
+($N_0002)-32.25E-06                   (X_0.$N_0001)  -18.0000                   
+
+(X_0.$N_0002)   18.0000               (X_0.$N_0003) 424.2E-09                   
+
+(X_0.$N_0004) 212.1E-09               (X_0.X_U2A.6) 2.038E-09                   
+
+(X_0.X_U2A.7)-15.96E-06               (X_0.X_U2A.8)-15.96E-06                   
+
+(X_0.X_U2A.9)    0.0000               (X_1.$N_0001)  -18.0000                   
+
+(X_1.$N_0002)   18.0000               (X_1.$N_0003)-15.86E-06                   
+
+(X_1.$N_0004)-15.91E-06               (X_1.X_U2A.6) 4.768E-09                   
+
+(X_1.X_U2A.7)-32.25E-06               (X_1.X_U2A.8)-32.25E-06                   
+
+(X_1.X_U2A.9)    0.0000               (X_2.$N_0001)  -18.0000                   
+
+(X_2.$N_0002)   18.0000               (X_2.$N_0003)-32.05E-06                   
+
+(X_2.$N_0004)-32.15E-06               (X_2.X_U2A.6) 7.548E-09                   
+
+(X_2.X_U2A.7)-48.43E-06               (X_2.X_U2A.8)-48.43E-06                   
+
+(X_2.X_U2A.9)    0.0000               (X_0.X_U2A.10)     .6546                  
+
+(X_0.X_U2A.11)   17.6540              (X_0.X_U2A.12)   17.6540                  
+
+(X_0.X_U2A.53)   16.5000              (X_0.X_U2A.54)  -16.5000                  
+
+(X_0.X_U2A.90)-46.62E-09              (X_0.X_U2A.91)   50.0000                  
+
+(X_0.X_U2A.92)  -50.0000              (X_0.X_U2A.99)    0.0000                  
+
+(X_1.X_U2A.10)     .6546              (X_1.X_U2A.11)   17.6540                  
+
+(X_1.X_U2A.12)   17.6540              (X_1.X_U2A.53)   16.5000                  
+
+(X_1.X_U2A.54)  -16.5000              (X_1.X_U2A.90)-45.90E-09                  
+
+(X_1.X_U2A.91)   50.0000              (X_1.X_U2A.92)  -50.0000                  
+
+(X_1.X_U2A.99)    0.0000              (X_2.X_U2A.10)     .6546                  
+
+(X_2.X_U2A.11)   17.6540              (X_2.X_U2A.12)   17.6540                  
+
+(X_2.X_U2A.53)   16.5000              (X_2.X_U2A.54)  -16.5000                  
+
+(X_2.X_U2A.90)-71.74E-09              (X_2.X_U2A.91)   50.0000                  
+
+(X_2.X_U2A.92)  -50.0000              (X_2.X_U2A.99)    0.0000              
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V8         2.331E-11
+    X_0.V_V3    -2.034E-03
+    X_0.V_V4    -2.035E-03
+    X_1.V_V3    -2.034E-03
+    X_1.V_V4    -2.035E-03
+    X_2.V_V3    -2.034E-03
+    X_2.V_V4    -2.035E-03
+    X_0.X_U2A.vb   2.038E-14
+    X_0.X_U2A.vc   1.650E-11
+    X_0.X_U2A.ve   1.819E-11
+    X_0.X_U2A.vlim  -4.662E-11
+    X_0.X_U2A.vlp  -5.000E-11
+    X_0.X_U2A.vln  -5.001E-11
+    X_1.X_U2A.vb   4.801E-14
+    X_1.X_U2A.vc   1.650E-11
+    X_1.X_U2A.ve   1.819E-11
+    X_1.X_U2A.vlim  -4.590E-11
+    X_1.X_U2A.vlp  -5.000E-11
+    X_1.X_U2A.vln  -5.001E-11
+    X_2.X_U2A.vb   7.548E-14
+    X_2.X_U2A.vc   1.650E-11
+    X_2.X_U2A.ve   1.819E-11
+    X_2.X_U2A.vlim  -7.174E-11
+    X_2.X_U2A.vlp  -5.000E-11
+    X_2.X_U2A.vln  -5.001E-11
+
+    TOTAL POWER DISSIPATION   2.20E-01  WATTS
+
+
+
+
+**** VOLTAGE-CONTROLLED CURRENT SOURCES
+
+
+NAME         X_0.X_U2A.ga            X_0.X_U2A.gcm         
+I-SOURCE     1.114E-08               1.114E-08            
+
+NAME         X_1.X_U2A.ga            X_1.X_U2A.gcm         
+I-SOURCE     1.114E-08               1.114E-08            
+
+NAME         X_2.X_U2A.ga            X_2.X_U2A.gcm         
+I-SOURCE     1.113E-08               1.113E-08            
+
+
+**** VOLTAGE-CONTROLLED VOLTAGE SOURCES
+
+
+NAME         X_0.X_U2A.egnd          X_1.X_U2A.egnd        
+V-SOURCE     0.000E+00               0.000E+00            
+I-SOURCE     7.660E-07               7.660E-07            
+
+NAME         X_2.X_U2A.egnd        
+V-SOURCE     0.000E+00            
+I-SOURCE     7.660E-07            
+
+
+**** CURRENT-CONTROLLED CURRENT SOURCES
+
+
+NAME         X_0.X_U2A.fb            X_1.X_U2A.fb          
+I-SOURCE    -2.690E-06              -2.593E-06            
+
+NAME         X_2.X_U2A.fb          
+I-SOURCE    -2.498E-06            
+
+
+**** CURRENT-CONTROLLED VOLTAGE SOURCES
+
+
+NAME         X_0.X_U2A.hlim          X_1.X_U2A.hlim        
+V-SOURCE    -4.662E-08              -4.590E-08            
+I-SOURCE     9.324E-20               9.180E-20            
+
+NAME         X_2.X_U2A.hlim        
+V-SOURCE    -7.174E-08            
+I-SOURCE     1.435E-19            
+
+
+**** DIODES
+
+
+NAME         X_0.X_U2A.dc            X_0.X_U2A.de          
+MODEL        X_0.X_U2A.dy            X_0.X_U2A.dy          
+ID          -1.65E-11               -1.65E-11             
+VD          -1.65E+01               -1.65E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          2.39E-12                2.39E-12             
+
+NAME         X_0.X_U2A.dlp           X_0.X_U2A.dln         
+MODEL        X_0.X_U2A.dx            X_0.X_U2A.dx          
+ID          -5.00E-11               -5.00E-11             
+VD          -5.00E+01               -5.00E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          0.00E+00                0.00E+00             
+
+NAME         X_0.X_U2A.dp            X_1.X_U2A.dc          
+MODEL        X_0.X_U2A.dx            X_1.X_U2A.dy          
+ID          -3.60E-11               -1.65E-11             
+VD          -3.60E+01               -1.65E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          0.00E+00                2.39E-12             
+
+NAME         X_1.X_U2A.de            X_1.X_U2A.dlp         
+MODEL        X_1.X_U2A.dy            X_1.X_U2A.dx          
+ID          -1.65E-11               -5.00E-11             
+VD          -1.65E+01               -5.00E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          2.39E-12                0.00E+00             
+
+NAME         X_1.X_U2A.dln           X_1.X_U2A.dp          
+MODEL        X_1.X_U2A.dx            X_1.X_U2A.dx          
+ID          -5.00E-11               -3.60E-11             
+VD          -5.00E+01               -3.60E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          0.00E+00                0.00E+00             
+
+NAME         X_2.X_U2A.dc            X_2.X_U2A.de          
+MODEL        X_2.X_U2A.dy            X_2.X_U2A.dy          
+ID          -1.65E-11               -1.65E-11             
+VD          -1.65E+01               -1.65E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          2.39E-12                2.39E-12             
+
+NAME         X_2.X_U2A.dlp           X_2.X_U2A.dln         
+MODEL        X_2.X_U2A.dx            X_2.X_U2A.dx          
+ID          -5.00E-11               -5.00E-11             
+VD          -5.00E+01               -5.00E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          0.00E+00                0.00E+00             
+
+NAME         X_2.X_U2A.dp          
+MODEL        X_2.X_U2A.dx          
+ID          -3.60E-11             
+VD          -3.60E+01             
+REQ          1.00E+12             
+CAP          0.00E+00             
+
+
+**** JFETS
+
+
+NAME         X_0.X_U2A.j1            X_0.X_U2A.j2          
+MODEL        X_0.X_U2A.jx            X_0.X_U2A.jx          
+ID           1.17E-04                1.17E-04             
+VGS         -6.55E-01               -6.55E-01             
+VDS          1.70E+01                1.70E+01             
+GM           6.80E-04                6.80E-04             
+GDS          0.00E+00                0.00E+00             
+CGS          0.00E+00                0.00E+00             
+CGD          0.00E+00                0.00E+00             
+
+NAME         X_1.X_U2A.j1            X_1.X_U2A.j2          
+MODEL        X_1.X_U2A.jx            X_1.X_U2A.jx          
+ID           1.17E-04                1.17E-04             
+VGS         -6.55E-01               -6.55E-01             
+VDS          1.70E+01                1.70E+01             
+GM           6.80E-04                6.80E-04             
+GDS          0.00E+00                0.00E+00             
+CGS          0.00E+00                0.00E+00             
+CGD          0.00E+00                0.00E+00             
+
+NAME         X_2.X_U2A.j1            X_2.X_U2A.j2          
+MODEL        X_2.X_U2A.jx            X_2.X_U2A.jx          
+ID           1.17E-04                1.17E-04             
+VGS         -6.55E-01               -6.55E-01             
+VDS          1.70E+01                1.70E+01             
+GM           6.80E-04                6.80E-04             
+GDS          0.00E+00                0.00E+00             
+CGS          0.00E+00                0.00E+00             
+CGD          0.00E+00                0.00E+00              NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   in)    0.0000  (  out)-48.43E-06  ($N_0001)-15.96E-06                       
+
+($N_0002)-32.25E-06                   (X_0.$N_0001)  -18.0000                   
+
+(X_0.$N_0002)   18.0000               (X_0.$N_0003) 424.2E-09                   
+
+(X_0.$N_0004) 212.1E-09               (X_0.X_U2A.6) 2.076E-09                   
+
+(X_0.X_U2A.7)-15.96E-06               (X_0.X_U2A.8)-15.96E-06                   
+
+(X_0.X_U2A.9)    0.0000               (X_1.$N_0001)  -18.0000                   
+
+(X_1.$N_0002)   18.0000               (X_1.$N_0003)-15.86E-06                   
+
+(X_1.$N_0004)-15.91E-06               (X_1.X_U2A.6) 4.768E-09                   
+
+(X_1.X_U2A.7)-32.25E-06               (X_1.X_U2A.8)-32.25E-06                   
+
+(X_1.X_U2A.9)    0.0000               (X_2.$N_0001)  -18.0000                   
+
+(X_2.$N_0002)   18.0000               (X_2.$N_0003)-32.05E-06                   
+
+(X_2.$N_0004)-32.15E-06               (X_2.X_U2A.6) 7.585E-09                   
+
+(X_2.X_U2A.7)-48.43E-06               (X_2.X_U2A.8)-48.43E-06                   
+
+(X_2.X_U2A.9)    0.0000               (X_0.X_U2A.10)     .6546                  
+
+(X_0.X_U2A.11)   17.6540              (X_0.X_U2A.12)   17.6540                  
+
+(X_0.X_U2A.53)   16.5000              (X_0.X_U2A.54)  -16.5000                  
+
+(X_0.X_U2A.90)-46.62E-09              (X_0.X_U2A.91)   50.0000                  
+
+(X_0.X_U2A.92)  -50.0000              (X_0.X_U2A.99)    0.0000                  
+
+(X_1.X_U2A.10)     .6546              (X_1.X_U2A.11)   17.6540                  
+
+(X_1.X_U2A.12)   17.6540              (X_1.X_U2A.53)   16.5000                  
+
+(X_1.X_U2A.54)  -16.5000              (X_1.X_U2A.90)-44.25E-09                  
+
+(X_1.X_U2A.91)   50.0000              (X_1.X_U2A.92)  -50.0000                  
+
+(X_1.X_U2A.99)    0.0000              (X_2.X_U2A.10)     .6546                  
+
+(X_2.X_U2A.11)   17.6540              (X_2.X_U2A.12)   17.6540                  
+
+(X_2.X_U2A.53)   16.5000              (X_2.X_U2A.54)  -16.5000                  
+
+(X_2.X_U2A.90)-71.74E-09              (X_2.X_U2A.91)   50.0000                  
+
+(X_2.X_U2A.92)  -50.0000              (X_2.X_U2A.99)    0.0000              
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V8         2.331E-11
+    X_0.V_V3    -2.034E-03
+    X_0.V_V4    -2.035E-03
+    X_1.V_V3    -2.034E-03
+    X_1.V_V4    -2.035E-03
+    X_2.V_V3    -2.034E-03
+    X_2.V_V4    -2.035E-03
+    X_0.X_U2A.vb   2.075E-14
+    X_0.X_U2A.vc   1.650E-11
+    X_0.X_U2A.ve   1.688E-11
+    X_0.X_U2A.vlim  -4.662E-11
+    X_0.X_U2A.vlp  -5.000E-11
+    X_0.X_U2A.vln  -5.001E-11
+    X_1.X_U2A.vb   4.801E-14
+    X_1.X_U2A.vc   1.650E-11
+    X_1.X_U2A.ve   1.819E-11
+    X_1.X_U2A.vlim  -4.425E-11
+    X_1.X_U2A.vlp  -5.000E-11
+    X_1.X_U2A.vln  -5.001E-11
+    X_2.X_U2A.vb   7.585E-14
+    X_2.X_U2A.vc   1.650E-11
+    X_2.X_U2A.ve   1.688E-11
+    X_2.X_U2A.vlim  -7.174E-11
+    X_2.X_U2A.vlp  -5.000E-11
+    X_2.X_U2A.vln  -5.001E-11
+
+    TOTAL POWER DISSIPATION   2.20E-01  WATTS
+
+
+
+
+**** VOLTAGE-CONTROLLED CURRENT SOURCES
+
+
+NAME         X_0.X_U2A.ga            X_0.X_U2A.gcm         
+I-SOURCE     1.114E-08               1.114E-08            
+
+NAME         X_1.X_U2A.ga            X_1.X_U2A.gcm         
+I-SOURCE     1.114E-08               1.114E-08            
+
+NAME         X_2.X_U2A.ga            X_2.X_U2A.gcm         
+I-SOURCE     1.113E-08               1.113E-08            
+
+
+**** VOLTAGE-CONTROLLED VOLTAGE SOURCES
+
+
+NAME         X_0.X_U2A.egnd          X_1.X_U2A.egnd        
+V-SOURCE     0.000E+00               0.000E+00            
+I-SOURCE     7.660E-07               7.660E-07            
+
+NAME         X_2.X_U2A.egnd        
+V-SOURCE     0.000E+00            
+I-SOURCE     7.660E-07            
+
+
+**** CURRENT-CONTROLLED CURRENT SOURCES
+
+
+NAME         X_0.X_U2A.fb            X_1.X_U2A.fb          
+I-SOURCE    -2.692E-06              -2.596E-06            
+
+NAME         X_2.X_U2A.fb          
+I-SOURCE    -2.501E-06            
+
+
+**** CURRENT-CONTROLLED VOLTAGE SOURCES
+
+
+NAME         X_0.X_U2A.hlim          X_1.X_U2A.hlim        
+V-SOURCE    -4.662E-08              -4.425E-08            
+I-SOURCE     9.324E-20               8.851E-20            
+
+NAME         X_2.X_U2A.hlim        
+V-SOURCE    -7.174E-08            
+I-SOURCE     1.435E-19            
+
+
+**** DIODES
+
+
+NAME         X_0.X_U2A.dc            X_0.X_U2A.de          
+MODEL        X_0.X_U2A.dy            X_0.X_U2A.dy          
+ID          -1.65E-11               -1.65E-11             
+VD          -1.65E+01               -1.65E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          2.39E-12                2.39E-12             
+
+NAME         X_0.X_U2A.dlp           X_0.X_U2A.dln         
+MODEL        X_0.X_U2A.dx            X_0.X_U2A.dx          
+ID          -5.00E-11               -5.00E-11             
+VD          -5.00E+01               -5.00E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          0.00E+00                0.00E+00             
+
+NAME         X_0.X_U2A.dp            X_1.X_U2A.dc          
+MODEL        X_0.X_U2A.dx            X_1.X_U2A.dy          
+ID          -3.60E-11               -1.65E-11             
+VD          -3.60E+01               -1.65E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          0.00E+00                2.39E-12             
+
+NAME         X_1.X_U2A.de            X_1.X_U2A.dlp         
+MODEL        X_1.X_U2A.dy            X_1.X_U2A.dx          
+ID          -1.65E-11               -5.00E-11             
+VD          -1.65E+01               -5.00E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          2.39E-12                0.00E+00             
+
+NAME         X_1.X_U2A.dln           X_1.X_U2A.dp          
+MODEL        X_1.X_U2A.dx            X_1.X_U2A.dx          
+ID          -5.00E-11               -3.60E-11             
+VD          -5.00E+01               -3.60E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          0.00E+00                0.00E+00             
+
+NAME         X_2.X_U2A.dc            X_2.X_U2A.de          
+MODEL        X_2.X_U2A.dy            X_2.X_U2A.dy          
+ID          -1.65E-11               -1.65E-11             
+VD          -1.65E+01               -1.65E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          2.39E-12                2.39E-12             
+
+NAME         X_2.X_U2A.dlp           X_2.X_U2A.dln         
+MODEL        X_2.X_U2A.dx            X_2.X_U2A.dx          
+ID          -5.00E-11               -5.00E-11             
+VD          -5.00E+01               -5.00E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          0.00E+00                0.00E+00             
+
+NAME         X_2.X_U2A.dp          
+MODEL        X_2.X_U2A.dx          
+ID          -3.60E-11             
+VD          -3.60E+01             
+REQ          1.00E+12             
+CAP          0.00E+00             
+
+
+**** JFETS
+
+
+NAME         X_0.X_U2A.j1            X_0.X_U2A.j2          
+MODEL        X_0.X_U2A.jx            X_0.X_U2A.jx          
+ID           1.17E-04                1.17E-04             
+VGS         -6.55E-01               -6.55E-01             
+VDS          1.70E+01                1.70E+01             
+GM           6.80E-04                6.80E-04             
+GDS          0.00E+00                0.00E+00             
+CGS          0.00E+00                0.00E+00             
+CGD          0.00E+00                0.00E+00             
+
+NAME         X_1.X_U2A.j1            X_1.X_U2A.j2          
+MODEL        X_1.X_U2A.jx            X_1.X_U2A.jx          
+ID           1.17E-04                1.17E-04             
+VGS         -6.55E-01               -6.55E-01             
+VDS          1.70E+01                1.70E+01             
+GM           6.80E-04                6.80E-04             
+GDS          0.00E+00                0.00E+00             
+CGS          0.00E+00                0.00E+00             
+CGD          0.00E+00                0.00E+00             
+
+NAME         X_2.X_U2A.j1            X_2.X_U2A.j2          
+MODEL        X_2.X_U2A.jx            X_2.X_U2A.jx          
+ID           1.17E-04                1.17E-04             
+VGS         -6.55E-01               -6.55E-01             
+VDS          1.70E+01                1.70E+01             
+GM           6.80E-04                6.80E-04             
+GDS          0.00E+00                0.00E+00             
+CGS          0.00E+00                0.00E+00             
+CGD          0.00E+00                0.00E+00              NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   in)    0.0000  (  out)-48.43E-06  ($N_0001)-15.96E-06                       
+
+($N_0002)-32.25E-06                   (X_0.$N_0001)  -18.0000                   
+
+(X_0.$N_0002)   18.0000               (X_0.$N_0003) 424.2E-09                   
+
+(X_0.$N_0004) 212.1E-09               (X_0.X_U2A.6) 2.038E-09                   
+
+(X_0.X_U2A.7)-15.96E-06               (X_0.X_U2A.8)-15.96E-06                   
+
+(X_0.X_U2A.9)    0.0000               (X_1.$N_0001)  -18.0000                   
+
+(X_1.$N_0002)   18.0000               (X_1.$N_0003)-15.86E-06                   
+
+(X_1.$N_0004)-15.91E-06               (X_1.X_U2A.6) 4.768E-09                   
+
+(X_1.X_U2A.7)-32.25E-06               (X_1.X_U2A.8)-32.25E-06                   
+
+(X_1.X_U2A.9)    0.0000               (X_2.$N_0001)  -18.0000                   
+
+(X_2.$N_0002)   18.0000               (X_2.$N_0003)-32.05E-06                   
+
+(X_2.$N_0004)-32.15E-06               (X_2.X_U2A.6) 7.548E-09                   
+
+(X_2.X_U2A.7)-48.43E-06               (X_2.X_U2A.8)-48.43E-06                   
+
+(X_2.X_U2A.9)    0.0000               (X_0.X_U2A.10)     .6546                  
+
+(X_0.X_U2A.11)   17.6540              (X_0.X_U2A.12)   17.6540                  
+
+(X_0.X_U2A.53)   16.5000              (X_0.X_U2A.54)  -16.5000                  
+
+(X_0.X_U2A.90)-46.62E-09              (X_0.X_U2A.91)   50.0000                  
+
+(X_0.X_U2A.92)  -50.0000              (X_0.X_U2A.99)    0.0000                  
+
+(X_1.X_U2A.10)     .6546              (X_1.X_U2A.11)   17.6540                  
+
+(X_1.X_U2A.12)   17.6540              (X_1.X_U2A.53)   16.5000                  
+
+(X_1.X_U2A.54)  -16.5000              (X_1.X_U2A.90)-42.09E-09                  
+
+(X_1.X_U2A.91)   50.0000              (X_1.X_U2A.92)  -50.0000                  
+
+(X_1.X_U2A.99)    0.0000              (X_2.X_U2A.10)     .6546                  
+
+(X_2.X_U2A.11)   17.6540              (X_2.X_U2A.12)   17.6540                  
+
+(X_2.X_U2A.53)   16.5000              (X_2.X_U2A.54)  -16.5000                  
+
+(X_2.X_U2A.90)-71.74E-09              (X_2.X_U2A.91)   50.0000                  
+
+(X_2.X_U2A.92)  -50.0000              (X_2.X_U2A.99)    0.0000              
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V8         2.331E-11
+    X_0.V_V3    -2.034E-03
+    X_0.V_V4    -2.035E-03
+    X_1.V_V3    -2.034E-03
+    X_1.V_V4    -2.035E-03
+    X_2.V_V3    -2.034E-03
+    X_2.V_V4    -2.035E-03
+    X_0.X_U2A.vb   2.038E-14
+    X_0.X_U2A.vc   1.650E-11
+    X_0.X_U2A.ve   1.819E-11
+    X_0.X_U2A.vlim  -4.662E-11
+    X_0.X_U2A.vlp  -5.000E-11
+    X_0.X_U2A.vln  -5.001E-11
+    X_1.X_U2A.vb   4.801E-14
+    X_1.X_U2A.vc   1.650E-11
+    X_1.X_U2A.ve   1.819E-11
+    X_1.X_U2A.vlim  -4.209E-11
+    X_1.X_U2A.vlp  -5.000E-11
+    X_1.X_U2A.vln  -5.001E-11
+    X_2.X_U2A.vb   7.548E-14
+    X_2.X_U2A.vc   1.650E-11
+    X_2.X_U2A.ve   1.819E-11
+    X_2.X_U2A.vlim  -7.174E-11
+    X_2.X_U2A.vlp  -5.000E-11
+    X_2.X_U2A.vln  -5.001E-11
+
+    TOTAL POWER DISSIPATION   2.20E-01  WATTS
+
+
+
+
+**** VOLTAGE-CONTROLLED CURRENT SOURCES
+
+
+NAME         X_0.X_U2A.ga            X_0.X_U2A.gcm         
+I-SOURCE     1.114E-08               1.114E-08            
+
+NAME         X_1.X_U2A.ga            X_1.X_U2A.gcm         
+I-SOURCE     1.114E-08               1.114E-08            
+
+NAME         X_2.X_U2A.ga            X_2.X_U2A.gcm         
+I-SOURCE     1.113E-08               1.113E-08            
+
+
+**** VOLTAGE-CONTROLLED VOLTAGE SOURCES
+
+
+NAME         X_0.X_U2A.egnd          X_1.X_U2A.egnd        
+V-SOURCE     0.000E+00               0.000E+00            
+I-SOURCE     7.660E-07               7.660E-07            
+
+NAME         X_2.X_U2A.egnd        
+V-SOURCE     0.000E+00            
+I-SOURCE     7.660E-07            
+
+
+**** CURRENT-CONTROLLED CURRENT SOURCES
+
+
+NAME         X_0.X_U2A.fb            X_1.X_U2A.fb          
+I-SOURCE    -2.689E-06              -2.595E-06            
+
+NAME         X_2.X_U2A.fb          
+I-SOURCE    -2.498E-06            
+
+
+**** CURRENT-CONTROLLED VOLTAGE SOURCES
+
+
+NAME         X_0.X_U2A.hlim          X_1.X_U2A.hlim        
+V-SOURCE    -4.662E-08              -4.209E-08            
+I-SOURCE     9.324E-20               8.417E-20            
+
+NAME         X_2.X_U2A.hlim        
+V-SOURCE    -7.174E-08            
+I-SOURCE     1.435E-19            
+
+
+**** DIODES
+
+
+NAME         X_0.X_U2A.dc            X_0.X_U2A.de          
+MODEL        X_0.X_U2A.dy            X_0.X_U2A.dy          
+ID          -1.65E-11               -1.65E-11             
+VD          -1.65E+01               -1.65E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          2.39E-12                2.39E-12             
+
+NAME         X_0.X_U2A.dlp           X_0.X_U2A.dln         
+MODEL        X_0.X_U2A.dx            X_0.X_U2A.dx          
+ID          -5.00E-11               -5.00E-11             
+VD          -5.00E+01               -5.00E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          0.00E+00                0.00E+00             
+
+NAME         X_0.X_U2A.dp            X_1.X_U2A.dc          
+MODEL        X_0.X_U2A.dx            X_1.X_U2A.dy          
+ID          -3.60E-11               -1.65E-11             
+VD          -3.60E+01               -1.65E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          0.00E+00                2.39E-12             
+
+NAME         X_1.X_U2A.de            X_1.X_U2A.dlp         
+MODEL        X_1.X_U2A.dy            X_1.X_U2A.dx          
+ID          -1.65E-11               -5.00E-11             
+VD          -1.65E+01               -5.00E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          2.39E-12                0.00E+00             
+
+NAME         X_1.X_U2A.dln           X_1.X_U2A.dp          
+MODEL        X_1.X_U2A.dx            X_1.X_U2A.dx          
+ID          -5.00E-11               -3.60E-11             
+VD          -5.00E+01               -3.60E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          0.00E+00                0.00E+00             
+
+NAME         X_2.X_U2A.dc            X_2.X_U2A.de          
+MODEL        X_2.X_U2A.dy            X_2.X_U2A.dy          
+ID          -1.65E-11               -1.65E-11             
+VD          -1.65E+01               -1.65E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          2.39E-12                2.39E-12             
+
+NAME         X_2.X_U2A.dlp           X_2.X_U2A.dln         
+MODEL        X_2.X_U2A.dx            X_2.X_U2A.dx          
+ID          -5.00E-11               -5.00E-11             
+VD          -5.00E+01               -5.00E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          0.00E+00                0.00E+00             
+
+NAME         X_2.X_U2A.dp          
+MODEL        X_2.X_U2A.dx          
+ID          -3.60E-11             
+VD          -3.60E+01             
+REQ          1.00E+12             
+CAP          0.00E+00             
+
+
+**** JFETS
+
+
+NAME         X_0.X_U2A.j1            X_0.X_U2A.j2          
+MODEL        X_0.X_U2A.jx            X_0.X_U2A.jx          
+ID           1.17E-04                1.17E-04             
+VGS         -6.55E-01               -6.55E-01             
+VDS          1.70E+01                1.70E+01             
+GM           6.80E-04                6.80E-04             
+GDS          0.00E+00                0.00E+00             
+CGS          0.00E+00                0.00E+00             
+CGD          0.00E+00                0.00E+00             
+
+NAME         X_1.X_U2A.j1            X_1.X_U2A.j2          
+MODEL        X_1.X_U2A.jx            X_1.X_U2A.jx          
+ID           1.17E-04                1.17E-04             
+VGS         -6.55E-01               -6.55E-01             
+VDS          1.70E+01                1.70E+01             
+GM           6.80E-04                6.80E-04             
+GDS          0.00E+00                0.00E+00             
+CGS          0.00E+00                0.00E+00             
+CGD          0.00E+00                0.00E+00             
+
+NAME         X_2.X_U2A.j1            X_2.X_U2A.j2          
+MODEL        X_2.X_U2A.jx            X_2.X_U2A.jx          
+ID           1.17E-04                1.17E-04             
+VGS         -6.55E-01               -6.55E-01             
+VDS          1.70E+01                1.70E+01             
+GM           6.80E-04                6.80E-04             
+GDS          0.00E+00                0.00E+00             
+CGS          0.00E+00                0.00E+00             
+CGD          0.00E+00                0.00E+00              NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   in)    0.0000  (  out)-48.43E-06  ($N_0001)-15.96E-06                       
+
+($N_0002)-32.25E-06                   (X_0.$N_0001)  -18.0000                   
+
+(X_0.$N_0002)   18.0000               (X_0.$N_0003) 424.2E-09                   
+
+(X_0.$N_0004) 212.1E-09               (X_0.X_U2A.6) 2.038E-09                   
+
+(X_0.X_U2A.7)-15.96E-06               (X_0.X_U2A.8)-15.96E-06                   
+
+(X_0.X_U2A.9)    0.0000               (X_1.$N_0001)  -18.0000                   
+
+(X_1.$N_0002)   18.0000               (X_1.$N_0003)-15.86E-06                   
+
+(X_1.$N_0004)-15.91E-06               (X_1.X_U2A.6) 4.768E-09                   
+
+(X_1.X_U2A.7)-32.25E-06               (X_1.X_U2A.8)-32.25E-06                   
+
+(X_1.X_U2A.9)    0.0000               (X_2.$N_0001)  -18.0000                   
+
+(X_2.$N_0002)   18.0000               (X_2.$N_0003)-32.05E-06                   
+
+(X_2.$N_0004)-32.15E-06               (X_2.X_U2A.6) 7.585E-09                   
+
+(X_2.X_U2A.7)-48.43E-06               (X_2.X_U2A.8)-48.43E-06                   
+
+(X_2.X_U2A.9)    0.0000               (X_0.X_U2A.10)     .6546                  
+
+(X_0.X_U2A.11)   17.6540              (X_0.X_U2A.12)   17.6540                  
+
+(X_0.X_U2A.53)   16.5000              (X_0.X_U2A.54)  -16.5000                  
+
+(X_0.X_U2A.90)-46.62E-09              (X_0.X_U2A.91)   50.0000                  
+
+(X_0.X_U2A.92)  -50.0000              (X_0.X_U2A.99)    0.0000                  
+
+(X_1.X_U2A.10)     .6546              (X_1.X_U2A.11)   17.6540                  
+
+(X_1.X_U2A.12)   17.6540              (X_1.X_U2A.53)   16.5000                  
+
+(X_1.X_U2A.54)  -16.5000              (X_1.X_U2A.90)-45.90E-09                  
+
+(X_1.X_U2A.91)   50.0000              (X_1.X_U2A.92)  -50.0000                  
+
+(X_1.X_U2A.99)    0.0000              (X_2.X_U2A.10)     .6546                  
+
+(X_2.X_U2A.11)   17.6540              (X_2.X_U2A.12)   17.6540                  
+
+(X_2.X_U2A.53)   16.5000              (X_2.X_U2A.54)  -16.5000                  
+
+(X_2.X_U2A.90)-71.74E-09              (X_2.X_U2A.91)   50.0000                  
+
+(X_2.X_U2A.92)  -50.0000              (X_2.X_U2A.99)    0.0000              
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V8         2.331E-11
+    X_0.V_V3    -2.034E-03
+    X_0.V_V4    -2.035E-03
+    X_1.V_V3    -2.034E-03
+    X_1.V_V4    -2.035E-03
+    X_2.V_V3    -2.034E-03
+    X_2.V_V4    -2.035E-03
+    X_0.X_U2A.vb   2.038E-14
+    X_0.X_U2A.vc   1.650E-11
+    X_0.X_U2A.ve   1.819E-11
+    X_0.X_U2A.vlim  -4.662E-11
+    X_0.X_U2A.vlp  -5.000E-11
+    X_0.X_U2A.vln  -5.001E-11
+    X_1.X_U2A.vb   4.801E-14
+    X_1.X_U2A.vc   1.650E-11
+    X_1.X_U2A.ve   1.819E-11
+    X_1.X_U2A.vlim  -4.590E-11
+    X_1.X_U2A.vlp  -5.000E-11
+    X_1.X_U2A.vln  -5.001E-11
+    X_2.X_U2A.vb   7.585E-14
+    X_2.X_U2A.vc   1.650E-11
+    X_2.X_U2A.ve   1.688E-11
+    X_2.X_U2A.vlim  -7.174E-11
+    X_2.X_U2A.vlp  -5.000E-11
+    X_2.X_U2A.vln  -5.001E-11
+
+    TOTAL POWER DISSIPATION   2.20E-01  WATTS
+
+
+
+
+**** VOLTAGE-CONTROLLED CURRENT SOURCES
+
+
+NAME         X_0.X_U2A.ga            X_0.X_U2A.gcm         
+I-SOURCE     1.114E-08               1.114E-08            
+
+NAME         X_1.X_U2A.ga            X_1.X_U2A.gcm         
+I-SOURCE     1.114E-08               1.114E-08            
+
+NAME         X_2.X_U2A.ga            X_2.X_U2A.gcm         
+I-SOURCE     1.113E-08               1.113E-08            
+
+
+**** VOLTAGE-CONTROLLED VOLTAGE SOURCES
+
+
+NAME         X_0.X_U2A.egnd          X_1.X_U2A.egnd        
+V-SOURCE     0.000E+00               0.000E+00            
+I-SOURCE     7.660E-07               7.660E-07            
+
+NAME         X_2.X_U2A.egnd        
+V-SOURCE     0.000E+00            
+I-SOURCE     7.660E-07            
+
+
+**** CURRENT-CONTROLLED CURRENT SOURCES
+
+
+NAME         X_0.X_U2A.fb            X_1.X_U2A.fb          
+I-SOURCE    -2.690E-06              -2.595E-06            
+
+NAME         X_2.X_U2A.fb          
+I-SOURCE    -2.501E-06            
+
+
+**** CURRENT-CONTROLLED VOLTAGE SOURCES
+
+
+NAME         X_0.X_U2A.hlim          X_1.X_U2A.hlim        
+V-SOURCE    -4.662E-08              -4.590E-08            
+I-SOURCE     9.324E-20               9.180E-20            
+
+NAME         X_2.X_U2A.hlim        
+V-SOURCE    -7.174E-08            
+I-SOURCE     1.435E-19            
+
+
+**** DIODES
+
+
+NAME         X_0.X_U2A.dc            X_0.X_U2A.de          
+MODEL        X_0.X_U2A.dy            X_0.X_U2A.dy          
+ID          -1.65E-11               -1.65E-11             
+VD          -1.65E+01               -1.65E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          2.39E-12                2.39E-12             
+
+NAME         X_0.X_U2A.dlp           X_0.X_U2A.dln         
+MODEL        X_0.X_U2A.dx            X_0.X_U2A.dx          
+ID          -5.00E-11               -5.00E-11             
+VD          -5.00E+01               -5.00E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          0.00E+00                0.00E+00             
+
+NAME         X_0.X_U2A.dp            X_1.X_U2A.dc          
+MODEL        X_0.X_U2A.dx            X_1.X_U2A.dy          
+ID          -3.60E-11               -1.65E-11             
+VD          -3.60E+01               -1.65E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          0.00E+00                2.39E-12             
+
+NAME         X_1.X_U2A.de            X_1.X_U2A.dlp         
+MODEL        X_1.X_U2A.dy            X_1.X_U2A.dx          
+ID          -1.65E-11               -5.00E-11             
+VD          -1.65E+01               -5.00E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          2.39E-12                0.00E+00             
+
+NAME         X_1.X_U2A.dln           X_1.X_U2A.dp          
+MODEL        X_1.X_U2A.dx            X_1.X_U2A.dx          
+ID          -5.00E-11               -3.60E-11             
+VD          -5.00E+01               -3.60E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          0.00E+00                0.00E+00             
+
+NAME         X_2.X_U2A.dc            X_2.X_U2A.de          
+MODEL        X_2.X_U2A.dy            X_2.X_U2A.dy          
+ID          -1.65E-11               -1.65E-11             
+VD          -1.65E+01               -1.65E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          2.39E-12                2.39E-12             
+
+NAME         X_2.X_U2A.dlp           X_2.X_U2A.dln         
+MODEL        X_2.X_U2A.dx            X_2.X_U2A.dx          
+ID          -5.00E-11               -5.00E-11             
+VD          -5.00E+01               -5.00E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          0.00E+00                0.00E+00             
+
+NAME         X_2.X_U2A.dp          
+MODEL        X_2.X_U2A.dx          
+ID          -3.60E-11             
+VD          -3.60E+01             
+REQ          1.00E+12             
+CAP          0.00E+00             
+
+
+**** JFETS
+
+
+NAME         X_0.X_U2A.j1            X_0.X_U2A.j2          
+MODEL        X_0.X_U2A.jx            X_0.X_U2A.jx          
+ID           1.17E-04                1.17E-04             
+VGS         -6.55E-01               -6.55E-01             
+VDS          1.70E+01                1.70E+01             
+GM           6.80E-04                6.80E-04             
+GDS          0.00E+00                0.00E+00             
+CGS          0.00E+00                0.00E+00             
+CGD          0.00E+00                0.00E+00             
+
+NAME         X_1.X_U2A.j1            X_1.X_U2A.j2          
+MODEL        X_1.X_U2A.jx            X_1.X_U2A.jx          
+ID           1.17E-04                1.17E-04             
+VGS         -6.55E-01               -6.55E-01             
+VDS          1.70E+01                1.70E+01             
+GM           6.80E-04                6.80E-04             
+GDS          0.00E+00                0.00E+00             
+CGS          0.00E+00                0.00E+00             
+CGD          0.00E+00                0.00E+00             
+
+NAME         X_2.X_U2A.j1            X_2.X_U2A.j2          
+MODEL        X_2.X_U2A.jx            X_2.X_U2A.jx          
+ID           1.17E-04                1.17E-04             
+VGS         -6.55E-01               -6.55E-01             
+VDS          1.70E+01                1.70E+01             
+GM           6.80E-04                6.80E-04             
+GDS          0.00E+00                0.00E+00             
+CGS          0.00E+00                0.00E+00             
+CGD          0.00E+00                0.00E+00              NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   in)    0.0000  (  out)-48.43E-06  ($N_0001)-15.96E-06                       
+
+($N_0002)-32.25E-06                   (X_0.$N_0001)  -18.0000                   
+
+(X_0.$N_0002)   18.0000               (X_0.$N_0003) 424.2E-09                   
+
+(X_0.$N_0004) 212.1E-09               (X_0.X_U2A.6) 2.038E-09                   
+
+(X_0.X_U2A.7)-15.96E-06               (X_0.X_U2A.8)-15.96E-06                   
+
+(X_0.X_U2A.9)    0.0000               (X_1.$N_0001)  -18.0000                   
+
+(X_1.$N_0002)   18.0000               (X_1.$N_0003)-15.86E-06                   
+
+(X_1.$N_0004)-15.91E-06               (X_1.X_U2A.6) 4.768E-09                   
+
+(X_1.X_U2A.7)-32.25E-06               (X_1.X_U2A.8)-32.25E-06                   
+
+(X_1.X_U2A.9)    0.0000               (X_2.$N_0001)  -18.0000                   
+
+(X_2.$N_0002)   18.0000               (X_2.$N_0003)-32.05E-06                   
+
+(X_2.$N_0004)-32.15E-06               (X_2.X_U2A.6) 7.548E-09                   
+
+(X_2.X_U2A.7)-48.43E-06               (X_2.X_U2A.8)-48.43E-06                   
+
+(X_2.X_U2A.9)    0.0000               (X_0.X_U2A.10)     .6546                  
+
+(X_0.X_U2A.11)   17.6540              (X_0.X_U2A.12)   17.6540                  
+
+(X_0.X_U2A.53)   16.5000              (X_0.X_U2A.54)  -16.5000                  
+
+(X_0.X_U2A.90)-46.62E-09              (X_0.X_U2A.91)   50.0000                  
+
+(X_0.X_U2A.92)  -50.0000              (X_0.X_U2A.99)    0.0000                  
+
+(X_1.X_U2A.10)     .6546              (X_1.X_U2A.11)   17.6540                  
+
+(X_1.X_U2A.12)   17.6540              (X_1.X_U2A.53)   16.5000                  
+
+(X_1.X_U2A.54)  -16.5000              (X_1.X_U2A.90)-44.77E-09                  
+
+(X_1.X_U2A.91)   50.0000              (X_1.X_U2A.92)  -50.0000                  
+
+(X_1.X_U2A.99)    0.0000              (X_2.X_U2A.10)     .6546                  
+
+(X_2.X_U2A.11)   17.6540              (X_2.X_U2A.12)   17.6540                  
+
+(X_2.X_U2A.53)   16.5000              (X_2.X_U2A.54)  -16.5000                  
+
+(X_2.X_U2A.90)-71.74E-09              (X_2.X_U2A.91)   50.0000                  
+
+(X_2.X_U2A.92)  -50.0000              (X_2.X_U2A.99)    0.0000              
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V8         2.331E-11
+    X_0.V_V3    -2.034E-03
+    X_0.V_V4    -2.035E-03
+    X_1.V_V3    -2.034E-03
+    X_1.V_V4    -2.035E-03
+    X_2.V_V3    -2.034E-03
+    X_2.V_V4    -2.035E-03
+    X_0.X_U2A.vb   2.038E-14
+    X_0.X_U2A.vc   1.650E-11
+    X_0.X_U2A.ve   1.819E-11
+    X_0.X_U2A.vlim  -4.662E-11
+    X_0.X_U2A.vlp  -5.000E-11
+    X_0.X_U2A.vln  -5.001E-11
+    X_1.X_U2A.vb   4.801E-14
+    X_1.X_U2A.vc   1.650E-11
+    X_1.X_U2A.ve   1.819E-11
+    X_1.X_U2A.vlim  -4.477E-11
+    X_1.X_U2A.vlp  -5.000E-11
+    X_1.X_U2A.vln  -5.001E-11
+    X_2.X_U2A.vb   7.548E-14
+    X_2.X_U2A.vc   1.650E-11
+    X_2.X_U2A.ve   1.819E-11
+    X_2.X_U2A.vlim  -7.174E-11
+    X_2.X_U2A.vlp  -5.000E-11
+    X_2.X_U2A.vln  -5.001E-11
+
+    TOTAL POWER DISSIPATION   2.20E-01  WATTS
+
+
+
+
+**** VOLTAGE-CONTROLLED CURRENT SOURCES
+
+
+NAME         X_0.X_U2A.ga            X_0.X_U2A.gcm         
+I-SOURCE     1.114E-08               1.114E-08            
+
+NAME         X_1.X_U2A.ga            X_1.X_U2A.gcm         
+I-SOURCE     1.114E-08               1.114E-08            
+
+NAME         X_2.X_U2A.ga            X_2.X_U2A.gcm         
+I-SOURCE     1.113E-08               1.113E-08            
+
+
+**** VOLTAGE-CONTROLLED VOLTAGE SOURCES
+
+
+NAME         X_0.X_U2A.egnd          X_1.X_U2A.egnd        
+V-SOURCE     0.000E+00               0.000E+00            
+I-SOURCE     7.660E-07               7.660E-07            
+
+NAME         X_2.X_U2A.egnd        
+V-SOURCE     0.000E+00            
+I-SOURCE     7.660E-07            
+
+
+**** CURRENT-CONTROLLED CURRENT SOURCES
+
+
+NAME         X_0.X_U2A.fb            X_1.X_U2A.fb          
+I-SOURCE    -2.690E-06              -2.596E-06            
+
+NAME         X_2.X_U2A.fb          
+I-SOURCE    -2.498E-06            
+
+
+**** CURRENT-CONTROLLED VOLTAGE SOURCES
+
+
+NAME         X_0.X_U2A.hlim          X_1.X_U2A.hlim        
+V-SOURCE    -4.662E-08              -4.477E-08            
+I-SOURCE     9.324E-20               8.955E-20            
+
+NAME         X_2.X_U2A.hlim        
+V-SOURCE    -7.174E-08            
+I-SOURCE     1.435E-19            
+
+
+**** DIODES
+
+
+NAME         X_0.X_U2A.dc            X_0.X_U2A.de          
+MODEL        X_0.X_U2A.dy            X_0.X_U2A.dy          
+ID          -1.65E-11               -1.65E-11             
+VD          -1.65E+01               -1.65E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          2.39E-12                2.39E-12             
+
+NAME         X_0.X_U2A.dlp           X_0.X_U2A.dln         
+MODEL        X_0.X_U2A.dx            X_0.X_U2A.dx          
+ID          -5.00E-11               -5.00E-11             
+VD          -5.00E+01               -5.00E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          0.00E+00                0.00E+00             
+
+NAME         X_0.X_U2A.dp            X_1.X_U2A.dc          
+MODEL        X_0.X_U2A.dx            X_1.X_U2A.dy          
+ID          -3.60E-11               -1.65E-11             
+VD          -3.60E+01               -1.65E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          0.00E+00                2.39E-12             
+
+NAME         X_1.X_U2A.de            X_1.X_U2A.dlp         
+MODEL        X_1.X_U2A.dy            X_1.X_U2A.dx          
+ID          -1.65E-11               -5.00E-11             
+VD          -1.65E+01               -5.00E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          2.39E-12                0.00E+00             
+
+NAME         X_1.X_U2A.dln           X_1.X_U2A.dp          
+MODEL        X_1.X_U2A.dx            X_1.X_U2A.dx          
+ID          -5.00E-11               -3.60E-11             
+VD          -5.00E+01               -3.60E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          0.00E+00                0.00E+00             
+
+NAME         X_2.X_U2A.dc            X_2.X_U2A.de          
+MODEL        X_2.X_U2A.dy            X_2.X_U2A.dy          
+ID          -1.65E-11               -1.65E-11             
+VD          -1.65E+01               -1.65E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          2.39E-12                2.39E-12             
+
+NAME         X_2.X_U2A.dlp           X_2.X_U2A.dln         
+MODEL        X_2.X_U2A.dx            X_2.X_U2A.dx          
+ID          -5.00E-11               -5.00E-11             
+VD          -5.00E+01               -5.00E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          0.00E+00                0.00E+00             
+
+NAME         X_2.X_U2A.dp          
+MODEL        X_2.X_U2A.dx          
+ID          -3.60E-11             
+VD          -3.60E+01             
+REQ          1.00E+12             
+CAP          0.00E+00             
+
+
+**** JFETS
+
+
+NAME         X_0.X_U2A.j1            X_0.X_U2A.j2          
+MODEL        X_0.X_U2A.jx            X_0.X_U2A.jx          
+ID           1.17E-04                1.17E-04             
+VGS         -6.55E-01               -6.55E-01             
+VDS          1.70E+01                1.70E+01             
+GM           6.80E-04                6.80E-04             
+GDS          0.00E+00                0.00E+00             
+CGS          0.00E+00                0.00E+00             
+CGD          0.00E+00                0.00E+00             
+
+NAME         X_1.X_U2A.j1            X_1.X_U2A.j2          
+MODEL        X_1.X_U2A.jx            X_1.X_U2A.jx          
+ID           1.17E-04                1.17E-04             
+VGS         -6.55E-01               -6.55E-01             
+VDS          1.70E+01                1.70E+01             
+GM           6.80E-04                6.80E-04             
+GDS          0.00E+00                0.00E+00             
+CGS          0.00E+00                0.00E+00             
+CGD          0.00E+00                0.00E+00             
+
+NAME         X_2.X_U2A.j1            X_2.X_U2A.j2          
+MODEL        X_2.X_U2A.jx            X_2.X_U2A.jx          
+ID           1.17E-04                1.17E-04             
+VGS         -6.55E-01               -6.55E-01             
+VDS          1.70E+01                1.70E+01             
+GM           6.80E-04                6.80E-04             
+GDS          0.00E+00                0.00E+00             
+CGS          0.00E+00                0.00E+00             
+CGD          0.00E+00                0.00E+00              NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   in)    0.0000  (  out)-48.43E-06  ($N_0001)-15.96E-06                       
+
+($N_0002)-32.25E-06                   (X_0.$N_0001)  -18.0000                   
+
+(X_0.$N_0002)   18.0000               (X_0.$N_0003) 424.4E-09                   
+
+(X_0.$N_0004) 212.1E-09               (X_0.X_U2A.6) 2.075E-09                   
+
+(X_0.X_U2A.7)-15.96E-06               (X_0.X_U2A.8)-15.96E-06                   
+
+(X_0.X_U2A.9)    0.0000               (X_1.$N_0001)  -18.0000                   
+
+(X_1.$N_0002)   18.0000               (X_1.$N_0003)-15.86E-06                   
+
+(X_1.$N_0004)-15.91E-06               (X_1.X_U2A.6) 4.768E-09                   
+
+(X_1.X_U2A.7)-32.25E-06               (X_1.X_U2A.8)-32.25E-06                   
+
+(X_1.X_U2A.9)    0.0000               (X_2.$N_0001)  -18.0000                   
+
+(X_2.$N_0002)   18.0000               (X_2.$N_0003)-32.05E-06                   
+
+(X_2.$N_0004)-32.15E-06               (X_2.X_U2A.6) 7.586E-09                   
+
+(X_2.X_U2A.7)-48.43E-06               (X_2.X_U2A.8)-48.43E-06                   
+
+(X_2.X_U2A.9)    0.0000               (X_0.X_U2A.10)     .6546                  
+
+(X_0.X_U2A.11)   17.6540              (X_0.X_U2A.12)   17.6540                  
+
+(X_0.X_U2A.53)   16.5000              (X_0.X_U2A.54)  -16.5000                  
+
+(X_0.X_U2A.90)-46.62E-09              (X_0.X_U2A.91)   50.0000                  
+
+(X_0.X_U2A.92)  -50.0000              (X_0.X_U2A.99)    0.0000                  
+
+(X_1.X_U2A.10)     .6546              (X_1.X_U2A.11)   17.6540                  
+
+(X_1.X_U2A.12)   17.6540              (X_1.X_U2A.53)   16.5000                  
+
+(X_1.X_U2A.54)  -16.5000              (X_1.X_U2A.90)-45.60E-09                  
+
+(X_1.X_U2A.91)   50.0000              (X_1.X_U2A.92)  -50.0000                  
+
+(X_1.X_U2A.99)    0.0000              (X_2.X_U2A.10)     .6546                  
+
+(X_2.X_U2A.11)   17.6540              (X_2.X_U2A.12)   17.6540                  
+
+(X_2.X_U2A.53)   16.5000              (X_2.X_U2A.54)  -16.5000                  
+
+(X_2.X_U2A.90)-71.74E-09              (X_2.X_U2A.91)   50.0000                  
+
+(X_2.X_U2A.92)  -50.0000              (X_2.X_U2A.99)    0.0000              
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V8         2.331E-11
+    X_0.V_V3    -2.034E-03
+    X_0.V_V4    -2.035E-03
+    X_1.V_V3    -2.034E-03
+    X_1.V_V4    -2.035E-03
+    X_2.V_V3    -2.034E-03
+    X_2.V_V4    -2.035E-03
+    X_0.X_U2A.vb   2.075E-14
+    X_0.X_U2A.vc   1.650E-11
+    X_0.X_U2A.ve   1.688E-11
+    X_0.X_U2A.vlim  -4.662E-11
+    X_0.X_U2A.vlp  -5.000E-11
+    X_0.X_U2A.vln  -5.001E-11
+    X_1.X_U2A.vb   4.801E-14
+    X_1.X_U2A.vc   1.650E-11
+    X_1.X_U2A.ve   1.819E-11
+    X_1.X_U2A.vlim  -4.560E-11
+    X_1.X_U2A.vlp  -5.000E-11
+    X_1.X_U2A.vln  -5.001E-11
+    X_2.X_U2A.vb   7.585E-14
+    X_2.X_U2A.vc   1.650E-11
+    X_2.X_U2A.ve   1.688E-11
+    X_2.X_U2A.vlim  -7.174E-11
+    X_2.X_U2A.vlp  -5.000E-11
+    X_2.X_U2A.vln  -5.001E-11
+
+    TOTAL POWER DISSIPATION   2.20E-01  WATTS
+
+
+
+
+**** VOLTAGE-CONTROLLED CURRENT SOURCES
+
+
+NAME         X_0.X_U2A.ga            X_0.X_U2A.gcm         
+I-SOURCE     1.114E-08               1.114E-08            
+
+NAME         X_1.X_U2A.ga            X_1.X_U2A.gcm         
+I-SOURCE     1.114E-08               1.114E-08            
+
+NAME         X_2.X_U2A.ga            X_2.X_U2A.gcm         
+I-SOURCE     1.113E-08               1.113E-08            
+
+
+**** VOLTAGE-CONTROLLED VOLTAGE SOURCES
+
+
+NAME         X_0.X_U2A.egnd          X_1.X_U2A.egnd        
+V-SOURCE     0.000E+00               0.000E+00            
+I-SOURCE     7.660E-07               7.660E-07            
+
+NAME         X_2.X_U2A.egnd        
+V-SOURCE     0.000E+00            
+I-SOURCE     7.660E-07            
+
+
+**** CURRENT-CONTROLLED CURRENT SOURCES
+
+
+NAME         X_0.X_U2A.fb            X_1.X_U2A.fb          
+I-SOURCE    -2.692E-06              -2.596E-06            
+
+NAME         X_2.X_U2A.fb          
+I-SOURCE    -2.501E-06            
+
+
+**** CURRENT-CONTROLLED VOLTAGE SOURCES
+
+
+NAME         X_0.X_U2A.hlim          X_1.X_U2A.hlim        
+V-SOURCE    -4.662E-08              -4.560E-08            
+I-SOURCE     9.324E-20               9.120E-20            
+
+NAME         X_2.X_U2A.hlim        
+V-SOURCE    -7.174E-08            
+I-SOURCE     1.435E-19            
+
+
+**** DIODES
+
+
+NAME         X_0.X_U2A.dc            X_0.X_U2A.de          
+MODEL        X_0.X_U2A.dy            X_0.X_U2A.dy          
+ID          -1.65E-11               -1.65E-11             
+VD          -1.65E+01               -1.65E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          2.39E-12                2.39E-12             
+
+NAME         X_0.X_U2A.dlp           X_0.X_U2A.dln         
+MODEL        X_0.X_U2A.dx            X_0.X_U2A.dx          
+ID          -5.00E-11               -5.00E-11             
+VD          -5.00E+01               -5.00E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          0.00E+00                0.00E+00             
+
+NAME         X_0.X_U2A.dp            X_1.X_U2A.dc          
+MODEL        X_0.X_U2A.dx            X_1.X_U2A.dy          
+ID          -3.60E-11               -1.65E-11             
+VD          -3.60E+01               -1.65E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          0.00E+00                2.39E-12             
+
+NAME         X_1.X_U2A.de            X_1.X_U2A.dlp         
+MODEL        X_1.X_U2A.dy            X_1.X_U2A.dx          
+ID          -1.65E-11               -5.00E-11             
+VD          -1.65E+01               -5.00E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          2.39E-12                0.00E+00             
+
+NAME         X_1.X_U2A.dln           X_1.X_U2A.dp          
+MODEL        X_1.X_U2A.dx            X_1.X_U2A.dx          
+ID          -5.00E-11               -3.60E-11             
+VD          -5.00E+01               -3.60E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          0.00E+00                0.00E+00             
+
+NAME         X_2.X_U2A.dc            X_2.X_U2A.de          
+MODEL        X_2.X_U2A.dy            X_2.X_U2A.dy          
+ID          -1.65E-11               -1.65E-11             
+VD          -1.65E+01               -1.65E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          2.39E-12                2.39E-12             
+
+NAME         X_2.X_U2A.dlp           X_2.X_U2A.dln         
+MODEL        X_2.X_U2A.dx            X_2.X_U2A.dx          
+ID          -5.00E-11               -5.00E-11             
+VD          -5.00E+01               -5.00E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          0.00E+00                0.00E+00             
+
+NAME         X_2.X_U2A.dp          
+MODEL        X_2.X_U2A.dx          
+ID          -3.60E-11             
+VD          -3.60E+01             
+REQ          1.00E+12             
+CAP          0.00E+00             
+
+
+**** JFETS
+
+
+NAME         X_0.X_U2A.j1            X_0.X_U2A.j2          
+MODEL        X_0.X_U2A.jx            X_0.X_U2A.jx          
+ID           1.17E-04                1.17E-04             
+VGS         -6.55E-01               -6.55E-01             
+VDS          1.70E+01                1.70E+01             
+GM           6.80E-04                6.80E-04             
+GDS          0.00E+00                0.00E+00             
+CGS          0.00E+00                0.00E+00             
+CGD          0.00E+00                0.00E+00             
+
+NAME         X_1.X_U2A.j1            X_1.X_U2A.j2          
+MODEL        X_1.X_U2A.jx            X_1.X_U2A.jx          
+ID           1.17E-04                1.17E-04             
+VGS         -6.55E-01               -6.55E-01             
+VDS          1.70E+01                1.70E+01             
+GM           6.80E-04                6.80E-04             
+GDS          0.00E+00                0.00E+00             
+CGS          0.00E+00                0.00E+00             
+CGD          0.00E+00                0.00E+00             
+
+NAME         X_2.X_U2A.j1            X_2.X_U2A.j2          
+MODEL        X_2.X_U2A.jx            X_2.X_U2A.jx          
+ID           1.17E-04                1.17E-04             
+VGS         -6.55E-01               -6.55E-01             
+VDS          1.70E+01                1.70E+01             
+GM           6.80E-04                6.80E-04             
+GDS          0.00E+00                0.00E+00             
+CGS          0.00E+00                0.00E+00             
+CGD          0.00E+00                0.00E+00              NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   in)    0.0000  (  out)-48.43E-06  ($N_0001)-15.96E-06                       
+
+($N_0002)-32.25E-06                   (X_0.$N_0001)  -18.0000                   
+
+(X_0.$N_0002)   18.0000               (X_0.$N_0003) 424.4E-09                   
+
+(X_0.$N_0004) 212.3E-09               (X_0.X_U2A.6) 2.038E-09                   
+
+(X_0.X_U2A.7)-15.96E-06               (X_0.X_U2A.8)-15.96E-06                   
+
+(X_0.X_U2A.9)    0.0000               (X_1.$N_0001)  -18.0000                   
+
+(X_1.$N_0002)   18.0000               (X_1.$N_0003)-15.86E-06                   
+
+(X_1.$N_0004)-15.91E-06               (X_1.X_U2A.6) 4.768E-09                   
+
+(X_1.X_U2A.7)-32.25E-06               (X_1.X_U2A.8)-32.25E-06                   
+
+(X_1.X_U2A.9)    0.0000               (X_2.$N_0001)  -18.0000                   
+
+(X_2.$N_0002)   18.0000               (X_2.$N_0003)-32.05E-06                   
+
+(X_2.$N_0004)-32.15E-06               (X_2.X_U2A.6) 7.548E-09                   
+
+(X_2.X_U2A.7)-48.43E-06               (X_2.X_U2A.8)-48.43E-06                   
+
+(X_2.X_U2A.9)    0.0000               (X_0.X_U2A.10)     .6546                  
+
+(X_0.X_U2A.11)   17.6540              (X_0.X_U2A.12)   17.6540                  
+
+(X_0.X_U2A.53)   16.5000              (X_0.X_U2A.54)  -16.5000                  
+
+(X_0.X_U2A.90)-46.62E-09              (X_0.X_U2A.91)   50.0000                  
+
+(X_0.X_U2A.92)  -50.0000              (X_0.X_U2A.99)    0.0000                  
+
+(X_1.X_U2A.10)     .6546              (X_1.X_U2A.11)   17.6540                  
+
+(X_1.X_U2A.12)   17.6540              (X_1.X_U2A.53)   16.5000                  
+
+(X_1.X_U2A.54)  -16.5000              (X_1.X_U2A.90)-42.91E-09                  
+
+(X_1.X_U2A.91)   50.0000              (X_1.X_U2A.92)  -50.0000                  
+
+(X_1.X_U2A.99)    0.0000              (X_2.X_U2A.10)     .6546                  
+
+(X_2.X_U2A.11)   17.6540              (X_2.X_U2A.12)   17.6540                  
+
+(X_2.X_U2A.53)   16.5000              (X_2.X_U2A.54)  -16.5000                  
+
+(X_2.X_U2A.90)-71.74E-09              (X_2.X_U2A.91)   50.0000                  
+
+(X_2.X_U2A.92)  -50.0000              (X_2.X_U2A.99)    0.0000              
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V8         2.331E-11
+    X_0.V_V3    -2.034E-03
+    X_0.V_V4    -2.035E-03
+    X_1.V_V3    -2.034E-03
+    X_1.V_V4    -2.035E-03
+    X_2.V_V3    -2.034E-03
+    X_2.V_V4    -2.035E-03
+    X_0.X_U2A.vb   2.038E-14
+    X_0.X_U2A.vc   1.650E-11
+    X_0.X_U2A.ve   1.819E-11
+    X_0.X_U2A.vlim  -4.662E-11
+    X_0.X_U2A.vlp  -5.000E-11
+    X_0.X_U2A.vln  -5.001E-11
+    X_1.X_U2A.vb   4.801E-14
+    X_1.X_U2A.vc   1.650E-11
+    X_1.X_U2A.ve   1.819E-11
+    X_1.X_U2A.vlim  -4.291E-11
+    X_1.X_U2A.vlp  -5.000E-11
+    X_1.X_U2A.vln  -5.001E-11
+    X_2.X_U2A.vb   7.548E-14
+    X_2.X_U2A.vc   1.650E-11
+    X_2.X_U2A.ve   1.819E-11
+    X_2.X_U2A.vlim  -7.174E-11
+    X_2.X_U2A.vlp  -5.000E-11
+    X_2.X_U2A.vln  -5.001E-11
+
+    TOTAL POWER DISSIPATION   2.20E-01  WATTS
+
+
+
+
+**** VOLTAGE-CONTROLLED CURRENT SOURCES
+
+
+NAME         X_0.X_U2A.ga            X_0.X_U2A.gcm         
+I-SOURCE     1.114E-08               1.114E-08            
+
+NAME         X_1.X_U2A.ga            X_1.X_U2A.gcm         
+I-SOURCE     1.114E-08               1.114E-08            
+
+NAME         X_2.X_U2A.ga            X_2.X_U2A.gcm         
+I-SOURCE     1.113E-08               1.113E-08            
+
+
+**** VOLTAGE-CONTROLLED VOLTAGE SOURCES
+
+
+NAME         X_0.X_U2A.egnd          X_1.X_U2A.egnd        
+V-SOURCE     0.000E+00               0.000E+00            
+I-SOURCE     7.660E-07               7.660E-07            
+
+NAME         X_2.X_U2A.egnd        
+V-SOURCE     0.000E+00            
+I-SOURCE     7.660E-07            
+
+
+**** CURRENT-CONTROLLED CURRENT SOURCES
+
+
+NAME         X_0.X_U2A.fb            X_1.X_U2A.fb          
+I-SOURCE    -2.689E-06              -2.597E-06            
+
+NAME         X_2.X_U2A.fb          
+I-SOURCE    -2.498E-06            
+
+
+**** CURRENT-CONTROLLED VOLTAGE SOURCES
+
+
+NAME         X_0.X_U2A.hlim          X_1.X_U2A.hlim        
+V-SOURCE    -4.662E-08              -4.291E-08            
+I-SOURCE     9.324E-20               8.582E-20            
+
+NAME         X_2.X_U2A.hlim        
+V-SOURCE    -7.174E-08            
+I-SOURCE     1.435E-19            
+
+
+**** DIODES
+
+
+NAME         X_0.X_U2A.dc            X_0.X_U2A.de          
+MODEL        X_0.X_U2A.dy            X_0.X_U2A.dy          
+ID          -1.65E-11               -1.65E-11             
+VD          -1.65E+01               -1.65E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          2.39E-12                2.39E-12             
+
+NAME         X_0.X_U2A.dlp           X_0.X_U2A.dln         
+MODEL        X_0.X_U2A.dx            X_0.X_U2A.dx          
+ID          -5.00E-11               -5.00E-11             
+VD          -5.00E+01               -5.00E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          0.00E+00                0.00E+00             
+
+NAME         X_0.X_U2A.dp            X_1.X_U2A.dc          
+MODEL        X_0.X_U2A.dx            X_1.X_U2A.dy          
+ID          -3.60E-11               -1.65E-11             
+VD          -3.60E+01               -1.65E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          0.00E+00                2.39E-12             
+
+NAME         X_1.X_U2A.de            X_1.X_U2A.dlp         
+MODEL        X_1.X_U2A.dy            X_1.X_U2A.dx          
+ID          -1.65E-11               -5.00E-11             
+VD          -1.65E+01               -5.00E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          2.39E-12                0.00E+00             
+
+NAME         X_1.X_U2A.dln           X_1.X_U2A.dp          
+MODEL        X_1.X_U2A.dx            X_1.X_U2A.dx          
+ID          -5.00E-11               -3.60E-11             
+VD          -5.00E+01               -3.60E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          0.00E+00                0.00E+00             
+
+NAME         X_2.X_U2A.dc            X_2.X_U2A.de          
+MODEL        X_2.X_U2A.dy            X_2.X_U2A.dy          
+ID          -1.65E-11               -1.65E-11             
+VD          -1.65E+01               -1.65E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          2.39E-12                2.39E-12             
+
+NAME         X_2.X_U2A.dlp           X_2.X_U2A.dln         
+MODEL        X_2.X_U2A.dx            X_2.X_U2A.dx          
+ID          -5.00E-11               -5.00E-11             
+VD          -5.00E+01               -5.00E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          0.00E+00                0.00E+00             
+
+NAME         X_2.X_U2A.dp          
+MODEL        X_2.X_U2A.dx          
+ID          -3.60E-11             
+VD          -3.60E+01             
+REQ          1.00E+12             
+CAP          0.00E+00             
+
+
+**** JFETS
+
+
+NAME         X_0.X_U2A.j1            X_0.X_U2A.j2          
+MODEL        X_0.X_U2A.jx            X_0.X_U2A.jx          
+ID           1.17E-04                1.17E-04             
+VGS         -6.55E-01               -6.55E-01             
+VDS          1.70E+01                1.70E+01             
+GM           6.80E-04                6.80E-04             
+GDS          0.00E+00                0.00E+00             
+CGS          0.00E+00                0.00E+00             
+CGD          0.00E+00                0.00E+00             
+
+NAME         X_1.X_U2A.j1            X_1.X_U2A.j2          
+MODEL        X_1.X_U2A.jx            X_1.X_U2A.jx          
+ID           1.17E-04                1.17E-04             
+VGS         -6.55E-01               -6.55E-01             
+VDS          1.70E+01                1.70E+01             
+GM           6.80E-04                6.80E-04             
+GDS          0.00E+00                0.00E+00             
+CGS          0.00E+00                0.00E+00             
+CGD          0.00E+00                0.00E+00             
+
+NAME         X_2.X_U2A.j1            X_2.X_U2A.j2          
+MODEL        X_2.X_U2A.jx            X_2.X_U2A.jx          
+ID           1.17E-04                1.17E-04             
+VGS         -6.55E-01               -6.55E-01             
+VDS          1.70E+01                1.70E+01             
+GM           6.80E-04                6.80E-04             
+GDS          0.00E+00                0.00E+00             
+CGS          0.00E+00                0.00E+00             
+CGD          0.00E+00                0.00E+00              NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   in)    0.0000  (  out)-48.43E-06  ($N_0001)-15.96E-06                       
+
+($N_0002)-32.25E-06                   (X_0.$N_0001)  -18.0000                   
+
+(X_0.$N_0002)   18.0000               (X_0.$N_0003) 424.2E-09                   
+
+(X_0.$N_0004) 212.1E-09               (X_0.X_U2A.6) 2.038E-09                   
+
+(X_0.X_U2A.7)-15.96E-06               (X_0.X_U2A.8)-15.96E-06                   
+
+(X_0.X_U2A.9)    0.0000               (X_1.$N_0001)  -18.0000                   
+
+(X_1.$N_0002)   18.0000               (X_1.$N_0003)-15.86E-06                   
+
+(X_1.$N_0004)-15.91E-06               (X_1.X_U2A.6) 4.768E-09                   
+
+(X_1.X_U2A.7)-32.25E-06               (X_1.X_U2A.8)-32.25E-06                   
+
+(X_1.X_U2A.9)    0.0000               (X_2.$N_0001)  -18.0000                   
+
+(X_2.$N_0002)   18.0000               (X_2.$N_0003)-32.05E-06                   
+
+(X_2.$N_0004)-32.15E-06               (X_2.X_U2A.6) 7.585E-09                   
+
+(X_2.X_U2A.7)-48.43E-06               (X_2.X_U2A.8)-48.43E-06                   
+
+(X_2.X_U2A.9)    0.0000               (X_0.X_U2A.10)     .6546                  
+
+(X_0.X_U2A.11)   17.6540              (X_0.X_U2A.12)   17.6540                  
+
+(X_0.X_U2A.53)   16.5000              (X_0.X_U2A.54)  -16.5000                  
+
+(X_0.X_U2A.90)-46.62E-09              (X_0.X_U2A.91)   50.0000                  
+
+(X_0.X_U2A.92)  -50.0000              (X_0.X_U2A.99)    0.0000                  
+
+(X_1.X_U2A.10)     .6546              (X_1.X_U2A.11)   17.6540                  
+
+(X_1.X_U2A.12)   17.6540              (X_1.X_U2A.53)   16.5000                  
+
+(X_1.X_U2A.54)  -16.5000              (X_1.X_U2A.90)-50.01E-09                  
+
+(X_1.X_U2A.91)   50.0000              (X_1.X_U2A.92)  -50.0000                  
+
+(X_1.X_U2A.99)    0.0000              (X_2.X_U2A.10)     .6546                  
+
+(X_2.X_U2A.11)   17.6540              (X_2.X_U2A.12)   17.6540                  
+
+(X_2.X_U2A.53)   16.5000              (X_2.X_U2A.54)  -16.5000                  
+
+(X_2.X_U2A.90)-71.74E-09              (X_2.X_U2A.91)   50.0000                  
+
+(X_2.X_U2A.92)  -50.0000              (X_2.X_U2A.99)    0.0000              
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V8         2.331E-11
+    X_0.V_V3    -2.034E-03
+    X_0.V_V4    -2.035E-03
+    X_1.V_V3    -2.034E-03
+    X_1.V_V4    -2.035E-03
+    X_2.V_V3    -2.034E-03
+    X_2.V_V4    -2.035E-03
+    X_0.X_U2A.vb   2.038E-14
+    X_0.X_U2A.vc   1.650E-11
+    X_0.X_U2A.ve   1.819E-11
+    X_0.X_U2A.vlim  -4.662E-11
+    X_0.X_U2A.vlp  -5.000E-11
+    X_0.X_U2A.vln  -5.001E-11
+    X_1.X_U2A.vb   4.801E-14
+    X_1.X_U2A.vc   1.650E-11
+    X_1.X_U2A.ve   1.819E-11
+    X_1.X_U2A.vlim  -5.001E-11
+    X_1.X_U2A.vlp  -5.000E-11
+    X_1.X_U2A.vln  -5.001E-11
+    X_2.X_U2A.vb   7.585E-14
+    X_2.X_U2A.vc   1.650E-11
+    X_2.X_U2A.ve   1.688E-11
+    X_2.X_U2A.vlim  -7.174E-11
+    X_2.X_U2A.vlp  -5.000E-11
+    X_2.X_U2A.vln  -5.001E-11
+
+    TOTAL POWER DISSIPATION   2.20E-01  WATTS
+
+
+
+
+**** VOLTAGE-CONTROLLED CURRENT SOURCES
+
+
+NAME         X_0.X_U2A.ga            X_0.X_U2A.gcm         
+I-SOURCE     1.114E-08               1.114E-08            
+
+NAME         X_1.X_U2A.ga            X_1.X_U2A.gcm         
+I-SOURCE     1.114E-08               1.114E-08            
+
+NAME         X_2.X_U2A.ga            X_2.X_U2A.gcm         
+I-SOURCE     1.113E-08               1.113E-08            
+
+
+**** VOLTAGE-CONTROLLED VOLTAGE SOURCES
+
+
+NAME         X_0.X_U2A.egnd          X_1.X_U2A.egnd        
+V-SOURCE     0.000E+00               0.000E+00            
+I-SOURCE     7.660E-07               7.660E-07            
+
+NAME         X_2.X_U2A.egnd        
+V-SOURCE     0.000E+00            
+I-SOURCE     7.660E-07            
+
+
+**** CURRENT-CONTROLLED CURRENT SOURCES
+
+
+NAME         X_0.X_U2A.fb            X_1.X_U2A.fb          
+I-SOURCE    -2.690E-06              -2.596E-06            
+
+NAME         X_2.X_U2A.fb          
+I-SOURCE    -2.501E-06            
+
+
+**** CURRENT-CONTROLLED VOLTAGE SOURCES
+
+
+NAME         X_0.X_U2A.hlim          X_1.X_U2A.hlim        
+V-SOURCE    -4.662E-08              -5.001E-08            
+I-SOURCE     9.324E-20               1.000E-19            
+
+NAME         X_2.X_U2A.hlim        
+V-SOURCE    -7.174E-08            
+I-SOURCE     1.435E-19            
+
+
+**** DIODES
+
+
+NAME         X_0.X_U2A.dc            X_0.X_U2A.de          
+MODEL        X_0.X_U2A.dy            X_0.X_U2A.dy          
+ID          -1.65E-11               -1.65E-11             
+VD          -1.65E+01               -1.65E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          2.39E-12                2.39E-12             
+
+NAME         X_0.X_U2A.dlp           X_0.X_U2A.dln         
+MODEL        X_0.X_U2A.dx            X_0.X_U2A.dx          
+ID          -5.00E-11               -5.00E-11             
+VD          -5.00E+01               -5.00E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          0.00E+00                0.00E+00             
+
+NAME         X_0.X_U2A.dp            X_1.X_U2A.dc          
+MODEL        X_0.X_U2A.dx            X_1.X_U2A.dy          
+ID          -3.60E-11               -1.65E-11             
+VD          -3.60E+01               -1.65E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          0.00E+00                2.39E-12             
+
+NAME         X_1.X_U2A.de            X_1.X_U2A.dlp         
+MODEL        X_1.X_U2A.dy            X_1.X_U2A.dx          
+ID          -1.65E-11               -5.00E-11             
+VD          -1.65E+01               -5.00E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          2.39E-12                0.00E+00             
+
+NAME         X_1.X_U2A.dln           X_1.X_U2A.dp          
+MODEL        X_1.X_U2A.dx            X_1.X_U2A.dx          
+ID          -5.00E-11               -3.60E-11             
+VD          -5.00E+01               -3.60E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          0.00E+00                0.00E+00             
+
+NAME         X_2.X_U2A.dc            X_2.X_U2A.de          
+MODEL        X_2.X_U2A.dy            X_2.X_U2A.dy          
+ID          -1.65E-11               -1.65E-11             
+VD          -1.65E+01               -1.65E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          2.39E-12                2.39E-12             
+
+NAME         X_2.X_U2A.dlp           X_2.X_U2A.dln         
+MODEL        X_2.X_U2A.dx            X_2.X_U2A.dx          
+ID          -5.00E-11               -5.00E-11             
+VD          -5.00E+01               -5.00E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          0.00E+00                0.00E+00             
+
+NAME         X_2.X_U2A.dp          
+MODEL        X_2.X_U2A.dx          
+ID          -3.60E-11             
+VD          -3.60E+01             
+REQ          1.00E+12             
+CAP          0.00E+00             
+
+
+**** JFETS
+
+
+NAME         X_0.X_U2A.j1            X_0.X_U2A.j2          
+MODEL        X_0.X_U2A.jx            X_0.X_U2A.jx          
+ID           1.17E-04                1.17E-04             
+VGS         -6.55E-01               -6.55E-01             
+VDS          1.70E+01                1.70E+01             
+GM           6.80E-04                6.80E-04             
+GDS          0.00E+00                0.00E+00             
+CGS          0.00E+00                0.00E+00             
+CGD          0.00E+00                0.00E+00             
+
+NAME         X_1.X_U2A.j1            X_1.X_U2A.j2          
+MODEL        X_1.X_U2A.jx            X_1.X_U2A.jx          
+ID           1.17E-04                1.17E-04             
+VGS         -6.55E-01               -6.55E-01             
+VDS          1.70E+01                1.70E+01             
+GM           6.80E-04                6.80E-04             
+GDS          0.00E+00                0.00E+00             
+CGS          0.00E+00                0.00E+00             
+CGD          0.00E+00                0.00E+00             
+
+NAME         X_2.X_U2A.j1            X_2.X_U2A.j2          
+MODEL        X_2.X_U2A.jx            X_2.X_U2A.jx          
+ID           1.17E-04                1.17E-04             
+VGS         -6.55E-01               -6.55E-01             
+VDS          1.70E+01                1.70E+01             
+GM           6.80E-04                6.80E-04             
+GDS          0.00E+00                0.00E+00             
+CGS          0.00E+00                0.00E+00             
+CGD          0.00E+00                0.00E+00              NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   in)    0.0000  (  out)-48.43E-06  ($N_0001)-15.96E-06                       
+
+($N_0002)-32.25E-06                   (X_0.$N_0001)  -18.0000                   
+
+(X_0.$N_0002)   18.0000               (X_0.$N_0003) 424.2E-09                   
+
+(X_0.$N_0004) 212.1E-09               (X_0.X_U2A.6) 2.038E-09                   
+
+(X_0.X_U2A.7)-15.96E-06               (X_0.X_U2A.8)-15.96E-06                   
+
+(X_0.X_U2A.9)    0.0000               (X_1.$N_0001)  -18.0000                   
+
+(X_1.$N_0002)   18.0000               (X_1.$N_0003)-15.86E-06                   
+
+(X_1.$N_0004)-15.91E-06               (X_1.X_U2A.6) 4.768E-09                   
+
+(X_1.X_U2A.7)-32.25E-06               (X_1.X_U2A.8)-32.25E-06                   
+
+(X_1.X_U2A.9)    0.0000               (X_2.$N_0001)  -18.0000                   
+
+(X_2.$N_0002)   18.0000               (X_2.$N_0003)-32.05E-06                   
+
+(X_2.$N_0004)-32.15E-06               (X_2.X_U2A.6) 7.548E-09                   
+
+(X_2.X_U2A.7)-48.43E-06               (X_2.X_U2A.8)-48.43E-06                   
+
+(X_2.X_U2A.9)    0.0000               (X_0.X_U2A.10)     .6546                  
+
+(X_0.X_U2A.11)   17.6540              (X_0.X_U2A.12)   17.6540                  
+
+(X_0.X_U2A.53)   16.5000              (X_0.X_U2A.54)  -16.5000                  
+
+(X_0.X_U2A.90)-46.62E-09              (X_0.X_U2A.91)   50.0000                  
+
+(X_0.X_U2A.92)  -50.0000              (X_0.X_U2A.99)    0.0000                  
+
+(X_1.X_U2A.10)     .6546              (X_1.X_U2A.11)   17.6540                  
+
+(X_1.X_U2A.12)   17.6540              (X_1.X_U2A.53)   16.5000                  
+
+(X_1.X_U2A.54)  -16.5000              (X_1.X_U2A.90)-47.24E-09                  
+
+(X_1.X_U2A.91)   50.0000              (X_1.X_U2A.92)  -50.0000                  
+
+(X_1.X_U2A.99)    0.0000              (X_2.X_U2A.10)     .6546                  
+
+(X_2.X_U2A.11)   17.6540              (X_2.X_U2A.12)   17.6540                  
+
+(X_2.X_U2A.53)   16.5000              (X_2.X_U2A.54)  -16.5000                  
+
+(X_2.X_U2A.90)-71.74E-09              (X_2.X_U2A.91)   50.0000                  
+
+(X_2.X_U2A.92)  -50.0000              (X_2.X_U2A.99)    0.0000              
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V8         2.331E-11
+    X_0.V_V3    -2.034E-03
+    X_0.V_V4    -2.035E-03
+    X_1.V_V3    -2.034E-03
+    X_1.V_V4    -2.035E-03
+    X_2.V_V3    -2.034E-03
+    X_2.V_V4    -2.035E-03
+    X_0.X_U2A.vb   2.038E-14
+    X_0.X_U2A.vc   1.650E-11
+    X_0.X_U2A.ve   1.819E-11
+    X_0.X_U2A.vlim  -4.662E-11
+    X_0.X_U2A.vlp  -5.000E-11
+    X_0.X_U2A.vln  -5.001E-11
+    X_1.X_U2A.vb   4.801E-14
+    X_1.X_U2A.vc   1.650E-11
+    X_1.X_U2A.ve   1.819E-11
+    X_1.X_U2A.vlim  -4.724E-11
+    X_1.X_U2A.vlp  -5.000E-11
+    X_1.X_U2A.vln  -5.001E-11
+    X_2.X_U2A.vb   7.548E-14
+    X_2.X_U2A.vc   1.650E-11
+    X_2.X_U2A.ve   1.819E-11
+    X_2.X_U2A.vlim  -7.174E-11
+    X_2.X_U2A.vlp  -5.000E-11
+    X_2.X_U2A.vln  -5.001E-11
+
+    TOTAL POWER DISSIPATION   2.20E-01  WATTS
+
+
+
+
+**** VOLTAGE-CONTROLLED CURRENT SOURCES
+
+
+NAME         X_0.X_U2A.ga            X_0.X_U2A.gcm         
+I-SOURCE     1.114E-08               1.114E-08            
+
+NAME         X_1.X_U2A.ga            X_1.X_U2A.gcm         
+I-SOURCE     1.114E-08               1.114E-08            
+
+NAME         X_2.X_U2A.ga            X_2.X_U2A.gcm         
+I-SOURCE     1.113E-08               1.113E-08            
+
+
+**** VOLTAGE-CONTROLLED VOLTAGE SOURCES
+
+
+NAME         X_0.X_U2A.egnd          X_1.X_U2A.egnd        
+V-SOURCE     0.000E+00               0.000E+00            
+I-SOURCE     7.660E-07               7.660E-07            
+
+NAME         X_2.X_U2A.egnd        
+V-SOURCE     0.000E+00            
+I-SOURCE     7.660E-07            
+
+
+**** CURRENT-CONTROLLED CURRENT SOURCES
+
+
+NAME         X_0.X_U2A.fb            X_1.X_U2A.fb          
+I-SOURCE    -2.690E-06              -2.595E-06            
+
+NAME         X_2.X_U2A.fb          
+I-SOURCE    -2.498E-06            
+
+
+**** CURRENT-CONTROLLED VOLTAGE SOURCES
+
+
+NAME         X_0.X_U2A.hlim          X_1.X_U2A.hlim        
+V-SOURCE    -4.662E-08              -4.724E-08            
+I-SOURCE     9.324E-20               9.448E-20            
+
+NAME         X_2.X_U2A.hlim        
+V-SOURCE    -7.174E-08            
+I-SOURCE     1.435E-19            
+
+
+**** DIODES
+
+
+NAME         X_0.X_U2A.dc            X_0.X_U2A.de          
+MODEL        X_0.X_U2A.dy            X_0.X_U2A.dy          
+ID          -1.65E-11               -1.65E-11             
+VD          -1.65E+01               -1.65E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          2.39E-12                2.39E-12             
+
+NAME         X_0.X_U2A.dlp           X_0.X_U2A.dln         
+MODEL        X_0.X_U2A.dx            X_0.X_U2A.dx          
+ID          -5.00E-11               -5.00E-11             
+VD          -5.00E+01               -5.00E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          0.00E+00                0.00E+00             
+
+NAME         X_0.X_U2A.dp            X_1.X_U2A.dc          
+MODEL        X_0.X_U2A.dx            X_1.X_U2A.dy          
+ID          -3.60E-11               -1.65E-11             
+VD          -3.60E+01               -1.65E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          0.00E+00                2.39E-12             
+
+NAME         X_1.X_U2A.de            X_1.X_U2A.dlp         
+MODEL        X_1.X_U2A.dy            X_1.X_U2A.dx          
+ID          -1.65E-11               -5.00E-11             
+VD          -1.65E+01               -5.00E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          2.39E-12                0.00E+00             
+
+NAME         X_1.X_U2A.dln           X_1.X_U2A.dp          
+MODEL        X_1.X_U2A.dx            X_1.X_U2A.dx          
+ID          -5.00E-11               -3.60E-11             
+VD          -5.00E+01               -3.60E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          0.00E+00                0.00E+00             
+
+NAME         X_2.X_U2A.dc            X_2.X_U2A.de          
+MODEL        X_2.X_U2A.dy            X_2.X_U2A.dy          
+ID          -1.65E-11               -1.65E-11             
+VD          -1.65E+01               -1.65E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          2.39E-12                2.39E-12             
+
+NAME         X_2.X_U2A.dlp           X_2.X_U2A.dln         
+MODEL        X_2.X_U2A.dx            X_2.X_U2A.dx          
+ID          -5.00E-11               -5.00E-11             
+VD          -5.00E+01               -5.00E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          0.00E+00                0.00E+00             
+
+NAME         X_2.X_U2A.dp          
+MODEL        X_2.X_U2A.dx          
+ID          -3.60E-11             
+VD          -3.60E+01             
+REQ          1.00E+12             
+CAP          0.00E+00             
+
+
+**** JFETS
+
+
+NAME         X_0.X_U2A.j1            X_0.X_U2A.j2          
+MODEL        X_0.X_U2A.jx            X_0.X_U2A.jx          
+ID           1.17E-04                1.17E-04             
+VGS         -6.55E-01               -6.55E-01             
+VDS          1.70E+01                1.70E+01             
+GM           6.80E-04                6.80E-04             
+GDS          0.00E+00                0.00E+00             
+CGS          0.00E+00                0.00E+00             
+CGD          0.00E+00                0.00E+00             
+
+NAME         X_1.X_U2A.j1            X_1.X_U2A.j2          
+MODEL        X_1.X_U2A.jx            X_1.X_U2A.jx          
+ID           1.17E-04                1.17E-04             
+VGS         -6.55E-01               -6.55E-01             
+VDS          1.70E+01                1.70E+01             
+GM           6.80E-04                6.80E-04             
+GDS          0.00E+00                0.00E+00             
+CGS          0.00E+00                0.00E+00             
+CGD          0.00E+00                0.00E+00             
+
+NAME         X_2.X_U2A.j1            X_2.X_U2A.j2          
+MODEL        X_2.X_U2A.jx            X_2.X_U2A.jx          
+ID           1.17E-04                1.17E-04             
+VGS         -6.55E-01               -6.55E-01             
+VDS          1.70E+01                1.70E+01             
+GM           6.80E-04                6.80E-04             
+GDS          0.00E+00                0.00E+00             
+CGS          0.00E+00                0.00E+00             
+CGD          0.00E+00                0.00E+00              NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   in)    0.0000  (  out)-48.43E-06  ($N_0001)-15.96E-06                       
+
+($N_0002)-32.25E-06                   (X_0.$N_0001)  -18.0000                   
+
+(X_0.$N_0002)   18.0000               (X_0.$N_0003) 424.2E-09                   
+
+(X_0.$N_0004) 212.1E-09               (X_0.X_U2A.6) 2.075E-09                   
+
+(X_0.X_U2A.7)-15.96E-06               (X_0.X_U2A.8)-15.96E-06                   
+
+(X_0.X_U2A.9)    0.0000               (X_1.$N_0001)  -18.0000                   
+
+(X_1.$N_0002)   18.0000               (X_1.$N_0003)-15.86E-06                   
+
+(X_1.$N_0004)-15.91E-06               (X_1.X_U2A.6) 4.768E-09                   
+
+(X_1.X_U2A.7)-32.25E-06               (X_1.X_U2A.8)-32.25E-06                   
+
+(X_1.X_U2A.9)    0.0000               (X_2.$N_0001)  -18.0000                   
+
+(X_2.$N_0002)   18.0000               (X_2.$N_0003)-32.05E-06                   
+
+(X_2.$N_0004)-32.15E-06               (X_2.X_U2A.6) 7.585E-09                   
+
+(X_2.X_U2A.7)-48.43E-06               (X_2.X_U2A.8)-48.43E-06                   
+
+(X_2.X_U2A.9)    0.0000               (X_0.X_U2A.10)     .6546                  
+
+(X_0.X_U2A.11)   17.6540              (X_0.X_U2A.12)   17.6540                  
+
+(X_0.X_U2A.53)   16.5000              (X_0.X_U2A.54)  -16.5000                  
+
+(X_0.X_U2A.90)-46.62E-09              (X_0.X_U2A.91)   50.0000                  
+
+(X_0.X_U2A.92)  -50.0000              (X_0.X_U2A.99)    0.0000                  
+
+(X_1.X_U2A.10)     .6546              (X_1.X_U2A.11)   17.6540                  
+
+(X_1.X_U2A.12)   17.6540              (X_1.X_U2A.53)   16.5000                  
+
+(X_1.X_U2A.54)  -16.5000              (X_1.X_U2A.90)-43.43E-09                  
+
+(X_1.X_U2A.91)   50.0000              (X_1.X_U2A.92)  -50.0000                  
+
+(X_1.X_U2A.99)    0.0000              (X_2.X_U2A.10)     .6546                  
+
+(X_2.X_U2A.11)   17.6540              (X_2.X_U2A.12)   17.6540                  
+
+(X_2.X_U2A.53)   16.5000              (X_2.X_U2A.54)  -16.5000                  
+
+(X_2.X_U2A.90)-71.74E-09              (X_2.X_U2A.91)   50.0000                  
+
+(X_2.X_U2A.92)  -50.0000              (X_2.X_U2A.99)    0.0000              
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V8         2.331E-11
+    X_0.V_V3    -2.034E-03
+    X_0.V_V4    -2.035E-03
+    X_1.V_V3    -2.034E-03
+    X_1.V_V4    -2.035E-03
+    X_2.V_V3    -2.034E-03
+    X_2.V_V4    -2.035E-03
+    X_0.X_U2A.vb   2.075E-14
+    X_0.X_U2A.vc   1.650E-11
+    X_0.X_U2A.ve   1.688E-11
+    X_0.X_U2A.vlim  -4.662E-11
+    X_0.X_U2A.vlp  -5.000E-11
+    X_0.X_U2A.vln  -5.001E-11
+    X_1.X_U2A.vb   4.801E-14
+    X_1.X_U2A.vc   1.650E-11
+    X_1.X_U2A.ve   1.819E-11
+    X_1.X_U2A.vlim  -4.343E-11
+    X_1.X_U2A.vlp  -5.000E-11
+    X_1.X_U2A.vln  -5.001E-11
+    X_2.X_U2A.vb   7.585E-14
+    X_2.X_U2A.vc   1.650E-11
+    X_2.X_U2A.ve   1.688E-11
+    X_2.X_U2A.vlim  -7.174E-11
+    X_2.X_U2A.vlp  -5.000E-11
+    X_2.X_U2A.vln  -5.001E-11
+
+    TOTAL POWER DISSIPATION   2.20E-01  WATTS
+
+
+
+
+**** VOLTAGE-CONTROLLED CURRENT SOURCES
+
+
+NAME         X_0.X_U2A.ga            X_0.X_U2A.gcm         
+I-SOURCE     1.114E-08               1.114E-08            
+
+NAME         X_1.X_U2A.ga            X_1.X_U2A.gcm         
+I-SOURCE     1.114E-08               1.114E-08            
+
+NAME         X_2.X_U2A.ga            X_2.X_U2A.gcm         
+I-SOURCE     1.113E-08               1.113E-08            
+
+
+**** VOLTAGE-CONTROLLED VOLTAGE SOURCES
+
+
+NAME         X_0.X_U2A.egnd          X_1.X_U2A.egnd        
+V-SOURCE     0.000E+00               0.000E+00            
+I-SOURCE     7.660E-07               7.660E-07            
+
+NAME         X_2.X_U2A.egnd        
+V-SOURCE     0.000E+00            
+I-SOURCE     7.660E-07            
+
+
+**** CURRENT-CONTROLLED CURRENT SOURCES
+
+
+NAME         X_0.X_U2A.fb            X_1.X_U2A.fb          
+I-SOURCE    -2.692E-06              -2.595E-06            
+
+NAME         X_2.X_U2A.fb          
+I-SOURCE    -2.501E-06            
+
+
+**** CURRENT-CONTROLLED VOLTAGE SOURCES
+
+
+NAME         X_0.X_U2A.hlim          X_1.X_U2A.hlim        
+V-SOURCE    -4.662E-08              -4.343E-08            
+I-SOURCE     9.324E-20               8.686E-20            
+
+NAME         X_2.X_U2A.hlim        
+V-SOURCE    -7.174E-08            
+I-SOURCE     1.435E-19            
+
+
+**** DIODES
+
+
+NAME         X_0.X_U2A.dc            X_0.X_U2A.de          
+MODEL        X_0.X_U2A.dy            X_0.X_U2A.dy          
+ID          -1.65E-11               -1.65E-11             
+VD          -1.65E+01               -1.65E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          2.39E-12                2.39E-12             
+
+NAME         X_0.X_U2A.dlp           X_0.X_U2A.dln         
+MODEL        X_0.X_U2A.dx            X_0.X_U2A.dx          
+ID          -5.00E-11               -5.00E-11             
+VD          -5.00E+01               -5.00E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          0.00E+00                0.00E+00             
+
+NAME         X_0.X_U2A.dp            X_1.X_U2A.dc          
+MODEL        X_0.X_U2A.dx            X_1.X_U2A.dy          
+ID          -3.60E-11               -1.65E-11             
+VD          -3.60E+01               -1.65E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          0.00E+00                2.39E-12             
+
+NAME         X_1.X_U2A.de            X_1.X_U2A.dlp         
+MODEL        X_1.X_U2A.dy            X_1.X_U2A.dx          
+ID          -1.65E-11               -5.00E-11             
+VD          -1.65E+01               -5.00E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          2.39E-12                0.00E+00             
+
+NAME         X_1.X_U2A.dln           X_1.X_U2A.dp          
+MODEL        X_1.X_U2A.dx            X_1.X_U2A.dx          
+ID          -5.00E-11               -3.60E-11             
+VD          -5.00E+01               -3.60E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          0.00E+00                0.00E+00             
+
+NAME         X_2.X_U2A.dc            X_2.X_U2A.de          
+MODEL        X_2.X_U2A.dy            X_2.X_U2A.dy          
+ID          -1.65E-11               -1.65E-11             
+VD          -1.65E+01               -1.65E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          2.39E-12                2.39E-12             
+
+NAME         X_2.X_U2A.dlp           X_2.X_U2A.dln         
+MODEL        X_2.X_U2A.dx            X_2.X_U2A.dx          
+ID          -5.00E-11               -5.00E-11             
+VD          -5.00E+01               -5.00E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          0.00E+00                0.00E+00             
+
+NAME         X_2.X_U2A.dp          
+MODEL        X_2.X_U2A.dx          
+ID          -3.60E-11             
+VD          -3.60E+01             
+REQ          1.00E+12             
+CAP          0.00E+00             
+
+
+**** JFETS
+
+
+NAME         X_0.X_U2A.j1            X_0.X_U2A.j2          
+MODEL        X_0.X_U2A.jx            X_0.X_U2A.jx          
+ID           1.17E-04                1.17E-04             
+VGS         -6.55E-01               -6.55E-01             
+VDS          1.70E+01                1.70E+01             
+GM           6.80E-04                6.80E-04             
+GDS          0.00E+00                0.00E+00             
+CGS          0.00E+00                0.00E+00             
+CGD          0.00E+00                0.00E+00             
+
+NAME         X_1.X_U2A.j1            X_1.X_U2A.j2          
+MODEL        X_1.X_U2A.jx            X_1.X_U2A.jx          
+ID           1.17E-04                1.17E-04             
+VGS         -6.55E-01               -6.55E-01             
+VDS          1.70E+01                1.70E+01             
+GM           6.80E-04                6.80E-04             
+GDS          0.00E+00                0.00E+00             
+CGS          0.00E+00                0.00E+00             
+CGD          0.00E+00                0.00E+00             
+
+NAME         X_2.X_U2A.j1            X_2.X_U2A.j2          
+MODEL        X_2.X_U2A.jx            X_2.X_U2A.jx          
+ID           1.17E-04                1.17E-04             
+VGS         -6.55E-01               -6.55E-01             
+VDS          1.70E+01                1.70E+01             
+GM           6.80E-04                6.80E-04             
+GDS          0.00E+00                0.00E+00             
+CGS          0.00E+00                0.00E+00             
+CGD          0.00E+00                0.00E+00              NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   in)    0.0000  (  out)-48.43E-06  ($N_0001)-15.96E-06                       
+
+($N_0002)-32.25E-06                   (X_0.$N_0001)  -18.0000                   
+
+(X_0.$N_0002)   18.0000               (X_0.$N_0003) 424.2E-09                   
+
+(X_0.$N_0004) 212.1E-09               (X_0.X_U2A.6) 2.038E-09                   
+
+(X_0.X_U2A.7)-15.96E-06               (X_0.X_U2A.8)-15.96E-06                   
+
+(X_0.X_U2A.9)    0.0000               (X_1.$N_0001)  -18.0000                   
+
+(X_1.$N_0002)   18.0000               (X_1.$N_0003)-15.86E-06                   
+
+(X_1.$N_0004)-15.91E-06               (X_1.X_U2A.6) 4.769E-09                   
+
+(X_1.X_U2A.7)-32.25E-06               (X_1.X_U2A.8)-32.25E-06                   
+
+(X_1.X_U2A.9)    0.0000               (X_2.$N_0001)  -18.0000                   
+
+(X_2.$N_0002)   18.0000               (X_2.$N_0003)-32.05E-06                   
+
+(X_2.$N_0004)-32.15E-06               (X_2.X_U2A.6) 7.548E-09                   
+
+(X_2.X_U2A.7)-48.43E-06               (X_2.X_U2A.8)-48.43E-06                   
+
+(X_2.X_U2A.9)    0.0000               (X_0.X_U2A.10)     .6546                  
+
+(X_0.X_U2A.11)   17.6540              (X_0.X_U2A.12)   17.6540                  
+
+(X_0.X_U2A.53)   16.5000              (X_0.X_U2A.54)  -16.5000                  
+
+(X_0.X_U2A.90)-46.62E-09              (X_0.X_U2A.91)   50.0000                  
+
+(X_0.X_U2A.92)  -50.0000              (X_0.X_U2A.99)    0.0000                  
+
+(X_1.X_U2A.10)     .6546              (X_1.X_U2A.11)   17.6540                  
+
+(X_1.X_U2A.12)   17.6540              (X_1.X_U2A.53)   16.5000                  
+
+(X_1.X_U2A.54)  -16.5000              (X_1.X_U2A.90)-43.65E-09                  
+
+(X_1.X_U2A.91)   50.0000              (X_1.X_U2A.92)  -50.0000                  
+
+(X_1.X_U2A.99)    0.0000              (X_2.X_U2A.10)     .6546                  
+
+(X_2.X_U2A.11)   17.6540              (X_2.X_U2A.12)   17.6540                  
+
+(X_2.X_U2A.53)   16.5000              (X_2.X_U2A.54)  -16.5000                  
+
+(X_2.X_U2A.90)-71.74E-09              (X_2.X_U2A.91)   50.0000                  
+
+(X_2.X_U2A.92)  -50.0000              (X_2.X_U2A.99)    0.0000              
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V8         2.331E-11
+    X_0.V_V3    -2.034E-03
+    X_0.V_V4    -2.035E-03
+    X_1.V_V3    -2.034E-03
+    X_1.V_V4    -2.035E-03
+    X_2.V_V3    -2.034E-03
+    X_2.V_V4    -2.035E-03
+    X_0.X_U2A.vb   2.038E-14
+    X_0.X_U2A.vc   1.650E-11
+    X_0.X_U2A.ve   1.819E-11
+    X_0.X_U2A.vlim  -4.662E-11
+    X_0.X_U2A.vlp  -5.000E-11
+    X_0.X_U2A.vln  -5.001E-11
+    X_1.X_U2A.vb   4.801E-14
+    X_1.X_U2A.vc   1.650E-11
+    X_1.X_U2A.ve   1.819E-11
+    X_1.X_U2A.vlim  -4.365E-11
+    X_1.X_U2A.vlp  -5.000E-11
+    X_1.X_U2A.vln  -5.001E-11
+    X_2.X_U2A.vb   7.548E-14
+    X_2.X_U2A.vc   1.650E-11
+    X_2.X_U2A.ve   1.819E-11
+    X_2.X_U2A.vlim  -7.174E-11
+    X_2.X_U2A.vlp  -5.000E-11
+    X_2.X_U2A.vln  -5.001E-11
+
+    TOTAL POWER DISSIPATION   2.20E-01  WATTS
+
+
+
+
+**** VOLTAGE-CONTROLLED CURRENT SOURCES
+
+
+NAME         X_0.X_U2A.ga            X_0.X_U2A.gcm         
+I-SOURCE     1.114E-08               1.114E-08            
+
+NAME         X_1.X_U2A.ga            X_1.X_U2A.gcm         
+I-SOURCE     1.114E-08               1.114E-08            
+
+NAME         X_2.X_U2A.ga            X_2.X_U2A.gcm         
+I-SOURCE     1.113E-08               1.113E-08            
+
+
+**** VOLTAGE-CONTROLLED VOLTAGE SOURCES
+
+
+NAME         X_0.X_U2A.egnd          X_1.X_U2A.egnd        
+V-SOURCE     0.000E+00               0.000E+00            
+I-SOURCE     7.660E-07               7.660E-07            
+
+NAME         X_2.X_U2A.egnd        
+V-SOURCE     0.000E+00            
+I-SOURCE     7.660E-07            
+
+
+**** CURRENT-CONTROLLED CURRENT SOURCES
+
+
+NAME         X_0.X_U2A.fb            X_1.X_U2A.fb          
+I-SOURCE    -2.689E-06              -2.597E-06            
+
+NAME         X_2.X_U2A.fb          
+I-SOURCE    -2.498E-06            
+
+
+**** CURRENT-CONTROLLED VOLTAGE SOURCES
+
+
+NAME         X_0.X_U2A.hlim          X_1.X_U2A.hlim        
+V-SOURCE    -4.662E-08              -4.365E-08            
+I-SOURCE     9.324E-20               8.730E-20            
+
+NAME         X_2.X_U2A.hlim        
+V-SOURCE    -7.174E-08            
+I-SOURCE     1.435E-19            
+
+
+**** DIODES
+
+
+NAME         X_0.X_U2A.dc            X_0.X_U2A.de          
+MODEL        X_0.X_U2A.dy            X_0.X_U2A.dy          
+ID          -1.65E-11               -1.65E-11             
+VD          -1.65E+01               -1.65E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          2.39E-12                2.39E-12             
+
+NAME         X_0.X_U2A.dlp           X_0.X_U2A.dln         
+MODEL        X_0.X_U2A.dx            X_0.X_U2A.dx          
+ID          -5.00E-11               -5.00E-11             
+VD          -5.00E+01               -5.00E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          0.00E+00                0.00E+00             
+
+NAME         X_0.X_U2A.dp            X_1.X_U2A.dc          
+MODEL        X_0.X_U2A.dx            X_1.X_U2A.dy          
+ID          -3.60E-11               -1.65E-11             
+VD          -3.60E+01               -1.65E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          0.00E+00                2.39E-12             
+
+NAME         X_1.X_U2A.de            X_1.X_U2A.dlp         
+MODEL        X_1.X_U2A.dy            X_1.X_U2A.dx          
+ID          -1.65E-11               -5.00E-11             
+VD          -1.65E+01               -5.00E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          2.39E-12                0.00E+00             
+
+NAME         X_1.X_U2A.dln           X_1.X_U2A.dp          
+MODEL        X_1.X_U2A.dx            X_1.X_U2A.dx          
+ID          -5.00E-11               -3.60E-11             
+VD          -5.00E+01               -3.60E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          0.00E+00                0.00E+00             
+
+NAME         X_2.X_U2A.dc            X_2.X_U2A.de          
+MODEL        X_2.X_U2A.dy            X_2.X_U2A.dy          
+ID          -1.65E-11               -1.65E-11             
+VD          -1.65E+01               -1.65E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          2.39E-12                2.39E-12             
+
+NAME         X_2.X_U2A.dlp           X_2.X_U2A.dln         
+MODEL        X_2.X_U2A.dx            X_2.X_U2A.dx          
+ID          -5.00E-11               -5.00E-11             
+VD          -5.00E+01               -5.00E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          0.00E+00                0.00E+00             
+
+NAME         X_2.X_U2A.dp          
+MODEL        X_2.X_U2A.dx          
+ID          -3.60E-11             
+VD          -3.60E+01             
+REQ          1.00E+12             
+CAP          0.00E+00             
+
+
+**** JFETS
+
+
+NAME         X_0.X_U2A.j1            X_0.X_U2A.j2          
+MODEL        X_0.X_U2A.jx            X_0.X_U2A.jx          
+ID           1.17E-04                1.17E-04             
+VGS         -6.55E-01               -6.55E-01             
+VDS          1.70E+01                1.70E+01             
+GM           6.80E-04                6.80E-04             
+GDS          0.00E+00                0.00E+00             
+CGS          0.00E+00                0.00E+00             
+CGD          0.00E+00                0.00E+00             
+
+NAME         X_1.X_U2A.j1            X_1.X_U2A.j2          
+MODEL        X_1.X_U2A.jx            X_1.X_U2A.jx          
+ID           1.17E-04                1.17E-04             
+VGS         -6.55E-01               -6.55E-01             
+VDS          1.70E+01                1.70E+01             
+GM           6.80E-04                6.80E-04             
+GDS          0.00E+00                0.00E+00             
+CGS          0.00E+00                0.00E+00             
+CGD          0.00E+00                0.00E+00             
+
+NAME         X_2.X_U2A.j1            X_2.X_U2A.j2          
+MODEL        X_2.X_U2A.jx            X_2.X_U2A.jx          
+ID           1.17E-04                1.17E-04             
+VGS         -6.55E-01               -6.55E-01             
+VDS          1.70E+01                1.70E+01             
+GM           6.80E-04                6.80E-04             
+GDS          0.00E+00                0.00E+00             
+CGS          0.00E+00                0.00E+00             
+CGD          0.00E+00                0.00E+00             
+
+Mean Deviation =  421.1500E-06
+Sigma          =    2.7449E-03
+
+ RUN                    MAX DEVIATION FROM NOMINAL
+
+X_2.C_C2 X_2.CKAPACITA C
+                       4.5658E-03  (1.66 sigma)  higher  at F =    1.8781E+03
+                        (   4.9023% change per 1% change in Model Parameter)
+
+X_2.R_R1 X_2.RODPOR R
+                       4.2953E-03  (1.56 sigma)  higher  at F =    1.8781E+03
+                        (   4.6119% change per 1% change in Model Parameter)
+
+X_2.R_R2 X_2.RODPOR R
+                       4.2679E-03  (1.55 sigma)  higher  at F =    1.8781E+03
+                        (   4.5824% change per 1% change in Model Parameter)
+
+X_2.C_C1 X_2.CKAPACITA C
+                       4.0106E-03  (1.46 sigma)  higher  at F =    1.8738E+03
+                        (   4.3422% change per 1% change in Model Parameter)
+
+X_1.C_C1 X_1.CKAPACITA C
+                       2.0275E-03  ( .74 sigma)  lower  at F =    1.5199E+03
+                        (   2.0872% change per 1% change in Model Parameter)
+
+X_1.R_R1 X_1.RODPOR R
+                       1.7150E-03  ( .62 sigma)  lower  at F =    1.9174E+03
+                        (   1.7432% change per 1% change in Model Parameter)
+
+X_1.R_R2 X_1.RODPOR R
+                       1.7130E-03  ( .62 sigma)  lower  at F =    1.9174E+03
+                        (   1.7411% change per 1% change in Model Parameter)
+
+X_1.C_C2 X_1.CKAPACITA C
+                       1.6094E-03  ( .59 sigma)  lower  at F =    1.9174E+03
+                        (   1.6358% change per 1% change in Model Parameter)
+
+X_0.C_C1 X_0.CKAPACITA C
+                       1.4393E-03  ( .52 sigma)  lower  at F =    1.3028E+03
+                        (   1.1931% change per 1% change in Model Parameter)
+
+X_0.R_R1 X_0.RODPOR R
+                       1.2538E-03  ( .46 sigma)  lower  at F =    1.3209E+03
+                        (   1.0374% change per 1% change in Model Parameter)
+
+X_0.R_R2 X_0.RODPOR R
+                       1.2536E-03  ( .46 sigma)  lower  at F =    1.3209E+03
+                        (   1.0372% change per 1% change in Model Parameter)
+
+X_0.C_C2 X_0.CKAPACITA C
+                       1.0741E-03  ( .39 sigma)  lower  at F =    1.3424E+03
+                        (    .8911% change per 1% change in Model Parameter)
+
+
+**** 12/09/19 11:26:06 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\Semestralka_filtr_k_odevzdani.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      WORST CASE ALL DEVICES
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   in)    0.0000  (  out)-48.42E-06  ($N_0001)-15.95E-06                       
+
+($N_0002)-32.24E-06                   (X_0.$N_0001)  -18.0000                   
+
+(X_0.$N_0002)   18.0000               (X_0.$N_0003) 428.5E-09                   
+
+(X_0.$N_0004) 214.2E-09               (X_0.X_U2A.6) 2.037E-09                   
+
+(X_0.X_U2A.7)-15.96E-06               (X_0.X_U2A.8)-15.96E-06                   
+
+(X_0.X_U2A.9)    0.0000               (X_1.$N_0001)  -18.0000                   
+
+(X_1.$N_0002)   18.0000               (X_1.$N_0003)-15.86E-06                   
+
+(X_1.$N_0004)-15.91E-06               (X_1.X_U2A.6) 4.768E-09                   
+
+(X_1.X_U2A.7)-32.24E-06               (X_1.X_U2A.8)-32.24E-06                   
+
+(X_1.X_U2A.9)    0.0000               (X_2.$N_0001)  -18.0000                   
+
+(X_2.$N_0002)   18.0000               (X_2.$N_0003)-32.04E-06                   
+
+(X_2.$N_0004)-32.14E-06               (X_2.X_U2A.6) 7.585E-09                   
+
+(X_2.X_U2A.7)-48.43E-06               (X_2.X_U2A.8)-48.43E-06                   
+
+(X_2.X_U2A.9)    0.0000               (X_0.X_U2A.10)     .6546                  
+
+(X_0.X_U2A.11)   17.6540              (X_0.X_U2A.12)   17.6540                  
+
+(X_0.X_U2A.53)   16.5000              (X_0.X_U2A.54)  -16.5000                  
+
+(X_0.X_U2A.90)-46.62E-09              (X_0.X_U2A.91)   50.0000                  
+
+(X_0.X_U2A.92)  -50.0000              (X_0.X_U2A.99)    0.0000                  
+
+(X_1.X_U2A.10)     .6546              (X_1.X_U2A.11)   17.6540                  
+
+(X_1.X_U2A.12)   17.6540              (X_1.X_U2A.53)   16.5000                  
+
+(X_1.X_U2A.54)  -16.5000              (X_1.X_U2A.90)-40.70E-09                  
+
+(X_1.X_U2A.91)   50.0000              (X_1.X_U2A.92)  -50.0000                  
+
+(X_1.X_U2A.99)    0.0000              (X_2.X_U2A.10)     .6546                  
+
+(X_2.X_U2A.11)   17.6540              (X_2.X_U2A.12)   17.6540                  
+
+(X_2.X_U2A.53)   16.5000              (X_2.X_U2A.54)  -16.5000                  
+
+(X_2.X_U2A.90)-71.73E-09              (X_2.X_U2A.91)   50.0000                  
+
+(X_2.X_U2A.92)  -50.0000              (X_2.X_U2A.99)    0.0000              
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V8         2.331E-11
+    X_0.V_V3    -2.034E-03
+    X_0.V_V4    -2.035E-03
+    X_1.V_V3    -2.034E-03
+    X_1.V_V4    -2.035E-03
+    X_2.V_V3    -2.034E-03
+    X_2.V_V4    -2.035E-03
+    X_0.X_U2A.vb   2.037E-14
+    X_0.X_U2A.vc   1.650E-11
+    X_0.X_U2A.ve   1.819E-11
+    X_0.X_U2A.vlim  -4.662E-11
+    X_0.X_U2A.vlp  -5.000E-11
+    X_0.X_U2A.vln  -5.001E-11
+    X_1.X_U2A.vb   4.800E-14
+    X_1.X_U2A.vc   1.650E-11
+    X_1.X_U2A.ve   1.819E-11
+    X_1.X_U2A.vlim  -4.070E-11
+    X_1.X_U2A.vlp  -5.000E-11
+    X_1.X_U2A.vln  -5.001E-11
+    X_2.X_U2A.vb   7.585E-14
+    X_2.X_U2A.vc   1.650E-11
+    X_2.X_U2A.ve   1.688E-11
+    X_2.X_U2A.vlim  -7.173E-11
+    X_2.X_U2A.vlp  -5.000E-11
+    X_2.X_U2A.vln  -5.001E-11
+
+    TOTAL POWER DISSIPATION   2.20E-01  WATTS
+
+
+**** 12/09/19 11:26:06 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\Semestralka_filtr_k_odevzdani.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+                      WORST CASE ALL DEVICES
+
+******************************************************************************
+
+
+
+
+
+
+**** VOLTAGE-CONTROLLED CURRENT SOURCES
+
+
+NAME         X_0.X_U2A.ga            X_0.X_U2A.gcm         
+I-SOURCE     1.114E-08               1.114E-08            
+
+NAME         X_1.X_U2A.ga            X_1.X_U2A.gcm         
+I-SOURCE     1.114E-08               1.114E-08            
+
+NAME         X_2.X_U2A.ga            X_2.X_U2A.gcm         
+I-SOURCE     1.113E-08               1.113E-08            
+
+
+**** VOLTAGE-CONTROLLED VOLTAGE SOURCES
+
+
+NAME         X_0.X_U2A.egnd          X_1.X_U2A.egnd        
+V-SOURCE     0.000E+00               0.000E+00            
+I-SOURCE     7.660E-07               7.660E-07            
+
+NAME         X_2.X_U2A.egnd        
+V-SOURCE     0.000E+00            
+I-SOURCE     7.660E-07            
+
+
+**** CURRENT-CONTROLLED CURRENT SOURCES
+
+
+NAME         X_0.X_U2A.fb            X_1.X_U2A.fb          
+I-SOURCE    -2.690E-06              -2.597E-06            
+
+NAME         X_2.X_U2A.fb          
+I-SOURCE    -2.501E-06            
+
+
+**** CURRENT-CONTROLLED VOLTAGE SOURCES
+
+
+NAME         X_0.X_U2A.hlim          X_1.X_U2A.hlim        
+V-SOURCE    -4.662E-08              -4.070E-08            
+I-SOURCE     9.324E-20               8.139E-20            
+
+NAME         X_2.X_U2A.hlim        
+V-SOURCE    -7.173E-08            
+I-SOURCE     1.435E-19            
+
+
+**** DIODES
+
+
+NAME         X_0.X_U2A.dc            X_0.X_U2A.de          
+MODEL        X_0.X_U2A.dy            X_0.X_U2A.dy          
+ID          -1.65E-11               -1.65E-11             
+VD          -1.65E+01               -1.65E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          2.39E-12                2.39E-12             
+
+NAME         X_0.X_U2A.dlp           X_0.X_U2A.dln         
+MODEL        X_0.X_U2A.dx            X_0.X_U2A.dx          
+ID          -5.00E-11               -5.00E-11             
+VD          -5.00E+01               -5.00E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          0.00E+00                0.00E+00             
+
+NAME         X_0.X_U2A.dp            X_1.X_U2A.dc          
+MODEL        X_0.X_U2A.dx            X_1.X_U2A.dy          
+ID          -3.60E-11               -1.65E-11             
+VD          -3.60E+01               -1.65E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          0.00E+00                2.39E-12             
+
+NAME         X_1.X_U2A.de            X_1.X_U2A.dlp         
+MODEL        X_1.X_U2A.dy            X_1.X_U2A.dx          
+ID          -1.65E-11               -5.00E-11             
+VD          -1.65E+01               -5.00E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          2.39E-12                0.00E+00             
+
+NAME         X_1.X_U2A.dln           X_1.X_U2A.dp          
+MODEL        X_1.X_U2A.dx            X_1.X_U2A.dx          
+ID          -5.00E-11               -3.60E-11             
+VD          -5.00E+01               -3.60E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          0.00E+00                0.00E+00             
+
+NAME         X_2.X_U2A.dc            X_2.X_U2A.de          
+MODEL        X_2.X_U2A.dy            X_2.X_U2A.dy          
+ID          -1.65E-11               -1.65E-11             
+VD          -1.65E+01               -1.65E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          2.39E-12                2.39E-12             
+
+NAME         X_2.X_U2A.dlp           X_2.X_U2A.dln         
+MODEL        X_2.X_U2A.dx            X_2.X_U2A.dx          
+ID          -5.00E-11               -5.00E-11             
+VD          -5.00E+01               -5.00E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          0.00E+00                0.00E+00             
+
+NAME         X_2.X_U2A.dp          
+MODEL        X_2.X_U2A.dx          
+ID          -3.60E-11             
+VD          -3.60E+01             
+REQ          1.00E+12             
+CAP          0.00E+00             
+
+
+**** JFETS
+
+
+NAME         X_0.X_U2A.j1            X_0.X_U2A.j2          
+MODEL        X_0.X_U2A.jx            X_0.X_U2A.jx          
+ID           1.17E-04                1.17E-04             
+VGS         -6.55E-01               -6.55E-01             
+VDS          1.70E+01                1.70E+01             
+GM           6.80E-04                6.80E-04             
+GDS          0.00E+00                0.00E+00             
+CGS          0.00E+00                0.00E+00             
+CGD          0.00E+00                0.00E+00             
+
+NAME         X_1.X_U2A.j1            X_1.X_U2A.j2          
+MODEL        X_1.X_U2A.jx            X_1.X_U2A.jx          
+ID           1.17E-04                1.17E-04             
+VGS         -6.55E-01               -6.55E-01             
+VDS          1.70E+01                1.70E+01             
+GM           6.80E-04                6.80E-04             
+GDS          0.00E+00                0.00E+00             
+CGS          0.00E+00                0.00E+00             
+CGD          0.00E+00                0.00E+00             
+
+NAME         X_2.X_U2A.j1            X_2.X_U2A.j2          
+MODEL        X_2.X_U2A.jx            X_2.X_U2A.jx          
+ID           1.17E-04                1.17E-04             
+VGS         -6.55E-01               -6.55E-01             
+VDS          1.70E+01                1.70E+01             
+GM           6.80E-04                6.80E-04             
+GDS          0.00E+00                0.00E+00             
+CGS          0.00E+00                0.00E+00             
+CGD          0.00E+00                0.00E+00             
+**** 12/09/19 11:26:06 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\Semestralka_filtr_k_odevzdani.sch
+
+
+ ****     UPDATED MODEL PARAMETERS         TEMPERATURE =   27.000 DEG C
+
+                      WORST CASE ALL DEVICES
+
+******************************************************************************
+
+
+
+Device       MODEL        PARAMETER    NEW VALUE    
+X_0.C_C1     X_0.CkapacitaC               1.05          (Increased)  
+X_0.C_C2     X_0.CkapacitaC               1.05          (Increased)  
+X_1.C_C1     X_1.CkapacitaC               1.05          (Increased)  
+X_1.C_C2     X_1.CkapacitaC               1.05          (Increased)  
+X_2.C_C1     X_2.CkapacitaC                .95          (Decreased)  
+X_2.C_C2     X_2.CkapacitaC                .95          (Decreased)  
+X_0.R_R2     X_0.Rodpor   R               1.01          (Increased)  
+X_0.R_R1     X_0.Rodpor   R               1.01          (Increased)  
+X_1.R_R2     X_1.Rodpor   R               1.01          (Increased)  
+X_1.R_R1     X_1.Rodpor   R               1.01          (Increased)  
+X_2.R_R2     X_2.Rodpor   R                .99          (Decreased)  
+X_2.R_R1     X_2.Rodpor   R                .99          (Decreased)  
+    
+
+**** 12/09/19 11:26:06 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\Semestralka_filtr_k_odevzdani.sch
+
+
+ ****     SORTED DEVIATIONS OF V(out)      TEMPERATURE =   27.000 DEG C
+
+                      WORST CASE SUMMARY
+
+******************************************************************************
+
+
+
+
+
+Mean Deviation =    -.5635
+Sigma          =    0     
+
+ RUN                    MAX DEVIATION FROM NOMINAL
+
+WORST CASE ALL DEVICES
+                         .5635  lower  at F =    1.9174E+03
+                        ( 157.28% of Nominal)
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME            2.78
+

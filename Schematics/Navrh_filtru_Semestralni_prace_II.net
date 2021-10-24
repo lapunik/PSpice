@@ -1,0 +1,7 @@
+* Schematics Netlist *
+
+
+
+V_V1         IN 0 DC 0V AC 1V 
+R_R1         0 OUT  {odpor}  
+E_E2         OUT 0 LAPLACE { V(IN, 0) } = { {fp/((fp_2)*(fp*1.4142*s)*(s_2))} }

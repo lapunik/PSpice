@@ -1,0 +1,25 @@
+* Schematics Netlist *
+
+
+
+D_D8         $N_0001 usm D1N4148 
+D_D7         $N_0002 usm D1N4148 
+V_V1         $N_0002 $N_0001  
++PULSE +22 -22 0 0 0 52u 104u
+D_D9         0 $N_0002 D1N4148 
+D_D10         0 $N_0001 D1N4148 
+X_U2         usm $N_0003 0 LM7805C
+D_D12         $N_0003 Vcc D1N5819 
+D_D13         $N_0003 Vcc D1N5819 
+R_R4         0 Vcc  50k  
+C_C3         0 $N_0003  0.1u  
+C_C2         0 $N_0003  470u  
+C_C4         0 Vcc  0.1u  
+C_C5         0 Vcc  0.1u  
+C_C6         0 Vcc  470u  
+C_C1         0 usm  0.1u  
+R_R6         0 $N_0004  1k  
+X_U3A         $N_0004 AD $N_0005 0 AD AD704/AD
+V_V4         $N_0005 0 3.3V
+R_R7         0 AD  50k  
+R_R5         $N_0004 usm  5k  

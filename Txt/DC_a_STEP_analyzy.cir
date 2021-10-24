@@ -1,0 +1,38 @@
+***DC_a_STEP_analyzy.cir***
+
+.LIB "nom.lib"
+
+V1 1 0 DC 10
+R1 1 2 1k
+R2 2 0 {odpor}
+
+.PARAM odpor=1k
+
+.OP
+
+.PROBE V(1) V(2)
+
+*definice: .DC<typ_rozmitani:LIN,dec,oct><rozmitana_velicina><od><do><INKREMENT/pocet_bodu_na_dekadu/pocet_bodu_na_oktavu>
+*+ <typ_rozmitani:LIN,dec,oct><rozmitana_velicina><od><do><INKREMENT/pocet_bodu_na_dekadu/pocet_bodu_na_oktavu> ; druha smyèka DC analýzy, definuje nám parametr analýzy (*+ znamená že pokraèuji v pøedchozí rádce)
+* první smyèka analýzy nám udává rozlišení analýzy, tj. výpoèetní poèet bodù, druhá smycka pak pocet vykreslenych charakteristik
+* (prvni symèka je jako Uce a druhá jako Ib u bipolarniho tranzistoru)
+* pro první smycku volim inktement tak abych mel alespon 1000 bodu, pro druhou smycku, treba do deseti charakteristik
+
+*.DC LIN V1 0 5 5m ; 5m = 1/1000 5 voltù 
+
+*definice DC analýzy pro globální parametr .DC <LIN> PARAM <jmeno_globalniho_parametru><od><do><inkrement>
+* pokud budu chtít parametr(rozmitana velicina) jenom pro nekolik danych hodnot, muzu je zadat jako LIST:
+*definice pro LIST: .DC <rozmitana_velicina> LIST <hodnota1 hodnota2 ... hodnotaN>
+
+
+*.DC LIN V1 0 5 5m LIN PARAM odpor 100 1000 100; pri tomto postupu se zada napeti a spocita pro vsechny parametry(IB) atd..atd.. takže mi nenapise jaka cara je pro jaky (IB)
+
+*definice parametrikou analyzu .STEP <typ_rozmitani:LIN,dec,oct><rozmitana_velicina><od><do><INKREMENT/pocet_bodu_na_dekadu/pocet_bodu_na_oktavu>
+* zase muzu pouzit list
+
+.DC LIN V1 0 5 5m
+*.STEP LIN PARAM odpor 100 1000 100
+*vlastne rozdelena predchozi dc analyza do dvou radku
+.STEP PARAM odpor LIST 113 156 257 10k 100k; ukazka listu, (parametry musi jit vzestupne nebo sestupne, nikdy ne na preskacku)
+
+.END

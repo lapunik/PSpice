@@ -1,0 +1,23 @@
+* C:\Users\Lapunik\OneDrive\Dokumenty\PSpice\ENZ\Schematic_1_cvi_Zatezovaci_carakteristika.sch
+
+* Schematics Version 9.2
+* Tue Feb 25 12:04:07 2020
+
+
+.PARAM         zatez={5.1/2} 
+
+** Analysis setup **
+.DC LIN PARAM zatez 100 1m 1m 
+.OP 
+
+
+* From [PSPICE NETLIST] section of C:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "nom.lib"
+
+.INC "Schematic_1_cvi_Zatezovaci_carakteristika.net"
+
+
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END

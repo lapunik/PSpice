@@ -1,0 +1,52 @@
+
+**** 11/14/19 11:57:00 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\statistika_schematic.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.2
+* Thu Nov 14 11:57:00 2019
+
+
+
+** Analysis setup **
+.ac DEC 101 160k 160.000k
+-----------------$
+ERROR -- Invalid value
+.MC 100 AC v([out]) YMAX
++  OUTPUT ALL
+.OP 
+
+
+* From [PSPICE NETLIST] section of C:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "nom.lib"
+
+.INC "statistika_schematic.net"
+
+
+
+**** INCLUDING statistika_schematic.net ****
+* Schematics Netlist *
+
+
+
+R_R1         in out R_R1 1k  
+.model        R_R1 RES R=1 DEV=10%
+C_C1         0 out C_C1 1n  
+.model        C_C1 CAP C=1 DEV=30%
+V_V1         in 0 DC 0V AC 1 
+
+**** RESUMING statistika_schematic.cir ****
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END
+

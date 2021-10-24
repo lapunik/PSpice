@@ -1,0 +1,24 @@
+* C:\Users\Lapunik\Dropbox\PSpice\Schematics\Step_analyzy_Schematic.sch
+
+* Schematics Version 9.2
+* Thu Oct 24 11:45:58 2019
+
+
+.PARAM         odpor=1k 
+
+** Analysis setup **
+.DC LIN V_V1 0 5 5m 
+.STEP LIN PARAM odpor 100 1000 100 
+.OP 
+
+
+* From [PSPICE NETLIST] section of C:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "nom.lib"
+
+.INC "Step_analyzy_Schematic.net"
+
+
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END

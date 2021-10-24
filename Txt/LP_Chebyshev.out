@@ -1,0 +1,82 @@
+
+**** 12/02/19 19:27:31 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ *LP_CHEBYSHEV.cir*
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+.LIB "nom.lib"
+
+V1 1 0 AC 1 
+R1 1 0 1MEG 
+E1 2 0 CHEBYSHEV {V(1)}=LP 2k 3k 2 30 
+R2 2 0 1MEG 
+.OP
+ 
+.AC DEC 101 1 100k 
+
+.PROBE V(2) 
+
+.END
+
+**** 12/02/19 19:27:31 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ *LP_CHEBYSHEV.cir*
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(    1)    0.0000  (    2)    0.0000  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V1           0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+**** 12/02/19 19:27:31 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ *LP_CHEBYSHEV.cir*
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** VOLTAGE-CONTROLLED VOLTAGE SOURCES
+
+
+NAME         E1        
+V-SOURCE     0.000E+00
+I-SOURCE     0.000E+00
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .08
+

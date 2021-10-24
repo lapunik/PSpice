@@ -1,0 +1,23 @@
+* C:\Users\Lapunik\Dropbox\PSpice\Schematics\knihovna_usek_vedeni_Schematic1.sch
+
+* Schematics Version 9.2
+* Wed Dec 04 14:14:57 2019
+
+
+
+** Analysis setup **
+.tran 10u 10m 0 10u
+.OP 
+
+
+* From [PSPICE NETLIST] section of C:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "C:\Users\Lapunik\Dropbox\PSpice\Knihovna_z_netu\nova\knihovna.lib"
+.lib "nom.lib"
+
+.INC "knihovna_usek_vedeni_Schematic1.sub"
+
+
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END

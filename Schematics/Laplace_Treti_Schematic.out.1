@@ -1,0 +1,51 @@
+
+**** 12/06/19 20:08:07 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\Laplace_Treti_Schematic.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.2
+* Fri Dec 06 20:07:42 2019
+
+
+.PARAM         odpor=1MEG 
+
+** Analysis setup **
+.ac DEC 101 10 100k
+.OP 
+
+
+* From [PSPICE NETLIST] section of C:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "C:\Users\Lapunik\Dropbox\PSpice\Knihovna_z_netu\nova\knihovna.lib"
+.lib "nom.lib"
+
+.INC "Laplace_Treti_Schematic.net"
+
+
+
+**** INCLUDING Laplace_Treti_Schematic.net ****
+* Schematics Netlist *
+
+
+
+R_R1         0 $N_0001  {odpor}  
+V_V1         IN 0 DC 0V AC 1V 
+E_E3         $N_0001 0 LAPLACE { V(out2, 0) } = { {s/(2+(2*1.4142*s)+(s_2))}  }
+E_E4         out2 0 LAPLACE { V(Iout1, 0) } = { {s/(2+(2*1.4142*s)+(s_2))}  }
+E_E2         out1 0 LAPLACE { V(IN, 0) } = { {s/(2+(2*s)+(s_2))}  }
+
+**** RESUMING Laplace_Treti_Schematic.cir ****
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END
+
+ERROR -- Undefined parameter: s_2

@@ -1,0 +1,24 @@
+* C:\Users\Lapunik\Dropbox\PSpice\Schematics\IF_IN_IF_OUT_Schematic2.sch
+
+* Schematics Version 9.2
+* Thu Nov 21 12:35:04 2019
+
+
+.PARAM         indukcnost=10u svod=100k kapacita=3p
+
+** Analysis setup **
+.OP 
+
+
+* From [PSPICE NETLIST] section of C:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "C:\Users\Lapunik\Dropbox\PSpice\Knihovna_z_netu\nova\knihovna.lib"
+.lib "C:\Users\Lapunik\Dropbox\PSpice\Knihovna_z_netu\NE5532\moje_knihovna.lib"
+.lib "nom.lib"
+
+.INC "IF_IN_IF_OUT_Schematic2.sub"
+
+
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END

@@ -1,0 +1,802 @@
+
+**** 01/15/20 08:53:56 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\Sumovy_filtr_Semestralni_prace.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.2
+* Wed Jan 15 08:53:23 2020
+
+
+.PARAM         kondenzator35=150p 
+
+** Analysis setup **
+.ac DEC 101 100 100k
+.tran 1us 2m 0 1us
+.STEP  PARAM kondenzator35 LIST 
++ 100p 150p 300p
+.OP 
+
+
+* From [PSPICE NETLIST] section of C:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "C:\Users\Lapunik\Dropbox\PSpice\Knihovna_z_netu\nova\knihovna.lib"
+.lib "nom.lib"
+
+.INC "Sumovy_filtr_Semestralni_prace.net"
+
+
+
+**** INCLUDING Sumovy_filtr_Semestralni_prace.net ****
+* Schematics Netlist *
+
+
+
+R_Rz1         0 out1  100k  
+R_R46         in $N_0001  100k  
+R_R47         $N_0001 $N_0002  100k  
+C_C34         0 $N_0002  150p  
+R_R48         out1 $N_0003  100k  
+R_Rz2         0 out2  100k  
+C_C37         $N_0003 out2  150p  
+V_Voz+         $N_0004 0 +18
+R_R49         $N_0003 $N_0005  100k  
+X_OZ6         $N_0002 out1 $N_0004 $N_0006 out1 LF156/LT
+V_Voz-         0 $N_0006 +18
+C_C35         $N_0001 out1  {kondenzator35}  
+X_OZ7         $N_0005 out2 $N_0004 $N_0006 out2 LF156/LT
+C_C36         0 $N_0005  150p  
+V_V12         in 0  AC 200m
++PULSE 0 200m 0 0 0 500u 1m
+
+**** RESUMING Sumovy_filtr_Semestralni_prace.cir ****
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END
+
+**** 01/15/20 08:53:56 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\Sumovy_filtr_Semestralni_prace.sch
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_OZ6.DM1       X_OZ6.DM2       X_OZ6.DM3       X_OZ6.DM4       
+          IS    1.000000E-15  800.000000E-18  100.000000E-18    1.000000E-09 
+          BV                   52.8                                          
+
+
+               X_OZ7.DM1       X_OZ7.DM2       X_OZ7.DM3       X_OZ7.DM4       
+          IS    1.000000E-15  800.000000E-18  100.000000E-18    1.000000E-09 
+          BV                   52.8                                          
+
+
+**** 01/15/20 08:53:56 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\Sumovy_filtr_Semestralni_prace.sch
+
+
+ ****     Junction FET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_OZ6.JM1       X_OZ6.JM2       X_OZ7.JM1       X_OZ7.JM2       
+               PJF             PJF             PJF             PJF             
+         VTO   -1               -.998          -1               -.998        
+        BETA  925.280000E-06  925.280000E-06  925.280000E-06  925.280000E-06 
+          IS   31.500000E-12   28.500000E-12   31.500000E-12   28.500000E-12 
+
+
+**** 01/15/20 08:53:56 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\Sumovy_filtr_Semestralni_prace.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM KONDENZATOR35 =  100.0000E-12
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   in)    0.0000  ( out1)     .0020  ( out2)     .0040  ($N_0001)-7.323E-06    
+
+($N_0002)-14.65E-06                   ($N_0003)     .0020                       
+
+($N_0004)   18.0000                   ($N_0005)     .0020                       
+
+($N_0006)  -18.0000                   (X_OZ6.1)     .0020                       
+
+(X_OZ6.8)-940.8E-09                   (X_OZ7.1)     .0040                       
+
+(X_OZ7.8)-1.882E-06                   (X_OZ6.12)    -.4887                      
+
+(X_OZ6.13)    3.1572                  (X_OZ6.14)   -3.1532                      
+
+(X_OZ6.18) 415.0E-09                  (X_OZ6.20) 862.0E-18                      
+
+(X_OZ6.40)  -16.0000                  (X_OZ6.60)  -18.0000                      
+
+(X_OZ6.70)   18.0000                  (X_OZ6.80)  -15.7450                      
+
+(X_OZ6.90)  -15.7450                  (X_OZ7.12)    -.4867                      
+
+(X_OZ7.13)    3.1592                  (X_OZ7.14)   -3.1512                      
+
+(X_OZ7.18) 825.1E-09                  (X_OZ7.20) 1.714E-15                      
+
+(X_OZ7.40)  -16.0000                  (X_OZ7.60)  -18.0000                      
+
+(X_OZ7.70)   18.0000                  (X_OZ7.80)  -15.7450                      
+
+(X_OZ7.90)  -15.7450                  (X_OZ6.102)     .0020                     
+
+(X_OZ6.103)-14.65E-06                 (X_OZ6.131)   18.0000                     
+
+(X_OZ6.141)  -18.0000                 (X_OZ7.102)     .0040                     
+
+(X_OZ7.103)     .0020                 (X_OZ7.131)   18.0000                     
+
+(X_OZ7.141)  -18.0000                 
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Voz+      -1.000E-02
+    V_Voz-      -1.000E-02
+    V_V12       -7.323E-11
+    X_OZ6.VCM2   4.800E-04
+    X_OZ6.VC     1.484E-11
+    X_OZ6.VE     1.546E-11
+    X_OZ7.VCM2   4.800E-04
+    X_OZ7.VC     1.597E-11
+    X_OZ7.VE     1.485E-11
+
+    TOTAL POWER DISSIPATION   3.58E-01  WATTS
+
+
+**** 01/15/20 08:53:56 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\Sumovy_filtr_Semestralni_prace.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM KONDENZATOR35 =  100.0000E-12
+
+
+******************************************************************************
+
+
+
+
+
+
+**** VOLTAGE-CONTROLLED CURRENT SOURCES
+
+
+NAME         X_OZ6.GOSIT             X_OZ6.GCM   X_OZ6.GA    X_OZ6.GB  
+I-SOURCE     1.171E-09              -4.606E-09  -4.597E-09  -2.692E-05
+
+NAME         X_OZ6.GCL   X_OZ6.GPL   X_OZ6.GNL   X_OZ7.GOSIT           
+I-SOURCE     8.620E-16  -1.421E-14   1.421E-14   1.163E-09            
+
+NAME         X_OZ7.GCM   X_OZ7.GA    X_OZ7.GB    X_OZ7.GCL   X_OZ7.GPL 
+I-SOURCE    -4.587E-09  -4.568E-09  -5.383E-05   1.714E-15  -1.421E-14
+
+NAME         X_OZ7.GNL 
+I-SOURCE     1.421E-14
+
+
+**** VOLTAGE-CONTROLLED VOLTAGE SOURCES
+
+
+NAME         X_OZ6.ECL   X_OZ7.ECL 
+V-SOURCE     4.150E-07   8.251E-07
+I-SOURCE    -8.620E-19  -1.714E-18
+
+
+**** DIODES
+
+
+NAME         X_OZ6.D1    X_OZ6.D2    X_OZ6.D3A   X_OZ6.D3B   X_OZ6.D4A 
+MODEL        X_OZ6.DM1   X_OZ6.DM1   X_OZ6.DM3   X_OZ6.DM3   X_OZ6.DM3 
+ID           4.31E-19   -4.31E-19   -1.49E-18   -1.48E-11   -1.49E-18 
+VD           4.15E-07   -4.15E-07   -1.48E-06   -1.48E+01   -1.48E-06 
+REQ          9.63E+11    9.63E+11    9.96E+11    1.00E+12    9.96E+11 
+CAP          0.00E+00    0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+
+NAME         X_OZ6.D4B   X_OZ6.DSUB  X_OZ7.D1    X_OZ7.D2    X_OZ7.D3A 
+MODEL        X_OZ6.DM3   X_OZ6.DM2   X_OZ7.DM1   X_OZ7.DM1   X_OZ7.DM3 
+ID          -1.48E-11   -3.60E-11    8.57E-19   -8.57E-19   -1.49E-18 
+VD          -1.48E+01   -3.60E+01    8.25E-07   -8.25E-07   -1.48E-06 
+REQ          1.00E+12    1.00E+12    9.63E+11    9.63E+11    9.96E+11 
+CAP          0.00E+00    0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+
+NAME         X_OZ7.D3B   X_OZ7.D4A   X_OZ7.D4B   X_OZ7.DSUB
+MODEL        X_OZ7.DM3   X_OZ7.DM3   X_OZ7.DM3   X_OZ7.DM2 
+ID          -1.48E-11   -1.49E-18   -1.48E-11   -3.60E-11 
+VD          -1.48E+01   -1.48E-06   -1.48E+01   -3.60E+01 
+REQ          1.00E+12    9.96E+11    1.00E+12    1.00E+12 
+CAP          0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+
+
+**** JFETS
+
+
+NAME         X_OZ6.J1    X_OZ6.J2    X_OZ7.J1    X_OZ7.J2  
+MODEL        X_OZ6.JM1   X_OZ6.JM2   X_OZ7.JM1   X_OZ7.JM2 
+ID          -2.40E-04   -2.40E-04   -2.40E-04   -2.40E-04 
+VGS          4.91E-01    4.89E-01    4.91E-01    4.89E-01 
+VDS         -1.53E+01   -1.53E+01   -1.53E+01   -1.53E+01 
+GM           9.42E-04    9.42E-04    9.42E-04    9.42E-04 
+GDS          0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+CGS          0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+CGD          0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+**** 01/15/20 08:53:56 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\Sumovy_filtr_Semestralni_prace.sch
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM KONDENZATOR35 =  100.0000E-12
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   in)    0.0000  ( out1)     .0020  ( out2)     .0040  ($N_0001)-7.323E-06    
+
+($N_0002)-14.65E-06                   ($N_0003)     .0020                       
+
+($N_0004)   18.0000                   ($N_0005)     .0020                       
+
+($N_0006)  -18.0000                   (X_OZ6.1)     .0020                       
+
+(X_OZ6.8)-940.8E-09                   (X_OZ7.1)     .0040                       
+
+(X_OZ7.8)-1.882E-06                   (X_OZ6.12)    -.4887                      
+
+(X_OZ6.13)    3.1572                  (X_OZ6.14)   -3.1532                      
+
+(X_OZ6.18) 415.0E-09                  (X_OZ6.20) 862.0E-18                      
+
+(X_OZ6.40)  -16.0000                  (X_OZ6.60)  -18.0000                      
+
+(X_OZ6.70)   18.0000                  (X_OZ6.80)  -15.7450                      
+
+(X_OZ6.90)  -15.7450                  (X_OZ7.12)    -.4867                      
+
+(X_OZ7.13)    3.1592                  (X_OZ7.14)   -3.1512                      
+
+(X_OZ7.18) 825.1E-09                  (X_OZ7.20) 1.714E-15                      
+
+(X_OZ7.40)  -16.0000                  (X_OZ7.60)  -18.0000                      
+
+(X_OZ7.70)   18.0000                  (X_OZ7.80)  -15.7450                      
+
+(X_OZ7.90)  -15.7450                  (X_OZ6.102)     .0020                     
+
+(X_OZ6.103)-14.65E-06                 (X_OZ6.131)   18.0000                     
+
+(X_OZ6.141)  -18.0000                 (X_OZ7.102)     .0040                     
+
+(X_OZ7.103)     .0020                 (X_OZ7.131)   18.0000                     
+
+(X_OZ7.141)  -18.0000                 
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Voz+      -1.000E-02
+    V_Voz-      -1.000E-02
+    V_V12       -7.323E-11
+    X_OZ6.VCM2   4.800E-04
+    X_OZ6.VC     1.484E-11
+    X_OZ6.VE     1.546E-11
+    X_OZ7.VCM2   4.800E-04
+    X_OZ7.VC     1.597E-11
+    X_OZ7.VE     1.485E-11
+
+    TOTAL POWER DISSIPATION   3.58E-01  WATTS
+
+
+**** 01/15/20 08:53:56 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\Sumovy_filtr_Semestralni_prace.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM KONDENZATOR35 =  150.0000E-12
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   in)    0.0000  ( out1)     .0020  ( out2)     .0040  ($N_0001)-7.323E-06    
+
+($N_0002)-14.65E-06                   ($N_0003)     .0020                       
+
+($N_0004)   18.0000                   ($N_0005)     .0020                       
+
+($N_0006)  -18.0000                   (X_OZ6.1)     .0020                       
+
+(X_OZ6.8)-940.8E-09                   (X_OZ7.1)     .0040                       
+
+(X_OZ7.8)-1.882E-06                   (X_OZ6.12)    -.4887                      
+
+(X_OZ6.13)    3.1572                  (X_OZ6.14)   -3.1532                      
+
+(X_OZ6.18) 415.0E-09                  (X_OZ6.20) 862.2E-18                      
+
+(X_OZ6.40)  -16.0000                  (X_OZ6.60)  -18.0000                      
+
+(X_OZ6.70)   18.0000                  (X_OZ6.80)  -15.7450                      
+
+(X_OZ6.90)  -15.7450                  (X_OZ7.12)    -.4867                      
+
+(X_OZ7.13)    3.1592                  (X_OZ7.14)   -3.1512                      
+
+(X_OZ7.18) 825.2E-09                  (X_OZ7.20) 1.714E-15                      
+
+(X_OZ7.40)  -16.0000                  (X_OZ7.60)  -18.0000                      
+
+(X_OZ7.70)   18.0000                  (X_OZ7.80)  -15.7450                      
+
+(X_OZ7.90)  -15.7450                  (X_OZ6.102)     .0020                     
+
+(X_OZ6.103)-14.65E-06                 (X_OZ6.131)   18.0000                     
+
+(X_OZ6.141)  -18.0000                 (X_OZ7.102)     .0040                     
+
+(X_OZ7.103)     .0020                 (X_OZ7.131)   18.0000                     
+
+(X_OZ7.141)  -18.0000                 
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Voz+      -1.000E-02
+    V_Voz-      -1.000E-02
+    V_V12       -7.323E-11
+    X_OZ6.VCM2   4.800E-04
+    X_OZ6.VC     1.484E-11
+    X_OZ6.VE     1.485E-11
+    X_OZ7.VCM2   4.800E-04
+    X_OZ7.VC     1.484E-11
+    X_OZ7.VE     1.485E-11
+
+    TOTAL POWER DISSIPATION   3.58E-01  WATTS
+
+
+**** 01/15/20 08:53:56 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\Sumovy_filtr_Semestralni_prace.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM KONDENZATOR35 =  150.0000E-12
+
+
+******************************************************************************
+
+
+
+
+
+
+**** VOLTAGE-CONTROLLED CURRENT SOURCES
+
+
+NAME         X_OZ6.GOSIT             X_OZ6.GCM   X_OZ6.GA    X_OZ6.GB  
+I-SOURCE     1.171E-09              -4.606E-09  -4.597E-09  -2.692E-05
+
+NAME         X_OZ6.GCL   X_OZ6.GPL   X_OZ6.GNL   X_OZ7.GOSIT           
+I-SOURCE     8.622E-16  -1.421E-14   1.421E-14   1.163E-09            
+
+NAME         X_OZ7.GCM   X_OZ7.GA    X_OZ7.GB    X_OZ7.GCL   X_OZ7.GPL 
+I-SOURCE    -4.587E-09  -4.568E-09  -5.383E-05   1.714E-15  -1.421E-14
+
+NAME         X_OZ7.GNL 
+I-SOURCE     1.421E-14
+
+
+**** VOLTAGE-CONTROLLED VOLTAGE SOURCES
+
+
+NAME         X_OZ6.ECL   X_OZ7.ECL 
+V-SOURCE     4.150E-07   8.252E-07
+I-SOURCE    -8.622E-19  -1.714E-18
+
+
+**** DIODES
+
+
+NAME         X_OZ6.D1    X_OZ6.D2    X_OZ6.D3A   X_OZ6.D3B   X_OZ6.D4A 
+MODEL        X_OZ6.DM1   X_OZ6.DM1   X_OZ6.DM3   X_OZ6.DM3   X_OZ6.DM3 
+ID           4.31E-19   -4.31E-19   -1.49E-18   -1.48E-11   -1.49E-18 
+VD           4.15E-07   -4.15E-07   -1.48E-06   -1.48E+01   -1.48E-06 
+REQ          9.63E+11    9.63E+11    9.96E+11    1.00E+12    9.96E+11 
+CAP          0.00E+00    0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+
+NAME         X_OZ6.D4B   X_OZ6.DSUB  X_OZ7.D1    X_OZ7.D2    X_OZ7.D3A 
+MODEL        X_OZ6.DM3   X_OZ6.DM2   X_OZ7.DM1   X_OZ7.DM1   X_OZ7.DM3 
+ID          -1.48E-11   -3.60E-11    8.57E-19   -8.57E-19   -1.49E-18 
+VD          -1.48E+01   -3.60E+01    8.25E-07   -8.25E-07   -1.48E-06 
+REQ          1.00E+12    1.00E+12    9.63E+11    9.63E+11    9.96E+11 
+CAP          0.00E+00    0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+
+NAME         X_OZ7.D3B   X_OZ7.D4A   X_OZ7.D4B   X_OZ7.DSUB
+MODEL        X_OZ7.DM3   X_OZ7.DM3   X_OZ7.DM3   X_OZ7.DM2 
+ID          -1.48E-11   -1.49E-18   -1.48E-11   -3.60E-11 
+VD          -1.48E+01   -1.48E-06   -1.48E+01   -3.60E+01 
+REQ          1.00E+12    9.96E+11    1.00E+12    1.00E+12 
+CAP          0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+
+
+**** JFETS
+
+
+NAME         X_OZ6.J1    X_OZ6.J2    X_OZ7.J1    X_OZ7.J2  
+MODEL        X_OZ6.JM1   X_OZ6.JM2   X_OZ7.JM1   X_OZ7.JM2 
+ID          -2.40E-04   -2.40E-04   -2.40E-04   -2.40E-04 
+VGS          4.91E-01    4.89E-01    4.91E-01    4.89E-01 
+VDS         -1.53E+01   -1.53E+01   -1.53E+01   -1.53E+01 
+GM           9.42E-04    9.42E-04    9.42E-04    9.42E-04 
+GDS          0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+CGS          0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+CGD          0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+**** 01/15/20 08:53:56 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\Sumovy_filtr_Semestralni_prace.sch
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM KONDENZATOR35 =  150.0000E-12
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   in)    0.0000  ( out1)     .0020  ( out2)     .0040  ($N_0001)-7.323E-06    
+
+($N_0002)-14.65E-06                   ($N_0003)     .0020                       
+
+($N_0004)   18.0000                   ($N_0005)     .0020                       
+
+($N_0006)  -18.0000                   (X_OZ6.1)     .0020                       
+
+(X_OZ6.8)-940.8E-09                   (X_OZ7.1)     .0040                       
+
+(X_OZ7.8)-1.882E-06                   (X_OZ6.12)    -.4887                      
+
+(X_OZ6.13)    3.1572                  (X_OZ6.14)   -3.1532                      
+
+(X_OZ6.18) 415.1E-09                  (X_OZ6.20) 862.2E-18                      
+
+(X_OZ6.40)  -16.0000                  (X_OZ6.60)  -18.0000                      
+
+(X_OZ6.70)   18.0000                  (X_OZ6.80)  -15.7450                      
+
+(X_OZ6.90)  -15.7450                  (X_OZ7.12)    -.4867                      
+
+(X_OZ7.13)    3.1592                  (X_OZ7.14)   -3.1512                      
+
+(X_OZ7.18) 825.2E-09                  (X_OZ7.20) 1.714E-15                      
+
+(X_OZ7.40)  -16.0000                  (X_OZ7.60)  -18.0000                      
+
+(X_OZ7.70)   18.0000                  (X_OZ7.80)  -15.7450                      
+
+(X_OZ7.90)  -15.7450                  (X_OZ6.102)     .0020                     
+
+(X_OZ6.103)-14.65E-06                 (X_OZ6.131)   18.0000                     
+
+(X_OZ6.141)  -18.0000                 (X_OZ7.102)     .0040                     
+
+(X_OZ7.103)     .0020                 (X_OZ7.131)   18.0000                     
+
+(X_OZ7.141)  -18.0000                 
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Voz+      -1.000E-02
+    V_Voz-      -1.000E-02
+    V_V12       -7.323E-11
+    X_OZ6.VCM2   4.800E-04
+    X_OZ6.VC     1.484E-11
+    X_OZ6.VE     1.485E-11
+    X_OZ7.VCM2   4.800E-04
+    X_OZ7.VC     1.484E-11
+    X_OZ7.VE     1.485E-11
+
+    TOTAL POWER DISSIPATION   3.58E-01  WATTS
+
+
+**** 01/15/20 08:53:56 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\Sumovy_filtr_Semestralni_prace.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM KONDENZATOR35 =  300.0000E-12
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   in)    0.0000  ( out1)     .0020  ( out2)     .0040  ($N_0001)-7.323E-06    
+
+($N_0002)-14.65E-06                   ($N_0003)     .0020                       
+
+($N_0004)   18.0000                   ($N_0005)     .0020                       
+
+($N_0006)  -18.0000                   (X_OZ6.1)     .0020                       
+
+(X_OZ6.8)-940.8E-09                   (X_OZ7.1)     .0040                       
+
+(X_OZ7.8)-1.882E-06                   (X_OZ6.12)    -.4887                      
+
+(X_OZ6.13)    3.1572                  (X_OZ6.14)   -3.1532                      
+
+(X_OZ6.18) 414.9E-09                  (X_OZ6.20) 861.8E-18                      
+
+(X_OZ6.40)  -16.0000                  (X_OZ6.60)  -18.0000                      
+
+(X_OZ6.70)   18.0000                  (X_OZ6.80)  -15.7450                      
+
+(X_OZ6.90)  -15.7450                  (X_OZ7.12)    -.4867                      
+
+(X_OZ7.13)    3.1592                  (X_OZ7.14)   -3.1512                      
+
+(X_OZ7.18) 825.1E-09                  (X_OZ7.20) 1.714E-15                      
+
+(X_OZ7.40)  -16.0000                  (X_OZ7.60)  -18.0000                      
+
+(X_OZ7.70)   18.0000                  (X_OZ7.80)  -15.7450                      
+
+(X_OZ7.90)  -15.7450                  (X_OZ6.102)     .0020                     
+
+(X_OZ6.103)-14.65E-06                 (X_OZ6.131)   18.0000                     
+
+(X_OZ6.141)  -18.0000                 (X_OZ7.102)     .0040                     
+
+(X_OZ7.103)     .0020                 (X_OZ7.131)   18.0000                     
+
+(X_OZ7.141)  -18.0000                 
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Voz+      -1.000E-02
+    V_Voz-      -1.000E-02
+    V_V12       -7.323E-11
+    X_OZ6.VCM2   4.800E-04
+    X_OZ6.VC     1.484E-11
+    X_OZ6.VE     1.485E-11
+    X_OZ7.VCM2   4.800E-04
+    X_OZ7.VC     1.484E-11
+    X_OZ7.VE     1.485E-11
+
+    TOTAL POWER DISSIPATION   3.58E-01  WATTS
+
+
+**** 01/15/20 08:53:56 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\Sumovy_filtr_Semestralni_prace.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM KONDENZATOR35 =  300.0000E-12
+
+
+******************************************************************************
+
+
+
+
+
+
+**** VOLTAGE-CONTROLLED CURRENT SOURCES
+
+
+NAME         X_OZ6.GOSIT             X_OZ6.GCM   X_OZ6.GA    X_OZ6.GB  
+I-SOURCE     1.171E-09              -4.606E-09  -4.597E-09  -2.692E-05
+
+NAME         X_OZ6.GCL   X_OZ6.GPL   X_OZ6.GNL   X_OZ7.GOSIT           
+I-SOURCE     8.618E-16  -1.421E-14   1.421E-14   1.163E-09            
+
+NAME         X_OZ7.GCM   X_OZ7.GA    X_OZ7.GB    X_OZ7.GCL   X_OZ7.GPL 
+I-SOURCE    -4.587E-09  -4.568E-09  -5.383E-05   1.714E-15  -1.421E-14
+
+NAME         X_OZ7.GNL 
+I-SOURCE     1.421E-14
+
+
+**** VOLTAGE-CONTROLLED VOLTAGE SOURCES
+
+
+NAME         X_OZ6.ECL   X_OZ7.ECL 
+V-SOURCE     4.149E-07   8.251E-07
+I-SOURCE    -8.618E-19  -1.714E-18
+
+
+**** DIODES
+
+
+NAME         X_OZ6.D1    X_OZ6.D2    X_OZ6.D3A   X_OZ6.D3B   X_OZ6.D4A 
+MODEL        X_OZ6.DM1   X_OZ6.DM1   X_OZ6.DM3   X_OZ6.DM3   X_OZ6.DM3 
+ID           4.31E-19   -4.31E-19   -1.49E-18   -1.48E-11   -1.49E-18 
+VD           4.15E-07   -4.15E-07   -1.48E-06   -1.48E+01   -1.48E-06 
+REQ          9.63E+11    9.63E+11    9.96E+11    1.00E+12    9.96E+11 
+CAP          0.00E+00    0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+
+NAME         X_OZ6.D4B   X_OZ6.DSUB  X_OZ7.D1    X_OZ7.D2    X_OZ7.D3A 
+MODEL        X_OZ6.DM3   X_OZ6.DM2   X_OZ7.DM1   X_OZ7.DM1   X_OZ7.DM3 
+ID          -1.48E-11   -3.60E-11    8.57E-19   -8.57E-19   -1.49E-18 
+VD          -1.48E+01   -3.60E+01    8.25E-07   -8.25E-07   -1.48E-06 
+REQ          1.00E+12    1.00E+12    9.63E+11    9.63E+11    9.96E+11 
+CAP          0.00E+00    0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+
+NAME         X_OZ7.D3B   X_OZ7.D4A   X_OZ7.D4B   X_OZ7.DSUB
+MODEL        X_OZ7.DM3   X_OZ7.DM3   X_OZ7.DM3   X_OZ7.DM2 
+ID          -1.48E-11   -1.49E-18   -1.48E-11   -3.60E-11 
+VD          -1.48E+01   -1.48E-06   -1.48E+01   -3.60E+01 
+REQ          1.00E+12    9.96E+11    1.00E+12    1.00E+12 
+CAP          0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+
+
+**** JFETS
+
+
+NAME         X_OZ6.J1    X_OZ6.J2    X_OZ7.J1    X_OZ7.J2  
+MODEL        X_OZ6.JM1   X_OZ6.JM2   X_OZ7.JM1   X_OZ7.JM2 
+ID          -2.40E-04   -2.40E-04   -2.40E-04   -2.40E-04 
+VGS          4.91E-01    4.89E-01    4.91E-01    4.89E-01 
+VDS         -1.53E+01   -1.53E+01   -1.53E+01   -1.53E+01 
+GM           9.42E-04    9.42E-04    9.42E-04    9.42E-04 
+GDS          0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+CGS          0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+CGD          0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+**** 01/15/20 08:53:56 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\Sumovy_filtr_Semestralni_prace.sch
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM KONDENZATOR35 =  300.0000E-12
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   in)    0.0000  ( out1)     .0020  ( out2)     .0040  ($N_0001)-7.323E-06    
+
+($N_0002)-14.65E-06                   ($N_0003)     .0020                       
+
+($N_0004)   18.0000                   ($N_0005)     .0020                       
+
+($N_0006)  -18.0000                   (X_OZ6.1)     .0020                       
+
+(X_OZ6.8)-940.8E-09                   (X_OZ7.1)     .0040                       
+
+(X_OZ7.8)-1.882E-06                   (X_OZ6.12)    -.4887                      
+
+(X_OZ6.13)    3.1572                  (X_OZ6.14)   -3.1532                      
+
+(X_OZ6.18) 414.9E-09                  (X_OZ6.20) 861.8E-18                      
+
+(X_OZ6.40)  -16.0000                  (X_OZ6.60)  -18.0000                      
+
+(X_OZ6.70)   18.0000                  (X_OZ6.80)  -15.7450                      
+
+(X_OZ6.90)  -15.7450                  (X_OZ7.12)    -.4867                      
+
+(X_OZ7.13)    3.1592                  (X_OZ7.14)   -3.1512                      
+
+(X_OZ7.18) 825.2E-09                  (X_OZ7.20) 1.714E-15                      
+
+(X_OZ7.40)  -16.0000                  (X_OZ7.60)  -18.0000                      
+
+(X_OZ7.70)   18.0000                  (X_OZ7.80)  -15.7450                      
+
+(X_OZ7.90)  -15.7450                  (X_OZ6.102)     .0020                     
+
+(X_OZ6.103)-14.65E-06                 (X_OZ6.131)   18.0000                     
+
+(X_OZ6.141)  -18.0000                 (X_OZ7.102)     .0040                     
+
+(X_OZ7.103)     .0020                 (X_OZ7.131)   18.0000                     
+
+(X_OZ7.141)  -18.0000                 
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Voz+      -1.000E-02
+    V_Voz-      -1.000E-02
+    V_V12       -7.323E-11
+    X_OZ6.VCM2   4.800E-04
+    X_OZ6.VC     1.484E-11
+    X_OZ6.VE     1.485E-11
+    X_OZ7.VCM2   4.800E-04
+    X_OZ7.VC     1.484E-11
+    X_OZ7.VE     1.485E-11
+
+    TOTAL POWER DISSIPATION   3.58E-01  WATTS
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME            1.47
+

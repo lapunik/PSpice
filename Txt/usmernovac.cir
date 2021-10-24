@@ -1,0 +1,20 @@
+***usmernovac.cir***
+
+.LIB "nom.lib"
+
+*net list
+V1 1 0 SIN 0 30 50 0 0 0
+*definice diody: D<jmeno><A><K><model>
+D1 1 2 D1N4007
+D2 0 2 D1N4007
+D3 3 0 D1N4007 ;DIN4007 je typ diody
+D4 3 1 D1N4007
+R1 2 3 1MEG
+C1 2 3 100u
+
+.OP
+.TRAN 100u 100m 0 100u; prvni cislo je z pravidla tisicina druheho cisla 
+
+.PROBE V(1) V(R1); ekvivalentni k V(R1) je V(2,3), nebo poslat do PROBE V(2) V(3) a odecist je 
+.PROBE I(R1); zobrazit proud, je to vždy proud souèástkou (tranizistor zná IE,IC,IB)
+.END

@@ -1,0 +1,12 @@
+*** Schematics Subcircuit ***
+
+
+.SUBCKT Second_order_filtr Vin Vout PARAMS: rezistor_R1=0 rezistor_R2=0 kondenzator_C1=0 kondenzator_C2=0 
+V_V3         0 $N_0001 18V
+V_V4         $N_0002 0 18V
+X_U2A         $N_0003 Vout $N_0002 $N_0001 Vout TL082
+R_R2         $N_0004 $N_0003  {rezistor_R2}  
+C_C1         0 $N_0003  {kondenzator_C1}  
+C_C2         $N_0004 Vout  {kondenzator_C2}  
+R_R1         Vin $N_0004  {rezistor_R1}  
+.ENDS    Semestralka_Second_order_filtr_Schematic1

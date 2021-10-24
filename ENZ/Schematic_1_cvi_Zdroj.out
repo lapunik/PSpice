@@ -1,0 +1,176 @@
+
+**** 02/25/20 11:51:57 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\OneDrive\Dokumenty\PSpice\ENZ\Schematic_1_cvi_Zdroj.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.2
+* Tue Feb 25 11:51:57 2020
+
+
+
+** Analysis setup **
+.tran 0u 100m 0 10u
+.OP 
+
+
+* From [PSPICE NETLIST] section of C:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "nom.lib"
+
+.INC "Schematic_1_cvi_Zdroj.net"
+
+
+
+**** INCLUDING Schematic_1_cvi_Zdroj.net ****
+* Schematics Netlist *
+
+
+
+R_R1         V1 $N_0001  5  
+R_R4         0 $N_0002  10MEG  
+V_V1         V1 0  
++SIN 0 325 50 0 0 0
+R_R2         $N_0004 $N_0003  1  
+C_C1         $N_0002 $N_0005  8m  
+D_D2         $N_0002 $N_0006 D02CZ5_1 
+R_R3         $N_0002 $N_0006  {5.1/2}  
+R_R5         $N_0005 $N_0006  10.9  
+D_D1         $N_0003 $N_0005 D1N4007 
+L_L2         $N_0001 0  1  
+L_L1         $N_0002 $N_0004  20m  
+Kn_K1         L_L2 L_L1     1
+
+**** RESUMING Schematic_1_cvi_Zdroj.cir ****
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END
+
+**** 02/25/20 11:51:57 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\OneDrive\Dokumenty\PSpice\ENZ\Schematic_1_cvi_Zdroj.sch
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D02CZ5_1        D1N4007         D1N4001         
+          IS    9.086000E-12   14.110000E-09   14.110000E-09 
+           N    1.395           1.984           1.984        
+         ISR  664.700000E-09                                 
+         IKF     .11           94.81           94.81         
+          BV    5.198           1.500000E+03   75            
+         IBV     .1478         10.000000E-06   10.000000E-06 
+          RS                     .03389          .03389      
+          TT    5.000000E-09    5.700000E-06    5.700000E-06 
+         CJO  406.200000E-12   25.890000E-12   25.890000E-12 
+          VJ    5                .3245           .3245       
+           M    1.548            .44             .44         
+
+
+**** 02/25/20 11:51:57 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\OneDrive\Dokumenty\PSpice\ENZ\Schematic_1_cvi_Zdroj.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   V1)    0.0000  ($N_0001)    0.0000                   ($N_0002)    0.0000    
+
+($N_0003)-686.1E-27                   ($N_0004)    0.0000                       
+
+($N_0005)-59.89E-24                   ($N_0006)-67.37E-24                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+**** 02/25/20 11:51:57 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\OneDrive\Dokumenty\PSpice\ENZ\Schematic_1_cvi_Zdroj.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** DIODES
+
+
+NAME         D_D2        D_D1      
+MODEL        D02CZ5_1    D1N4007   
+ID           0.00E+00    0.00E+00 
+VD           6.74E-23    5.92E-23 
+REQ          7.75E+04    3.64E+06 
+CAP          4.06E-10    2.75E-11 
+**** 02/25/20 11:51:57 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\OneDrive\Dokumenty\PSpice\ENZ\Schematic_1_cvi_Zdroj.sch
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   V1)    0.0000  ($N_0001)    0.0000                   ($N_0002)    0.0000    
+
+($N_0003)-686.1E-27                   ($N_0004)    0.0000                       
+
+($N_0005)-59.89E-24                   ($N_0006)-67.37E-24                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME            1.31
+

@@ -1,0 +1,12 @@
+* Schematics Netlist *
+
+
+
+R_R1         0 out  1MEG  
+X_0         in $N_0001 0 Second_order_filter PARAMS: rezistor_R1=9100
++  rezistor_R2=9100 kondenzator_C1=16n kondenzator_C2=51n
+X_1         $N_0001 $N_0002 0 Second_order_filter PARAMS: rezistor_R1=2000
++  rezistor_R2=2000 kondenzator_C1=10n kondenzator_C2=330n
+X_2         $N_0002 out 0 Second_order_filter PARAMS: rezistor_R1=4300
++  rezistor_R2=4300 kondenzator_C1=0.91n kondenzator_C2=390n
+V_V8         in 0 DC 0V AC 1V 

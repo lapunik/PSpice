@@ -1,0 +1,16 @@
+***LP_CHEBYSHEV_SEMESTRALKA.cir***
+
+.LIB "nom.lib"
+
+V1 1 0 AC 1
+*V1 1 0 PULSE 0 1 1m 0 0 6m 7m
+R1 1 0 1MEG
+E1 2 0 CHEBYSHEV {V(1)}=LP 2k 3k 2 30
+R2 2 0 1MEG
+
+.OP
+.AC DEC 101 10 10k
+*.TRAN 6u 6m 0 6u;
+.PROBE V(2) V(1)
+
+.END

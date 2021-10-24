@@ -1,0 +1,8 @@
+* Schematics Subcircuit *
+
+
+.SUBCKT IF_IN_IF_OUT_Schematic2 gnd in out PARAMS: indukcnost=10u svod=100k kapacita=3p ; od PARAMS jsem to musel dopsat rucne
+L_L1         in out  {indukcnost}  
+R_R1         gnd out  {svod}  
+C_C1         gnd out  {kapacita}  
+.ENDS    IF_IN_IF_OUT_Schematic2

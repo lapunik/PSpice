@@ -1,0 +1,57 @@
+
+**** 10/24/19 12:07:41 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***potenciometr.cir***
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+.LIB "nom.lib"
+
+
+V1 1 0 DC 10
+Rhorni 1 2 {(({hodnota}*(1-{natoceni}))+1m)}
+Rdolni 2 0 {(({hodnota}*{natoceni})+1m)}
+R2 = 2 0 1MEG
+* dame jeste na vystup jedna mega odpor aby nebyl na prazdno
+
+.PARAM hodnota = 2k natoceni = 0.5
+
+*druha moznost zadani potenciometru (podobvod)
+
+*X <jmeno><globalni_uzly><jmeno_podobvodu> [PARAMS:<parametr>=<hodnota>] ; podobvod je X stejne jako kondenzator je C napr.
+
+*zadani podobvodu = zaciname prikazem .SUBCKT, nasleduje netlist a konci prikazem .ENDS
+*definice: .SUBCKT <jmeno_subobvodu><lokalni_uzly> [PARAMS:<parametr>=<hodnota>]; pak volani podobvodu musi byt stejne razeni uzlu
+
+.SUBCKT potak 100 200 jezdec PARAMS:hodnotaR=2k ;hodnotaR aby se nepletla s predchozim parametrem
+RPhorni 100 jezdec {(({hodnotaR}*(1-{natoceni}))+1m)}
+RPdolni 200 jezdec {(({hodnotaR}*{natoceni})+1m)}
+
+.ENDS potak; potak tam byt nemusi ale lepe se v tom pak vyznam
+
+X1 10 20 0 potak PARAMS: hodnota=10k; kdybych nenapsal PARAMS:... tak by hodnota R byla 2kOhm - definovano pod obvodem, takze ja mu 
+V2 10 0 DC 10
+R20 20 0 1MEG
+
+
+
+
+.OP
+
+*.DC LIN V1 0 5 5m
+.DC LIN V2 0 5 5m
+
+.STEP LIN PARAM natoceni 0 1 0.25
+
+.PROBE V(1) V(2)
+
+.END
+
+ERROR -- <X1.hodnota> not a subcircuit param

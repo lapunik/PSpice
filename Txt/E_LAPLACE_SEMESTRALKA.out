@@ -1,0 +1,113 @@
+
+**** 12/09/19 02:56:37 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***E_LAPLACE_SEMESTRALKA.cir***
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+.LIB "nom.lib" 
+
+.PARAM fc=2000 omega2={(2*3.1416*fc)*(2*3.1416*fc)} omega={(2*3.1416*fc)} 
+.PARAM omega6={omega2*omega2*omega2}
+.PARAM a1={3.588} b1={10.464} a2={0.4925} b2={1.9622} a3={0.0995} b3={1.0826}
+
+*V1 1 0 AC 1 
+V1 1 0 PULSE 0 1 1m 0 0 6m 7m
+R1 1 0 1MEG 
+E1 2 0 LAPLACE {V(1,0)}={(omega6/((omega2+(omega*a1*s)+(s*s*b1))*(omega2+(omega*a2*s)+(s*s*b2))*(omega2+(omega*a3*s)+(s*s*b3))))};
+R2 2 0 1MEG 
+.OP 
+*.AC DEC 101 10 10k 
+.TRAN 6u 6m 0 6u;
+.PROBE V(2) 
+.END
+
+**** 12/09/19 02:56:37 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***E_LAPLACE_SEMESTRALKA.cir***
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(    1)    0.0000  (    2)    0.0000  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V1           0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+**** 12/09/19 02:56:37 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***E_LAPLACE_SEMESTRALKA.cir***
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** VOLTAGE-CONTROLLED VOLTAGE SOURCES
+
+
+NAME         E1        
+V-SOURCE     0.000E+00
+I-SOURCE     0.000E+00
+**** 12/09/19 02:56:37 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***E_LAPLACE_SEMESTRALKA.cir***
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(    1)    0.0000  (    2)    0.0000  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V1           0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .13
+

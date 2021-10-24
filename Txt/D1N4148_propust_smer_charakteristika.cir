@@ -1,0 +1,16 @@
+***D1N4148_propust_smer_charakteristika.cir***
+.LIB "nom.lib"
+
+
+V1 1 0 DC 10 
+D1 1 0 D1N4148
+
+.OP
+
+.DC LIN V1 0 1 1m
+
+.STEP TEMP 0 100 10
+
+.PROBE I(D1);
+ 
+.END

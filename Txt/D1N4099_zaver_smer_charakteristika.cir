@@ -1,0 +1,17 @@
+***D1N4099_zaver_smer_charakteristika.cir***
+.LIB "nom.lib"
+
+V1 0 1 DC 10 
+R 1 2 10k
+D1 2 0 D1N4099
+
+
+.OP
+
+.DC LIN V1 0 10 10m
+
+.STEP TEMP 0 100 10
+
+.PROBE I(D1);
+ 
+.END

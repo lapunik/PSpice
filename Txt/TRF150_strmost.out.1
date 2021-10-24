@@ -1,0 +1,41 @@
+
+**** 11/07/19 11:55:08 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***TRF150_strmost.cir***
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+.LIB "nom.lib"
+
+VDS 1 0 DC 10 ; zdroj drain-source
+VGS 2 0 DC 4
+
+.PARAM teplota = 25
+
+*definice MOSFET: M<jmeno> <D> <G> <S> <substrt> <model> (substrt je ten prostredek se sipkou)
+M1 1 2 0 0 IRF150
+
+.OP
+*.DC LIN VDS 0 50 50m;5; po peti voltech byla prasarna... musim dat mene
+*.DC LIN VDS 0 50 50m VGS LIST 4 4.5 5 5.5 6 7 8; s druhou smyckou v podobe listu
+.DC LIN VDS 0 50 50m
+*.STEP VGS LIST 4 4.5 5 5.5 6 7 8; s druhou smyckou v podobe listu ale step... rozeznam jednotlive prubehy
+*.STEP VGS 0 10 1; s druhou smyckou v podobe od 0 do 10 step...
+.STEP LIN PARAM teplota 25 100
+
+*.TEMP 25 ; simulace pro 25 stupnu
+
+------------------------------$
+ERROR -- Missing parameter
+.PROBE VGS(M1);
+.PROBE ID(M1); 
+.PROBE IG(M1);
+.PROBE VDS(M1);  
+.END
+

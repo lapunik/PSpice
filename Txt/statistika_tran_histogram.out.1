@@ -1,0 +1,37 @@
+
+**** 11/21/19 11:27:22 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***statistika_tran_histogram.cir***
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+.LIB "nom.lib"
+
+*napetovy delic
+V1 1 0 DC 10
+R1 1 2 Rodpor 1k
+R2 2 0 Rodpor 1k
+
+.MODEL Rodpor RES R=1 DEV 10%
+
+.OP
+
+.TRAN 1u 1m 0 1u
+*.TRAN 1u 1m 1m 1u; vykresleni pouze v jednom bode, do jednoho mili od jednoho mili
+
+*.MC 20 TRAN V(2) YMAX OUTPUT ALL; 20 bhu analyzy pro vystupni napeti delice a hleam nejhorsi vysledky od nominalni hodnoty a vykres
+.WCASE TRAN V(2) YMAX LI
+----------------------$
+ERROR -- Invalid option
+
+.PROBE V(2)
+
+.END
+

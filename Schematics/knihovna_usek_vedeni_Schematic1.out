@@ -1,0 +1,127 @@
+
+**** 11/21/19 12:30:10 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\knihovna_usek_vedeni_Schematic1.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.2
+* Thu Nov 21 12:30:06 2019
+
+
+
+** Analysis setup **
+.tran 10u 10m 0 10u
+.OP 
+
+
+* From [PSPICE NETLIST] section of C:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "C:\Users\Lapunik\Dropbox\PSpice\Knihovna_z_netu\nova\knihovna.lib"
+.lib "C:\Users\Lapunik\Dropbox\PSpice\Knihovna_z_netu\NE5532\moje_knihovna.lib"
+.lib "nom.lib"
+
+.INC "knihovna_usek_vedeni_Schematic1.net"
+
+
+
+**** INCLUDING knihovna_usek_vedeni_Schematic1.net ****
+* Schematics Netlist *
+
+
+
+X_X2         in out 0 usek_vedeni PARAMS: indukcnost=10u svod=100k kapacita=3p
+R_R1         0 out  1k  
+V_V1         in 0  
++SIN 0 1 1k 0 0 0
+
+**** RESUMING knihovna_usek_vedeni_Schematic1.cir ****
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END
+
+Unable to find index file knihovna.ind for library file knihovna.lib
+Making new index file knihovna.ind for library file knihovna.lib
+Index has 2 entries from 1 file(s).
+
+**** 11/21/19 12:30:10 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\knihovna_usek_vedeni_Schematic1.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   in)    0.0000  (  out)    0.0000  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+**** 11/21/19 12:30:10 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\knihovna_usek_vedeni_Schematic1.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+**** 11/21/19 12:30:10 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\knihovna_usek_vedeni_Schematic1.sch
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   in)    0.0000  (  out)    0.0000  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .14
+

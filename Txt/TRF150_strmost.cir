@@ -1,0 +1,28 @@
+***TRF150_strmost.cir***
+.LIB "nom.lib"
+
+VDS 1 0 DC 10 ; zdroj drain-source
+VGS 2 0 DC 4
+
+
+*definice MOSFET: M<jmeno> <D> <G> <S> <substrát> <model> (substrát je ten prostredek se sipkou)
+M1 1 2 0 0 IRF150
+
+.OP
+*.DC LIN VDS 0 50 50m;5; po peti voltech byla prasarna... musim dat mene
+*.DC LIN VDS 0 50 50m VGS LIST 4 4.5 5 5.5 6 7 8; s druhou smyckou v podobe listu
+.DC LIN VGS 0 50 50m
+*.STEP VGS LIST 4 4.5 5 5.5 6 7 8; s druhou smyckou v podobe listu ale step... rozeznam jednotlive prubehy
+*.STEP VGS 0 10 1; s druhou smyckou v podobe od 0 do 10 step...
+.STEP TEMP LIST 25 100
+
+*.TEMP 25 ; simulace pro 25 stupnu
+
+.PROBE VGS(M1);
+.PROBE VDS(M1);
+.PROBE ID(M1); 
+.PROBE IG(M1);  
+.END
+ 
+
+*VGS strmost (VDS = tregba 10V), v listu bude teplota jako parametr

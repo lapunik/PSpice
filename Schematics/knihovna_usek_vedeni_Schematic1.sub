@@ -1,0 +1,9 @@
+* Schematics Subcircuit *
+
+
+.SUBCKT knihovna_usek_vedeni_Schematic1 
+X_X2         in out 0 usek_vedeni PARAMS: indukcnost=10u svod=100k kapacita=3p
+R_R1         0 out  1k  
+V_V1         in 0  
++SIN 0 1 1k 0 0 0
+.ENDS    knihovna_usek_vedeni_Schematic1

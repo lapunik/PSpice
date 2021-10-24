@@ -1,0 +1,36 @@
+
+**** 11/07/19 12:23:44 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***Q2N2222_vstupni_vystupni_charakteristika.cir***
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+.LIB "nom.lib"
+
+VCE 2 0 DC 10 
+IB 1 0 DC 4u
+
+Q1 1 2 0 0 Q2N2222
+
+.OP
+*.DC LIN VDS 0 50 50m;5; po peti voltech byla prasarna... musim dat mene
+*.DC LIN VDS 0 50 50m VGS LIST 4 4.5 5 5.5 6 7 8; s druhou smyckou v podobe listu
+.DC LIN VCE 0 50 50m
+*.STEP VGS LIST 4 4.5 5 5.5 6 7 8; s druhou smyckou v podobe listu ale step... rozeznam jednotlive prubehy
+*.STEP VGS 0 10 1; s druhou smyckou v podobe od 0 do 10 step...
+.STEP LIN IC 0 10u 1u
+
+*.TEMP 25 ; simulace pro 25 stupnu
+
+.PROBE IC(Q1);
+ 
+.END
+
+
+ERROR -- STEP device IC is undefined

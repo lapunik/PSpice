@@ -1,0 +1,503 @@
+
+**** 10/24/19 11:45:58 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\Step_analyzy_Schematic.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.2
+* Thu Oct 24 11:45:58 2019
+
+
+.PARAM         odpor=1k 
+
+** Analysis setup **
+.DC LIN V_V1 0 5 5m 
+.STEP LIN PARAM odpor 100 1000 100 
+.OP 
+
+
+* From [PSPICE NETLIST] section of C:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "nom.lib"
+
+.INC "Step_analyzy_Schematic.net"
+
+
+
+**** INCLUDING Step_analyzy_Schematic.net ****
+* Schematics Netlist *
+
+
+
+R_R1         in out  1k  
+R_R2         0 out  {odpor}  
+V_V1         in 0 10V
+
+**** RESUMING Step_analyzy_Schematic.cir ****
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END
+
+**** 10/24/19 11:45:58 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\Step_analyzy_Schematic.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM ODPOR =  100   
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   in)   10.0000  (  out)     .9091  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -9.091E-03
+
+    TOTAL POWER DISSIPATION   9.09E-02  WATTS
+
+
+**** 10/24/19 11:45:58 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\Step_analyzy_Schematic.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM ODPOR =  100   
+
+
+******************************************************************************
+
+
+
+
+**** 10/24/19 11:45:58 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\Step_analyzy_Schematic.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM ODPOR =  200   
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   in)   10.0000  (  out)    1.6667  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -8.333E-03
+
+    TOTAL POWER DISSIPATION   8.33E-02  WATTS
+
+
+**** 10/24/19 11:45:58 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\Step_analyzy_Schematic.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM ODPOR =  200   
+
+
+******************************************************************************
+
+
+
+
+**** 10/24/19 11:45:58 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\Step_analyzy_Schematic.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM ODPOR =  300   
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   in)   10.0000  (  out)    2.3077  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -7.692E-03
+
+    TOTAL POWER DISSIPATION   7.69E-02  WATTS
+
+
+**** 10/24/19 11:45:58 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\Step_analyzy_Schematic.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM ODPOR =  300   
+
+
+******************************************************************************
+
+
+
+
+**** 10/24/19 11:45:58 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\Step_analyzy_Schematic.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM ODPOR =  400   
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   in)   10.0000  (  out)    2.8571  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -7.143E-03
+
+    TOTAL POWER DISSIPATION   7.14E-02  WATTS
+
+
+**** 10/24/19 11:45:58 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\Step_analyzy_Schematic.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM ODPOR =  400   
+
+
+******************************************************************************
+
+
+
+
+**** 10/24/19 11:45:58 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\Step_analyzy_Schematic.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM ODPOR =  500   
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   in)   10.0000  (  out)    3.3333  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -6.667E-03
+
+    TOTAL POWER DISSIPATION   6.67E-02  WATTS
+
+
+**** 10/24/19 11:45:58 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\Step_analyzy_Schematic.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM ODPOR =  500   
+
+
+******************************************************************************
+
+
+
+
+**** 10/24/19 11:45:58 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\Step_analyzy_Schematic.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM ODPOR =  600   
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   in)   10.0000  (  out)    3.7500  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -6.250E-03
+
+    TOTAL POWER DISSIPATION   6.25E-02  WATTS
+
+
+**** 10/24/19 11:45:58 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\Step_analyzy_Schematic.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM ODPOR =  600   
+
+
+******************************************************************************
+
+
+
+
+**** 10/24/19 11:45:58 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\Step_analyzy_Schematic.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM ODPOR =  700   
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   in)   10.0000  (  out)    4.1176  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -5.882E-03
+
+    TOTAL POWER DISSIPATION   5.88E-02  WATTS
+
+
+**** 10/24/19 11:45:58 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\Step_analyzy_Schematic.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM ODPOR =  700   
+
+
+******************************************************************************
+
+
+
+
+**** 10/24/19 11:45:58 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\Step_analyzy_Schematic.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM ODPOR =  800   
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   in)   10.0000  (  out)    4.4444  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -5.556E-03
+
+    TOTAL POWER DISSIPATION   5.56E-02  WATTS
+
+
+**** 10/24/19 11:45:58 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\Step_analyzy_Schematic.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM ODPOR =  800   
+
+
+******************************************************************************
+
+
+
+
+**** 10/24/19 11:45:58 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\Step_analyzy_Schematic.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM ODPOR =  900   
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   in)   10.0000  (  out)    4.7368  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -5.263E-03
+
+    TOTAL POWER DISSIPATION   5.26E-02  WATTS
+
+
+**** 10/24/19 11:45:58 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\Step_analyzy_Schematic.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM ODPOR =  900   
+
+
+******************************************************************************
+
+
+
+
+**** 10/24/19 11:45:58 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\Step_analyzy_Schematic.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM ODPOR =    1.0000E+03
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   in)   10.0000  (  out)    5.0000  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -5.000E-03
+
+    TOTAL POWER DISSIPATION   5.00E-02  WATTS
+
+
+**** 10/24/19 11:45:58 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\Step_analyzy_Schematic.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM ODPOR =    1.0000E+03
+
+
+******************************************************************************
+
+
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME            1.66
+

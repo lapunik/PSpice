@@ -1,0 +1,352 @@
+
+**** 03/06/20 08:55:34 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\OneDrive\Dokumenty\PSpice\ENZ\Semestralka_vstup.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.2
+* Fri Mar 06 08:55:19 2020
+
+
+
+** Analysis setup **
+.tran 1u 1m 0 1u
+.OP 
+
+
+* From [PSPICE NETLIST] section of C:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "nom.lib"
+
+.INC "Semestralka_vstup.net"
+
+
+
+**** INCLUDING Semestralka_vstup.net ****
+* Schematics Netlist *
+
+
+
+R_R2         0 $N_0001  1k  
+X_U1A         $N_0001 out $N_0002 0 out AD704/AD
+R_R3         0 out  2k  
+D_D8         $N_0003 $N_0004 D1N4148 
+D_D7         $N_0005 $N_0004 D1N4148 
+D_D9         0 $N_0005 D1N4148 
+D_D10         0 $N_0003 D1N4148 
+V_V1         $N_0005 $N_0003  
++PULSE +22 -22 0 0 0 52u 104u
+V_V2         $N_0002 0 3.3V
+R_R1         $N_0001 $N_0004  3k  
+
+**** RESUMING Semestralka_vstup.cir ****
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END
+
+**** 03/06/20 08:55:34 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\OneDrive\Dokumenty\PSpice\ENZ\Semestralka_vstup.sch
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D1N4148         X_U1A.DX        X_U1A.DY        
+          IS    2.682000E-09    1.000000E-15    1.000000E-15 
+           N    1.836                                        
+         ISR    1.565000E-09                                 
+         IKF     .04417                                      
+          BV  100                              50            
+         IBV  100.000000E-06                                 
+          RS     .5664                                       
+          TT   11.540000E-09                                 
+         CJO    4.000000E-12                                 
+          VJ     .5                                          
+           M     .3333                                       
+
+
+**** 03/06/20 08:55:34 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\OneDrive\Dokumenty\PSpice\ENZ\Semestralka_vstup.sch
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1A.QX        
+               NPN             
+          IS  100.000000E-18 
+          BF  625.000000E+03 
+          NF    1            
+          BR    1            
+          NR    1            
+          CN    2.42         
+           D     .87         
+
+
+**** 03/06/20 08:55:34 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\OneDrive\Dokumenty\PSpice\ENZ\Semestralka_vstup.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  out)    2.8051  ($N_0001)    3.5396                   ($N_0002)    3.3000    
+
+($N_0003)    -.6916                   ($N_0004)   20.6170                       
+
+($N_0005)   21.3080                   (X_U1A.3)    3.1724                       
+
+(X_U1A.4)    2.8236                   (X_U1A.5)    3.3000                       
+
+(X_U1A.6)    3.2469                   (X_U1A.9)    3.5396                       
+
+(X_U1A.10)    2.8236                  (X_U1A.11)    2.8250                      
+
+(X_U1A.12)    2.6176                  (X_U1A.13)    1.9625                      
+
+(X_U1A.14)    1.3375                  (X_U1A.15)    2.0324                      
+
+(X_U1A.16)    1.6500                  (X_U1A.17)    2.6176                      
+
+(X_U1A.18)    1.6500                  (X_U1A.19) 967.6E+03                      
+
+(X_U1A.20)    2.6176                  (X_U1A.21)    2.6176                      
+
+(X_U1A.22)    1.6500                  (X_U1A.23)    2.6107                      
+
+(X_U1A.24)   50.3920                  (X_U1A.25)    5.9551                      
+
+(X_U1A.26)    -.3449                  (X_U1A.27)    2.8051                      
+
+(X_U1A.98)    1.6500                  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -5.692E-03
+    V_V2        -2.617E-04
+    X_U1A.V1    -1.000E-04
+    X_U1A.V2     1.281E-12
+    X_U1A.VSC1  -3.338E-12
+    X_U1A.VSC2  -2.963E-12
+
+    TOTAL POWER DISSIPATION   1.26E-01  WATTS
+
+
+**** 03/06/20 08:55:34 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\OneDrive\Dokumenty\PSpice\ENZ\Semestralka_vstup.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** VOLTAGE-CONTROLLED CURRENT SOURCES
+
+
+NAME         X_U1A.G1    X_U1A.GZP1  X_U1A.G2    X_U1A.GO1   X_U1A.GO2 
+I-SOURCE     1.000E-04   9.676E-07   9.676E-07   3.751E-04  -3.751E-04
+
+NAME         X_U1A.GO3   X_U1A.GO4 
+I-SOURCE     1.365E-03   5.235E-03
+
+
+**** VOLTAGE-CONTROLLED VOLTAGE SOURCES
+
+
+NAME         X_U1A.EOS   X_U1A.EREF  X_U1A.ECM   X_U1A.ENZ 
+V-SOURCE     3.038E-05   1.650E+00   3.824E-01   9.676E+05
+I-SOURCE    -2.153E-03  -1.000E-04  -3.824E-07  -9.676E+05
+
+
+**** DIODES
+
+
+NAME         D_D8        D_D7        D_D9        D_D10       X_U1A.D1  
+MODEL        D1N4148     D1N4148     D1N4148     D1N4148     X_U1A.DX  
+ID          -8.19E-09    5.69E-03   -8.19E-09    5.69E-03   -7.35E-13 
+VD          -2.13E+01    6.92E-01   -2.13E+01    6.92E-01   -7.34E-01 
+REQ          2.38E+10    8.76E+00    2.38E+10    8.76E+00    1.00E+12 
+CAP          1.14E-12    1.33E-09    1.14E-12    1.33E-09    0.00E+00 
+
+NAME         X_U1A.D2    X_U1A.D3    X_U1A.D4    X_U1A.DO1   X_U1A.DO2 
+MODEL        X_U1A.DX    X_U1A.DX    X_U1A.DX    X_U1A.DX    X_U1A.DY  
+ID           2.15E-03    1.00E-04   -1.28E-12    3.75E-04   -2.61E-12 
+VD           7.34E-01    6.55E-01   -1.28E+00    6.89E-01   -2.61E+00 
+REQ          1.20E+01    2.59E+02    1.00E+12    6.90E+01    1.00E+12 
+CAP          0.00E+00    0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+
+NAME         X_U1A.DO3   X_U1A.DO4   X_U1A.DSC1  X_U1A.DSC2
+MODEL        X_U1A.DX    X_U1A.DY    X_U1A.DX    X_U1A.DX  
+ID          -4.71E-11   -3.75E-04   -3.34E-12   -2.96E-12 
+VD          -4.71E+01   -5.04E+01   -3.34E+00   -2.96E+00 
+REQ          1.00E+12    6.90E+01    1.00E+12    1.00E+12 
+CAP          0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+
+
+**** BIPOLAR JUNCTION TRANSISTORS
+
+
+NAME         X_U1A.Q1    X_U1A.Q2  
+MODEL        X_U1A.QX    X_U1A.QX  
+IB          -4.95E-13    1.69E-10 
+IC           9.71E-13    1.00E-04 
+VBE         -1.85E-02    7.15E-01 
+VBC         -4.95E-01    2.93E-01 
+VCE          4.76E-01    4.22E-01 
+BETADC      -1.96E+00    5.93E+05 
+GM           1.89E-15    3.87E-03 
+RPI          6.24E+17    1.62E+08 
+RX           0.00E+00    0.00E+00 
+RO           1.00E+12    3.14E+09 
+CBE          0.00E+00    0.00E+00 
+CBC          0.00E+00    0.00E+00 
+CJS          0.00E+00    0.00E+00 
+BETAAC       1.18E+03    6.25E+05 
+CBX/CBX2     0.00E+00    0.00E+00 
+FT/FT2       3.01E+04    6.15E+16 
+
+
+**** 03/06/20 08:55:34 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\OneDrive\Dokumenty\PSpice\ENZ\Semestralka_vstup.sch
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  out)    2.8051  ($N_0001)    3.5396                   ($N_0002)    3.3000    
+
+($N_0003)    -.6916                   ($N_0004)   20.6170                       
+
+($N_0005)   21.3080                   (X_U1A.3)    3.1724                       
+
+(X_U1A.4)    2.8236                   (X_U1A.5)    3.3000                       
+
+(X_U1A.6)    3.2469                   (X_U1A.9)    3.5396                       
+
+(X_U1A.10)    2.8236                  (X_U1A.11)    2.8250                      
+
+(X_U1A.12)    2.6176                  (X_U1A.13)    1.9625                      
+
+(X_U1A.14)    1.3375                  (X_U1A.15)    2.0324                      
+
+(X_U1A.16)    1.6500                  (X_U1A.17)    2.6176                      
+
+(X_U1A.18)    1.6500                  (X_U1A.19) 967.6E+03                      
+
+(X_U1A.20)    2.6176                  (X_U1A.21)    2.6176                      
+
+(X_U1A.22)    1.6500                  (X_U1A.23)    2.6107                      
+
+(X_U1A.24)   50.3920                  (X_U1A.25)    5.9551                      
+
+(X_U1A.26)    -.3449                  (X_U1A.27)    2.8051                      
+
+(X_U1A.98)    1.6500                  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -5.692E-03
+    V_V2        -2.617E-04
+    X_U1A.V1    -1.000E-04
+    X_U1A.V2     1.281E-12
+    X_U1A.VSC1  -3.339E-12
+    X_U1A.VSC2  -2.963E-12
+
+    TOTAL POWER DISSIPATION   1.26E-01  WATTS
+
+
+ERROR -- Convergence problem in transient analysis at Time =  261.9E-06
+         Time step =  465.1E-18, minimum allowable step size =  1.000E-15
+
+  These voltages failed to converge:
+
+    V(X_U1A.24)               =     24.07V  \     48.18V
+
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  out)    2.4937  ($N_0001)    3.2138                   ($N_0002)    3.3000    
+
+($N_0003)    -.6777                   ($N_0004)   16.5960                       
+
+($N_0005)   17.2740                   (X_U1A.3)    2.8538                       
+
+(X_U1A.4)    2.4981                   (X_U1A.5)    3.2979                       
+
+(X_U1A.6)    3.2491                   (X_U1A.9)    3.2141                       
+
+(X_U1A.10)    2.4981                  (X_U1A.11)    2.4994                      
+
+(X_U1A.12)    2.5491                  (X_U1A.13)    1.9625                      
+
+(X_U1A.14)    1.3375                  (X_U1A.15)    1.9524                      
+
+(X_U1A.16)    1.6502                  (X_U1A.17)    2.5197                      
+
+(X_U1A.18)    1.6206                  (X_U1A.19) 869.7E+03                      
+
+(X_U1A.20)    2.5045                  (X_U1A.21)    2.4913                      
+
+(X_U1A.22)    1.6500                  (X_U1A.23)    3.0098                      
+
+(X_U1A.24)   24.0720                  (X_U1A.25)    5.6413                      
+
+(X_U1A.26)    -.6587                  (X_U1A.27)    2.4913                      
+
+(X_U1A.98)    1.6500                  
+

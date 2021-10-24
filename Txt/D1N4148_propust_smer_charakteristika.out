@@ -1,0 +1,633 @@
+
+**** 11/07/19 12:53:51 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***D1N4148_propust_smer_charakteristika.cir***
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+.LIB "nom.lib"
+
+
+V1 1 0 DC 10 
+D1 1 0 D1N4148
+
+.OP
+
+.DC LIN V1 0 1 1m
+
+.STEP TEMP 0 100 10
+
+.PROBE I(D1);
+ 
+.END
+
+**** 11/07/19 12:53:51 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***D1N4148_propust_smer_charakteristika.cir***
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D1N4148         
+          IS    2.682000E-09 
+           N    1.836        
+         ISR    1.565000E-09 
+         IKF     .04417      
+          BV  100            
+         IBV  100.000000E-06 
+          RS     .5664       
+          TT   11.540000E-09 
+         CJO    4.000000E-12 
+          VJ     .5          
+           M     .3333       
+
+
+**** 11/07/19 12:53:51 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***D1N4148_propust_smer_charakteristika.cir***
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =    0.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(    1)   10.0000  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V1          -1.557E+01
+
+    TOTAL POWER DISSIPATION   1.56E+02  WATTS
+
+
+**** 11/07/19 12:53:51 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***D1N4148_propust_smer_charakteristika.cir***
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =    0.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** DIODES
+
+
+NAME         D1        
+MODEL        D1N4148   
+ID           1.56E+01 
+VD           1.00E+01 
+REQ          3.21E-03 
+CAP          3.60E-06 
+**** 11/07/19 12:53:51 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***D1N4148_propust_smer_charakteristika.cir***
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   10.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(    1)   10.0000  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V1          -1.557E+01
+
+    TOTAL POWER DISSIPATION   1.56E+02  WATTS
+
+
+**** 11/07/19 12:53:51 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***D1N4148_propust_smer_charakteristika.cir***
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   10.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** DIODES
+
+
+NAME         D1        
+MODEL        D1N4148   
+ID           1.56E+01 
+VD           1.00E+01 
+REQ          3.32E-03 
+CAP          3.47E-06 
+**** 11/07/19 12:53:51 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***D1N4148_propust_smer_charakteristika.cir***
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   20.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(    1)   10.0000  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V1          -1.558E+01
+
+    TOTAL POWER DISSIPATION   1.56E+02  WATTS
+
+
+**** 11/07/19 12:53:51 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***D1N4148_propust_smer_charakteristika.cir***
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   20.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** DIODES
+
+
+NAME         D1        
+MODEL        D1N4148   
+ID           1.56E+01 
+VD           1.00E+01 
+REQ          3.43E-03 
+CAP          3.36E-06 
+**** 11/07/19 12:53:51 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***D1N4148_propust_smer_charakteristika.cir***
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   30.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(    1)   10.0000  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V1          -1.558E+01
+
+    TOTAL POWER DISSIPATION   1.56E+02  WATTS
+
+
+**** 11/07/19 12:53:51 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***D1N4148_propust_smer_charakteristika.cir***
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   30.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** DIODES
+
+
+NAME         D1        
+MODEL        D1N4148   
+ID           1.56E+01 
+VD           1.00E+01 
+REQ          3.55E-03 
+CAP          3.25E-06 
+**** 11/07/19 12:53:51 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***D1N4148_propust_smer_charakteristika.cir***
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   40.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(    1)   10.0000  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V1          -1.558E+01
+
+    TOTAL POWER DISSIPATION   1.56E+02  WATTS
+
+
+**** 11/07/19 12:53:51 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***D1N4148_propust_smer_charakteristika.cir***
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   40.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** DIODES
+
+
+NAME         D1        
+MODEL        D1N4148   
+ID           1.56E+01 
+VD           1.00E+01 
+REQ          3.66E-03 
+CAP          3.15E-06 
+**** 11/07/19 12:53:51 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***D1N4148_propust_smer_charakteristika.cir***
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   50.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(    1)   10.0000  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V1          -1.559E+01
+
+    TOTAL POWER DISSIPATION   1.56E+02  WATTS
+
+
+**** 11/07/19 12:53:51 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***D1N4148_propust_smer_charakteristika.cir***
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   50.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** DIODES
+
+
+NAME         D1        
+MODEL        D1N4148   
+ID           1.56E+01 
+VD           1.00E+01 
+REQ          3.77E-03 
+CAP          3.06E-06 
+**** 11/07/19 12:53:51 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***D1N4148_propust_smer_charakteristika.cir***
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   60.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(    1)   10.0000  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V1          -1.559E+01
+
+    TOTAL POWER DISSIPATION   1.56E+02  WATTS
+
+
+**** 11/07/19 12:53:51 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***D1N4148_propust_smer_charakteristika.cir***
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   60.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** DIODES
+
+
+NAME         D1        
+MODEL        D1N4148   
+ID           1.56E+01 
+VD           1.00E+01 
+REQ          3.88E-03 
+CAP          2.97E-06 
+**** 11/07/19 12:53:51 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***D1N4148_propust_smer_charakteristika.cir***
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   70.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(    1)   10.0000  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V1          -1.560E+01
+
+    TOTAL POWER DISSIPATION   1.56E+02  WATTS
+
+
+**** 11/07/19 12:53:51 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***D1N4148_propust_smer_charakteristika.cir***
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   70.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** DIODES
+
+
+NAME         D1        
+MODEL        D1N4148   
+ID           1.56E+01 
+VD           1.00E+01 
+REQ          3.99E-03 
+CAP          2.89E-06 
+**** 11/07/19 12:53:51 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***D1N4148_propust_smer_charakteristika.cir***
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   80.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(    1)   10.0000  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V1          -1.560E+01
+
+    TOTAL POWER DISSIPATION   1.56E+02  WATTS
+
+
+**** 11/07/19 12:53:51 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***D1N4148_propust_smer_charakteristika.cir***
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   80.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** DIODES
+
+
+NAME         D1        
+MODEL        D1N4148   
+ID           1.56E+01 
+VD           1.00E+01 
+REQ          4.10E-03 
+CAP          2.81E-06 
+**** 11/07/19 12:53:51 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***D1N4148_propust_smer_charakteristika.cir***
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   90.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(    1)   10.0000  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V1          -1.561E+01
+
+    TOTAL POWER DISSIPATION   1.56E+02  WATTS
+
+
+**** 11/07/19 12:53:51 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***D1N4148_propust_smer_charakteristika.cir***
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   90.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** DIODES
+
+
+NAME         D1        
+MODEL        D1N4148   
+ID           1.56E+01 
+VD           1.00E+01 
+REQ          4.21E-03 
+CAP          2.74E-06 
+**** 11/07/19 12:53:51 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***D1N4148_propust_smer_charakteristika.cir***
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =  100.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(    1)   10.0000  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V1          -1.561E+01
+
+    TOTAL POWER DISSIPATION   1.56E+02  WATTS
+
+
+**** 11/07/19 12:53:51 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***D1N4148_propust_smer_charakteristika.cir***
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =  100.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** DIODES
+
+
+NAME         D1        
+MODEL        D1N4148   
+ID           1.56E+01 
+VD           1.00E+01 
+REQ          4.32E-03 
+CAP          2.67E-06 
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME            1.22
+

@@ -1,0 +1,24 @@
+* C:\Users\Lapunik\Dropbox\PSpice\Schematics\Laplace_Treti_Schematic.sch
+
+* Schematics Version 9.2
+* Fri Dec 06 20:07:42 2019
+
+
+.PARAM         odpor=1MEG 
+
+** Analysis setup **
+.ac DEC 101 10 100k
+.OP 
+
+
+* From [PSPICE NETLIST] section of C:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "C:\Users\Lapunik\Dropbox\PSpice\Knihovna_z_netu\nova\knihovna.lib"
+.lib "nom.lib"
+
+.INC "Laplace_Treti_Schematic.net"
+
+
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END

@@ -1,0 +1,36 @@
+
+**** 10/17/19 11:21:14 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***usmernovac.cir***
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+.LIB "nom.lib"
+
+*net list
+V1 1 0 SIN 0 30 50 0 0 0
+*definice diody: D<jmeno><A><K><model>
+D1 1 2 D1N4007
+D2 0 2 D1N4007
+D3 3 0 D1N4007
+D4 3 1 D1N4007
+R1 2 3 1MEG
+
+.OP
+*
+.TRAN 100u 100m 0 100u 
+
+.PROBE V(1) V(R1) 
+.END
+
+ERROR -- Model D1N used by D1 is undefined
+ERROR -- Model D1N used by D2 is undefined
+ERROR -- Model D1N used by D3 is undefined
+ERROR -- Model D1N used by D4 is undefined

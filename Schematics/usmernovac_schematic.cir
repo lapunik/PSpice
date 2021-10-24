@@ -1,0 +1,22 @@
+* C:\Users\Lapunik\Dropbox\PSpice\Schematics\usmernovac_schematic.sch
+
+* Schematics Version 9.2
+* Thu Oct 17 11:33:46 2019
+
+
+
+** Analysis setup **
+.tran 100u 100m 0 100u
+.OP 
+
+
+* From [PSPICE NETLIST] section of C:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "nom.lib"
+
+.INC "usmernovac_schematic.net"
+
+
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END

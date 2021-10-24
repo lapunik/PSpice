@@ -1,0 +1,299 @@
+
+**** 02/25/20 12:36:42 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\OneDrive\Dokumenty\PSpice\ENZ\Schematic_1_cvi_Seriova_stabilizace_s_OZ.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.2
+* Tue Feb 25 12:36:42 2020
+
+
+.PARAM         zatez=100 
+
+** Analysis setup **
+.DC LIN PARAM zatez 100 10m 1m 
+.OP 
+
+
+* From [PSPICE NETLIST] section of C:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "nom.lib"
+
+.INC "Schematic_1_cvi_Seriova_stabilizace_s_OZ.net"
+
+
+
+**** INCLUDING Schematic_1_cvi_Seriova_stabilizace_s_OZ.net ****
+* Schematics Netlist *
+
+
+
+R_R3         UCC $N_0001  1245  
+D_D1         0 $N_0001 D02CZ5_1 
+V_V2         UCC 0 30
+R_R1         $N_0003 $N_0002  1k  
+R_R2         0 $N_0003  739  
+R_R4         0 $N_0002  {zatez}  
+X_U1A         $N_0001 $N_0003 UCC 0 $N_0004 TL082
+Q_Q1         UCC $N_0005 $N_0006 Q2N3055
+Q_Q3         UCC $N_0004 $N_0005 Q2N2222
+Q_Q4         $N_0004 $N_0006 $N_0002 Q2N2222
+R_R5         $N_0006 $N_0002  0.12  
+
+**** RESUMING Schematic_1_cvi_Seriova_stabilizace_s_OZ.cir ****
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END
+
+**** 02/25/20 12:36:42 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\OneDrive\Dokumenty\PSpice\ENZ\Schematic_1_cvi_Seriova_stabilizace_s_OZ.sch
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D02CZ5_1        X_U1A.dx        X_U1A.dy        
+          IS    9.086000E-12  800.000000E-18  800.000000E-18 
+           N    1.395                                        
+         ISR  664.700000E-09                                 
+         IKF     .11                                         
+          BV    5.198                                        
+         IBV     .1478                                       
+          RS                    1               1.000000E-03 
+          TT    5.000000E-09                                 
+         CJO  406.200000E-12                   10.000000E-12 
+          VJ    5                                            
+           M    1.548                                        
+
+
+**** 02/25/20 12:36:42 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\OneDrive\Dokumenty\PSpice\ENZ\Schematic_1_cvi_Seriova_stabilizace_s_OZ.sch
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               Q2N3055         Q2N2222         
+               NPN             NPN             
+          IS  974.400000E-15   14.340000E-15 
+          BF   99.49          255.9          
+          NF    1               1            
+         VAF   50              74.03         
+         IKF    4.029            .2847       
+         ISE  902.500000E-12   14.340000E-15 
+          NE    1.941           1.307        
+          BR    2.949           6.092        
+          NR    1               1            
+          RB     .1            10            
+          RC     .1             1            
+         CJE  569.100000E-12   22.010000E-12 
+         MJE     .3333           .377        
+         CJC  276.000000E-12    7.306000E-12 
+         MJC     .3333           .3416       
+          TF   39.110000E-09  411.100000E-12 
+         XTF    2               3            
+         VTF   10               1.7          
+         ITF   20                .6          
+          TR  971.700000E-09   46.910000E-09 
+         XTB    1.5             1.5          
+          CN    2.42            2.42         
+           D     .87             .87         
+
+
+**** 02/25/20 12:36:42 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\OneDrive\Dokumenty\PSpice\ENZ\Schematic_1_cvi_Seriova_stabilizace_s_OZ.sch
+
+
+ ****     Junction FET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1A.jx        
+               NJF             
+         VTO   -1            
+        BETA  984.200000E-06 
+          IS    2.500000E-12 
+
+
+**** 02/25/20 12:36:42 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\OneDrive\Dokumenty\PSpice\ENZ\Schematic_1_cvi_Seriova_stabilizace_s_OZ.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  UCC)   30.0000  ($N_0001)    5.1462                   ($N_0002)   12.1110    
+
+($N_0003)    5.1465                   ($N_0004)   13.4300                       
+
+($N_0005)   12.7810                   ($N_0006)   12.1260                       
+
+(X_U1A.6) 266.1E-06                   (X_U1A.7)   13.4300                       
+
+(X_U1A.8)   13.4300                   (X_U1A.9)    0.0000                       
+
+(X_U1A.10)    5.8096                  (X_U1A.11)   29.6710                      
+
+(X_U1A.12)   29.6710                  (X_U1A.53)   28.5000                      
+
+(X_U1A.54)    1.5000                  (X_U1A.90)     .0075                      
+
+(X_U1A.91)   50.0000                  (X_U1A.92)  -50.0000                      
+
+(X_U1A.99)   15.0000                  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V2        -1.497E-01
+    X_U1A.vb     2.661E-09
+    X_U1A.vc     1.507E-11
+    X_U1A.ve     1.205E-11
+    X_U1A.vlim   7.540E-06
+    X_U1A.vlp   -4.999E-11
+    X_U1A.vln   -5.002E-11
+
+    TOTAL POWER DISSIPATION   4.49E+00  WATTS
+
+
+**** 02/25/20 12:36:42 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\OneDrive\Dokumenty\PSpice\ENZ\Schematic_1_cvi_Seriova_stabilizace_s_OZ.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** VOLTAGE-CONTROLLED CURRENT SOURCES
+
+
+NAME         X_U1A.ga    X_U1A.gcm 
+I-SOURCE    -1.590E-07  -1.563E-07
+
+
+**** VOLTAGE-CONTROLLED VOLTAGE SOURCES
+
+
+NAME         X_U1A.egnd
+V-SOURCE     1.500E+01
+I-SOURCE    -1.829E-05
+
+
+**** CURRENT-CONTROLLED CURRENT SOURCES
+
+
+NAME         X_U1A.fb  
+I-SOURCE     9.226E-03
+
+
+**** CURRENT-CONTROLLED VOLTAGE SOURCES
+
+
+NAME         X_U1A.hlim
+V-SOURCE     7.540E-03
+I-SOURCE    -1.508E-14
+
+
+**** DIODES
+
+
+NAME         D_D1        X_U1A.dc    X_U1A.de    X_U1A.dlp   X_U1A.dln 
+MODEL        D02CZ5_1    X_U1A.dy    X_U1A.dy    X_U1A.dx    X_U1A.dx  
+ID          -2.00E-02   -1.51E-11   -1.19E-11   -5.00E-11   -5.00E-11 
+VD          -5.15E+00   -1.51E+01   -1.19E+01   -5.00E+01   -5.00E+01 
+REQ          1.30E+00    1.00E+12    1.00E+12    1.00E+12    1.00E+12 
+CAP          3.99E-09    2.49E-12    2.78E-12    0.00E+00    0.00E+00 
+
+NAME         X_U1A.dp  
+MODEL        X_U1A.dx  
+ID          -3.00E-11 
+VD          -3.00E+01 
+REQ          1.00E+12 
+CAP          0.00E+00 
+
+
+**** BIPOLAR JUNCTION TRANSISTORS
+
+
+NAME         Q_Q1        Q_Q3        Q_Q4      
+MODEL        Q2N3055     Q2N2222     Q2N2222   
+IB           1.39E-03    7.54E-06   -2.08E-13 
+IC           1.27E-01    1.38E-03    1.59E-12 
+VBE          6.55E-01    6.49E-01    1.54E-02 
+VBC         -1.72E+01   -1.66E+01   -1.30E+00 
+VCE          1.79E+01    1.72E+01    1.32E+00 
+BETADC       9.14E+01    1.83E+02   -7.62E+00 
+GM           4.79E+00    5.31E-02    1.00E-12 
+RPI          2.18E+01    3.80E+03    1.48E+12 
+RX           1.00E-01    1.00E+01    1.00E+01 
+RO           5.31E+02    6.57E+04    9.65E+11 
+CBE          1.88E-07    5.83E-11    2.22E-11 
+CBC          9.58E-11    2.50E-12    5.18E-12 
+CJS          0.00E+00    0.00E+00    0.00E+00 
+BETAAC       1.05E+02    2.02E+02    1.48E+00 
+CBX/CBX2     0.00E+00    0.00E+00    0.00E+00 
+FT/FT2       4.05E+06    1.39E+08    5.84E-03 
+
+
+
+
+**** JFETS
+
+
+NAME         X_U1A.j1    X_U1A.j2  
+MODEL        X_U1A.jx    X_U1A.jx  
+ID           1.12E-04    1.12E-04 
+VGS         -6.63E-01   -6.63E-01 
+VDS          2.39E+01    2.39E+01 
+GM           6.63E-04    6.63E-04 
+GDS          0.00E+00    0.00E+00 
+CGS          0.00E+00    0.00E+00 
+CGD          0.00E+00    0.00E+00 
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME           19.98
+

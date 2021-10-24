@@ -1,0 +1,11 @@
+* Schematics Netlist *
+
+
+
+D_D1         in out D1N4007 
+D_D2         0 out D1N4007 
+D_D4         out- 0 D1N4007 
+D_D3         out- in D1N4007 
+R_R1         out- out  1MEG  
+V_V1         in 0  AC 30
++SIN 0 30 50 0 0 0

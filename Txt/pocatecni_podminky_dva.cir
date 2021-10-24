@@ -1,0 +1,16 @@
+***pocatecni_podminky_dva.cir***
+
+* prechodak
+
+.LIB "nom.lib"
+
+V1 1 0 DC 15
+R1 1 2 {1k}
+C1 2 0 {1u} IC= 100
+
+.OP
+.TRAN 10u 10m 0 100u
+.PROBE V(1) V(2)
+
+
+.END

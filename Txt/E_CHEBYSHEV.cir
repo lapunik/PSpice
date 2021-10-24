@@ -1,0 +1,18 @@
+***E_CHEBYSHEV.cir***
+
+.LIB "nom.lib"
+*definice CHEBYSHEV: E<jmeno><uzel+><uzel-> CHEBYSHEV {<vyraz>} = <typ filtru> <zlomovy kmitocet> <utlumy>
+
+V1 1 0 AC 1;
+R1 1 0 1MEG;
+
+E2 2 0 CHEBYSHEV {V(1)}=LP 1k 20k 0.5 30
+R2 2 0 1MEG
+
+.OP
+
+.AC DEC 101 100 100k
+
+.PROBE V(1) V(2)
+
+.END

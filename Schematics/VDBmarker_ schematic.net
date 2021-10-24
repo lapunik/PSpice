@@ -1,0 +1,8 @@
+* Schematics Netlist *
+
+
+
+R_R1         in out  1k  
+V_V1         in 0  AC 0.1
++PULSE 5 -5 0 1u 1u 0.5m 1m
+C_C1         0 out  100n  

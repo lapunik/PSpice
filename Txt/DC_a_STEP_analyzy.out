@@ -1,0 +1,281 @@
+
+**** 11/07/19 11:46:33 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***DC_a_STEP_analyzy.cir***
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+.LIB "nom.lib"
+
+V1 1 0 DC 10
+R1 1 2 1k
+R2 2 0 {odpor}
+
+.PARAM odpor=1k
+
+.OP
+
+.PROBE V(1) V(2)
+
+*definice: .DC<typ_rozmitani:LIN,dec,oct><rozmitana_velicina><od><do><INKREMENT/pocet_bodu_na_dekadu/pocet_bodu_na_oktavu>
+*+ <typ_rozmitani:LIN,dec,oct><rozmitana_velicina><od><do><INKREMENT/pocet_bodu_na_dekadu/pocet_bodu_na_oktavu> ; druha smyka DC ana
+* prvn smyka analzy nm udv rozlien analzy, tj. vpoetn poet bod, druh smycka pak pocet vykreslenych charakteristik
+* (prvni symka je jako Uce a druh jako Ib u bipolarniho tranzistoru)
+* pro prvn smycku volim inktement tak abych mel alespon 1000 bodu, pro druhou smycku, treba do deseti charakteristik
+
+*.DC LIN V1 0 5 5m ; 5m = 1/1000 5 volt 
+
+*definice DC analzy pro globln parametr .DC <LIN> PARAM <jmeno_globalniho_parametru><od><do><inkrement>
+* pokud budu chtt parametr(rozmitana velicina) jenom pro nekolik danych hodnot, muzu je zadat jako LIST:
+*definice pro LIST: .DC <rozmitana_velicina> LIST <hodnota1 hodnota2 ... hodnotaN>
+
+
+*.DC LIN V1 0 5 5m LIN PARAM odpor 100 1000 100; pri tomto postupu se zada napeti a spocita pro vsechny parametry(IB) atd..atd.. tak
+
+*definice parametrikou analyzu .STEP <typ_rozmitani:LIN,dec,oct><rozmitana_velicina><od><do><INKREMENT/pocet_bodu_na_dekadu/pocet_bo
+* zase muzu pouzit list
+
+.DC LIN V1 0 5 5m
+*.STEP LIN PARAM odpor 100 1000 100
+*vlastne rozdelena predchozi dc analyza do dvou radku
+.STEP PARAM odpor LIST 113 156 257 10k 100k; ukazka listu, (parametry musi jit vzestupne nebo sestupne, nikdy ne na preskacku)
+
+.END
+
+**** 11/07/19 11:46:33 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***DC_a_STEP_analyzy.cir***
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM ODPOR =  113   
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(    1)   10.0000  (    2)    1.0153  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V1          -8.985E-03
+
+    TOTAL POWER DISSIPATION   8.98E-02  WATTS
+
+
+**** 11/07/19 11:46:33 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***DC_a_STEP_analyzy.cir***
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM ODPOR =  113   
+
+
+******************************************************************************
+
+
+
+
+**** 11/07/19 11:46:33 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***DC_a_STEP_analyzy.cir***
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM ODPOR =  156   
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(    1)   10.0000  (    2)    1.3495  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V1          -8.651E-03
+
+    TOTAL POWER DISSIPATION   8.65E-02  WATTS
+
+
+**** 11/07/19 11:46:33 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***DC_a_STEP_analyzy.cir***
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM ODPOR =  156   
+
+
+******************************************************************************
+
+
+
+
+**** 11/07/19 11:46:33 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***DC_a_STEP_analyzy.cir***
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM ODPOR =  257   
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(    1)   10.0000  (    2)    2.0446  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V1          -7.955E-03
+
+    TOTAL POWER DISSIPATION   7.96E-02  WATTS
+
+
+**** 11/07/19 11:46:33 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***DC_a_STEP_analyzy.cir***
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM ODPOR =  257   
+
+
+******************************************************************************
+
+
+
+
+**** 11/07/19 11:46:33 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***DC_a_STEP_analyzy.cir***
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM ODPOR =   10.0000E+03
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(    1)   10.0000  (    2)    9.0909  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V1          -9.091E-04
+
+    TOTAL POWER DISSIPATION   9.09E-03  WATTS
+
+
+**** 11/07/19 11:46:33 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***DC_a_STEP_analyzy.cir***
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM ODPOR =   10.0000E+03
+
+
+******************************************************************************
+
+
+
+
+**** 11/07/19 11:46:33 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***DC_a_STEP_analyzy.cir***
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM ODPOR =  100.0000E+03
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(    1)   10.0000  (    2)    9.9010  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V1          -9.901E-05
+
+    TOTAL POWER DISSIPATION   9.90E-04  WATTS
+
+
+**** 11/07/19 11:46:33 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ***DC_a_STEP_analyzy.cir***
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM ODPOR =  100.0000E+03
+
+
+******************************************************************************
+
+
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .56
+

@@ -1,0 +1,198 @@
+
+**** 01/16/20 01:00:12 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\pokus_o_kaskodu.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.2
+* Thu Jan 16 01:00:11 2020
+
+
+
+** Analysis setup **
+.tran 1u 2000u 0 1u
+.OP 
+
+
+* From [PSPICE NETLIST] section of C:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "C:\Users\Lapunik\Dropbox\PSpice\Knihovna_z_netu\nova\knihovna.lib"
+.lib "nom.lib"
+
+.INC "pokus_o_kaskodu.net"
+
+
+
+**** INCLUDING pokus_o_kaskodu.net ****
+* Schematics Netlist *
+
+
+
+Q_Q2         $N_0001 in 0 Q2N2222
+Q_Q1         out $N_0002 $N_0001 Q2N2222
+V_V2         $N_0003 0 12V
+R_R5         $N_0002 $N_0003  9k  
+V_V1         in 0  
++SIN 0 5 1k 0 0 0
+R_R4         0 $N_0002  12k  
+R_Rz2         0 out  10k  
+R_R3         out $N_0003  10k  
+
+**** RESUMING pokus_o_kaskodu.cir ****
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END
+
+**** 01/16/20 01:00:12 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\pokus_o_kaskodu.sch
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               Q2N2222         
+               NPN             
+          IS   14.340000E-15 
+          BF  255.9          
+          NF    1            
+         VAF   74.03         
+         IKF     .2847       
+         ISE   14.340000E-15 
+          NE    1.307        
+          BR    6.092        
+          NR    1            
+          RB   10            
+          RC    1            
+         CJE   22.010000E-12 
+         MJE     .377        
+         CJC    7.306000E-12 
+         MJC     .3416       
+          TF  411.100000E-12 
+         XTF    3            
+         VTF    1.7          
+         ITF     .6          
+          TR   46.910000E-09 
+         XTB    1.5          
+          CN    2.42         
+           D     .87         
+
+
+**** 01/16/20 01:00:12 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\pokus_o_kaskodu.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   in)    0.0000  (  out)    6.1283  ($N_0001)    6.1286                       
+
+($N_0002)    6.7251                   ($N_0003)   12.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V2        -1.173E-03
+    V_V1         1.008E-12
+
+    TOTAL POWER DISSIPATION   1.41E-02  WATTS
+
+
+**** 01/16/20 01:00:12 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\pokus_o_kaskodu.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** BIPOLAR JUNCTION TRANSISTORS
+
+
+NAME         Q_Q2        Q_Q1      
+MODEL        Q2N2222     Q2N2222   
+IB          -1.01E-12    2.57E-05 
+IC           7.66E-12   -2.57E-05 
+VBE          0.00E+00    5.97E-01 
+VBC         -6.13E+00    5.97E-01 
+VCE          6.13E+00   -2.43E-04 
+BETADC      -7.60E+00   -1.00E+00 
+GM           5.17E-13   -4.76E-05 
+RPI          2.32E+12    2.40E+04 
+RX           1.00E+01    1.00E+01 
+RO           8.58E+11    1.75E+02 
+CBE          2.20E-11    3.73E-11 
+CBC          3.43E-12    2.81E-10 
+CJS          0.00E+00    0.00E+00 
+BETAAC       1.20E+00   -1.14E+00 
+CBX/CBX2     0.00E+00    0.00E+00 
+FT/FT2       3.24E-03   -2.38E+04 
+
+
+**** 01/16/20 01:00:12 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\Lapunik\Dropbox\PSpice\Schematics\pokus_o_kaskodu.sch
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   in)    0.0000  (  out)    6.1283  ($N_0001)    6.1286                       
+
+($N_0002)    6.7251                   ($N_0003)   12.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V2        -1.173E-03
+    V_V1         1.008E-12
+
+    TOTAL POWER DISSIPATION   1.41E-02  WATTS
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .33
+
